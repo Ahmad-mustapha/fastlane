@@ -55,19 +55,13 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-  min-height: 100vh;
+html,
+body,
+#root {
+  background-color: #000 !important;
+  color: rgba(255, 255, 255, 0.87);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

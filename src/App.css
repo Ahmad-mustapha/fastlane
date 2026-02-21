@@ -1,25 +1,18 @@
 :root {
   --primary-color: #3b82f6;
   --primary-hover: #2563eb;
-  --bg-color: #f1f3f6;
-  --text-color: #111827;
-  --nav-bg: #ffffff;
-  --nav-text: #111827;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #000;
-    --text-color: #ffffffde;
-    --nav-bg: #1a1a1a;
-    --nav-text: #eee;
-  }
+  --text-color: #ffffff;
+  --nav-bg: #1a1a1a;
+  --nav-text: #eee;
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: #000;
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 .app-wrapper {
