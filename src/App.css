@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --bg-color: #f1f3f6;
+  --text-color: #111827;
+  --nav-bg: #ffffff;
+  --nav-text: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000;
+    --text-color: #ffffffde;
+    --nav-bg: #1a1a1a;
+    --nav-text: #eee;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--nav-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: rgba(30, 30, 30, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Pages */
+.page-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: left;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--primary-color), #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.page-text {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+
+/* HTML: <div class="inverted-radius"></div> */
+.inverted-radius {
+  --r: 12px;
+  /* the radius */
+  --s: 25px;
+  /* size of inner curve */
+  --x: 100px;
+  /* horizontal offset */
+  --y: 100px;
+  /* vertical offset */
+
+  background: #194070;
+  border-radius: var(--r);
+  --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(at calc(100% - var(--r)) var(--r), #0000 25%, #000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(100% - var(--_d) - var(--x)) 0 var(--_m),
+    100% calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 100% 0, #0000 99%, #000 calc(100% + 1px)) calc(-1*var(--r) - var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(-1*var(--_d) - var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  mask-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .inverted-radius {
+    --s: 18px;
+    --x: 50px;
+    --y: 50px;
+  }
+}
