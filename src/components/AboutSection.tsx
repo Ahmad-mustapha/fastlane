@@ -1,5 +1,4 @@
 import { memo } from "react";
-import { motion } from "framer-motion";
 import AboutImg from "../assets/aboutus.jpg";
 import { FaArrowRight } from "react-icons/fa6";
 
@@ -12,13 +11,7 @@ const AboutSection = memo(() => {
             {/* Main Content Grid */}
             <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16">
                 {/* Left — Image */}
-                <motion.div
-                    initial={{ opacity: 0, x: -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    className="w-full lg:w-[45%] relative"
-                >
+                <div className="w-full lg:w-[45%] relative">
                     <div
                         className="relative w-full h-[420px] md:h-[500px] overflow-hidden"
                     // style={{ clipPath: 'polygon(0 0, calc(100% - 70px) 0, 100% 70px, 100% 100%, 0 100%)' }}
@@ -32,16 +25,10 @@ const AboutSection = memo(() => {
                         {/* Overlay gradient */}
                         {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" /> */}
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Right — Header + Text Content */}
-                <motion.div
-                    initial={{ opacity: 0, x: 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-                    className="w-full lg:w-[55%] flex flex-col justify-between"
-                >
+                <div className="w-full lg:w-[55%] flex flex-col justify-between">
                     {/* Section Header */}
                     <div className="mb-8">
                         {/* <h2 className="text-5xl font-bolder text-white tracking-tight mb-10">
@@ -79,7 +66,7 @@ const AboutSection = memo(() => {
                     </div>
 
                     {/* Stats Grid
-                    <motion.div
+                    <div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -96,16 +83,10 @@ const AboutSection = memo(() => {
                                 </p>
                             </div>
                         ))}
-                    </motion.div> */}
+                    </div> */}
 
                     {/* CTA Button */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.45 }}
-                        className="mt-10"
-                    >
+                    <div className="mt-10">
                         <button className="group flex items-center justify-between gap-4 px-4 py-3 pl-6 rounded-full border border-gray-600 hover:border-white transition-colors bg-transparent min-w-[240px]">
                             <span className="text-[14px] md:text-[17px] font-medium text-white">
                                 Learn More About Us
@@ -114,8 +95,8 @@ const AboutSection = memo(() => {
                                 <FaArrowRight />
                             </span>
                         </button>
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
             </div>
         </section>
     );

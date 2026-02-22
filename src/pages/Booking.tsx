@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa6';
 import { Clock, MapPin, Phone, Mail, ChevronDown } from 'lucide-react';
 
@@ -98,34 +97,25 @@ export default function Booking() {
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" />
 
                 <div className="relative z-10 px-6 md:px-16 lg:px-24 text-center">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4 }}
+                    <span
                         className="inline-block px-5 py-2 rounded-full text-xs font-bold tracking-[0.15em] uppercase bg-white/10 text-white/80 mb-6"
                     >
                         Book a Session
-                    </motion.span>
+                    </span>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
+                    <h1
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
                     >
                         Start Your Learning
                         <br />
                         <span className="text-gray-500">Journey Today</span>
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                    <p
                         className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
                     >
                         Schedule a free consultation or book a session with one of our expert tutors. We'll match you with the perfect instructor for your goals.
-                    </motion.p>
+                    </p>
                 </div>
             </section>
 
@@ -133,11 +123,7 @@ export default function Booking() {
             <section className="px-6 md:px-16 lg:px-24 pb-24">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     {/* ─── Booking Form ─── */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                    <div
                         className="lg:w-3/5"
                     >
                         <div className="border border-white/10 rounded-2xl p-8 md:p-10 bg-white/[0.02] backdrop-blur-sm">
@@ -324,14 +310,10 @@ export default function Booking() {
                                 </button>
                             </form>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* ─── Sidebar ─── */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                    <div
                         className="lg:w-2/5 space-y-8"
                     >
                         {/* Contact Info Card */}
@@ -407,7 +389,7 @@ export default function Booking() {
                                 </button>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
         </div>

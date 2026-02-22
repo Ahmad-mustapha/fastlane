@@ -1,14 +1,10 @@
-import { motion } from "framer-motion";
 import HeroImg from "../assets/heroimg2.jpg";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Hero = () => {
     return (
         <section className="relative pt-32 md:pt-24 pb-4 mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-0 w-full">
-            <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+            <div
                 className="space-y-6 w-full lg:w-1/2"
             >
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[1] tracking-tight uppercase">
@@ -33,12 +29,9 @@ const Hero = () => {
                         </span>
                     </button>
                 </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-                initial={{ opacity: 0, scale: 0.98, x: 50 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            <div
                 className="relative overflow-hidden w-full lg:w-[450px] h-[380px] md:h-[500px] aspect-[4/3] inverted-radius md:mr-0 transition-all duration-500"
                 style={{
                     transform: 'translate3d(0,0,0)',
@@ -49,16 +42,13 @@ const Hero = () => {
                     src={HeroImg}
                     alt="Hero Image"
                     className="w-full h-full object-cover object-top"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
                     style={{
                         imageRendering: 'auto',
                         transform: 'translate3d(0,0,0)',
                         WebkitBackfaceVisibility: 'hidden',
                     }}
                 />
-            </motion.div>
+            </div>
         </section>
     );
 };

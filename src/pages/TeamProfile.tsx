@@ -1,5 +1,4 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
     ArrowUpRight,
     GraduationCap,
@@ -22,15 +21,6 @@ const SocialIcon = ({ platform }: { platform: string }) => {
     return <Mail className={cls} />;
 };
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 28 },
-    visible: (d = 0) => ({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.55, ease: 'easeOut' as const, delay: d as number },
-    }),
-};
-
 export default function TeamProfile() {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
@@ -40,8 +30,8 @@ export default function TeamProfile() {
     if (!member) {
         return (
             <div className="bg-black min-h-screen text-white flex flex-col items-center justify-center gap-6 px-6">
-                <p className="text-gray-500 text-sm tracking-widest uppercase">404 — Not Found</p>
-                <h1 className="text-4xl font-black uppercase tracking-tight">Instructor not found</h1>
+                <p className="text-gray-500 text-sm tracking-widest uppercase">404 — Profile Not Found</p>
+                <h1 className="text-4xl font-black uppercase tracking-tight">Instructor Profile not found</h1>
                 <Link
                     to="/teams"
                     className="group flex items-center gap-3 px-5 py-2.5 border border-gray-600 hover:border-white transition-colors text-sm font-medium"
@@ -63,10 +53,7 @@ export default function TeamProfile() {
 
             {/* ── Back Bar ── */}
             <div className="pt-28 pb-0 px-6 md:px-16 lg:px-24">
-                <motion.button
-                    initial={{ opacity: 0, x: -16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4 }}
+                <button
                     onClick={() => navigate(-1)}
                     className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-sm font-medium group"
                 >
@@ -75,7 +62,7 @@ export default function TeamProfile() {
                         className="group-hover:-translate-x-1 transition-transform"
                     />
                     Back
-                </motion.button>
+                </button>
             </div>
 
             {/* ════════════════════════════════════════════════ */}
@@ -85,10 +72,7 @@ export default function TeamProfile() {
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
 
                     {/* ── Photo ── */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.97, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: 'easeOut' }}
+                    <div
                         className="w-full lg:w-[38%] shrink-0"
                     >
                         <div className="relative w-full h-[420px] md:h-[540px] overflow-hidden">
@@ -127,16 +111,12 @@ export default function TeamProfile() {
                                 </a>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* ── Intro Content ── */}
                     <div className="flex-1 pt-2">
                         {/* Badge */}
-                        <motion.div
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate="visible"
-                            custom={0}
+                        <div
                             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase mb-6"
                             style={{ color: member.accentColor }}
                         >
@@ -145,14 +125,10 @@ export default function TeamProfile() {
                                 style={{ backgroundColor: member.accentColor }}
                             />
                             {member.role}
-                        </motion.div>
+                        </div>
 
                         {/* Name */}
-                        <motion.h1
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate="visible"
-                            custom={0.08}
+                        <h1
                             className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] uppercase mb-6"
                         >
                             {member.name.split(' ')[0]}{' '}
@@ -162,28 +138,20 @@ export default function TeamProfile() {
                             >
                                 {member.name.split(' ').slice(1).join(' ')}
                             </span>
-                        </motion.h1>
+                        </h1>
 
                         {/* Quote */}
-                        <motion.blockquote
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate="visible"
-                            custom={0.15}
+                        <blockquote
                             className="border-l-2 pl-5 mb-8"
                             style={{ borderColor: member.accentColor }}
                         >
                             <p className="text-gray-300 text-base md:text-lg leading-relaxed italic font-light">
                                 "{member.quote}"
                             </p>
-                        </motion.blockquote>
+                        </blockquote>
 
                         {/* Stats Row */}
-                        <motion.div
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate="visible"
-                            custom={0.2}
+                        <div
                             className="grid grid-cols-3 gap-px bg-white/10 mb-10"
                         >
                             {[
@@ -201,15 +169,10 @@ export default function TeamProfile() {
                                     </p>
                                 </div>
                             ))}
-                        </motion.div>
+                        </div>
 
                         {/* Subjects */}
-                        <motion.div
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate="visible"
-                            custom={0.25}
-                        >
+                        <div>
                             <p className="text-[10px] font-bold tracking-widest uppercase text-gray-600 mb-3">
                                 Subjects Taught
                             </p>
@@ -223,7 +186,7 @@ export default function TeamProfile() {
                                     </span>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -247,11 +210,7 @@ export default function TeamProfile() {
                     </div>
 
                     {/* Bio paragraphs */}
-                    <motion.div
-                        variants={fadeUp}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
+                    <div
                         className="lg:w-3/4 space-y-5"
                     >
                         {member.fullBio.trim().split('\n\n').map((para, i) => (
@@ -266,7 +225,7 @@ export default function TeamProfile() {
                                 {para.trim()}
                             </p>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -284,11 +243,7 @@ export default function TeamProfile() {
                         </div>
                     </div>
 
-                    <motion.div
-                        variants={fadeUp}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
+                    <div
                         className="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10"
                     >
                         {member.specialisms.map((spec, i) => (
@@ -305,7 +260,7 @@ export default function TeamProfile() {
                                 />
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -328,13 +283,8 @@ export default function TeamProfile() {
 
                     <div className="lg:w-3/4 space-y-0 divide-y divide-white/10">
                         {member.education.map((edu, i) => (
-                            <motion.div
+                            <div
                                 key={i}
-                                variants={fadeUp}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                custom={i * 0.08}
                                 className="flex items-start gap-5 py-7"
                             >
                                 <div
@@ -355,7 +305,7 @@ export default function TeamProfile() {
                                 <span className="text-xs text-gray-600 font-bold tracking-wider shrink-0 pt-1">
                                     {edu.year}
                                 </span>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -377,13 +327,8 @@ export default function TeamProfile() {
 
                     <div className="lg:w-3/4 space-y-0 divide-y divide-white/10">
                         {member.certifications.map((cert, i) => (
-                            <motion.div
+                            <div
                                 key={i}
-                                variants={fadeUp}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                custom={i * 0.08}
                                 className="flex items-start gap-5 py-7"
                             >
                                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 mt-0.5">
@@ -398,7 +343,7 @@ export default function TeamProfile() {
                                 <span className="text-xs text-gray-600 font-bold tracking-wider shrink-0 pt-1">
                                     {cert.year}
                                 </span>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -408,11 +353,7 @@ export default function TeamProfile() {
             {/*  BOOK CTA                                        */}
             {/* ════════════════════════════════════════════════ */}
             <section className="px-6 md:px-16 lg:px-24 pb-20">
-                <motion.div
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
+                <div
                     className="w-full p-10 md:p-14 relative overflow-hidden border border-white/10"
                     style={{
                         background: `linear-gradient(135deg, ${member.accentColor}14 0%, transparent 60%)`,
@@ -450,7 +391,7 @@ export default function TeamProfile() {
                         className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none opacity-20"
                         style={{ backgroundColor: member.accentColor }}
                     />
-                </motion.div>
+                </div>
             </section>
 
             {/* ════════════════════════════════════════════════ */}

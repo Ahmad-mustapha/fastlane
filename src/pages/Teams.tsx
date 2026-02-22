@@ -1,4 +1,3 @@
-import { motion, type Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
@@ -31,27 +30,7 @@ const ctaCards = [
     },
 ];
 
-const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-        },
-    },
-};
 
-const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: "easeOut"
-        }
-    },
-};
 
 export default function Teams() {
     return (
@@ -59,11 +38,7 @@ export default function Teams() {
             <div className="px-6 md:px-16 lg:px-24">
                 {/* ── Hero Header ── */}
                 <section className="pt-36 pb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
-                    >
+                    <div>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] uppercase mb-6">
                             MEET THE{' '}
                             <span className="block text-transparent"
@@ -71,34 +46,26 @@ export default function Teams() {
                                 INSTRUCTORS
                             </span>
                         </h1>
-                    </motion.div>
+                    </div>
 
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mt-8">
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                        <p
                             className="text-gray-400 text-base md:text-lg max-w-md leading-relaxed"
                         >
                             Learn from industry experts who have shaped academic outcomes across the globe.
                             Our team brings decades of combined experience from top institutions to your screen.
-                        </motion.p>
+                        </p>
                     </div>
                 </section>
 
                 {/* ── Team Grid ── */}
                 <section className="pb-24">
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: '-50px' }}
+                    <div
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10"
                     >
                         {teamMembers.map((member, i) => (
-                            <motion.div
+                            <div
                                 key={i}
-                                variants={itemVariants}
                             >
                                 <Link
                                     to={`/team/${member.id}`}
@@ -134,18 +101,14 @@ export default function Teams() {
                                         {member.tag}
                                     </span>
                                 </Link>
-                            </motion.div>
+                            </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </section>
 
                 {/* ── Bottom CTA Cards ── */}
                 <section className="pb-0">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                    <div
                         className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-0"
                     >
                         {ctaCards.map((card, i) => (
@@ -180,7 +143,7 @@ export default function Teams() {
                                 />
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </section>
             </div>
         </div>
