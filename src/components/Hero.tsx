@@ -1,7 +1,9 @@
 import HeroImg from "../assets/heroimg2.jpg";
 import { FaArrowRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+    const navigate = useNavigate();
     return (
         <section className="relative pt-32 md:pt-24 pb-4 mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-0 w-full">
             <div
@@ -17,7 +19,7 @@ const Hero = () => {
                     We build confidence through expert instruction and clear learning pathways.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <button className="group w-full sm:w-auto flex items-center justify-between gap-4 px-4 py-3 pl-6 rounded-full border border-gray-400 dark:border-gray-600 hover:border-white transition-colors bg-transparent text-left min-w-[280px]">
+                    <button onClick={() => navigate("/booking")} className="group w-full sm:w-auto flex items-center justify-between gap-4 px-4 py-3 pl-6 rounded-full border border-gray-400 dark:border-gray-600 hover:border-white transition-colors bg-transparent text-left min-w-[280px]">
                         <span className="text-[14px] font-medium md:text-[17px]">Book Free Session</span>
                         <span className="bg-white rounded-full p-3 text-black">
                             <FaArrowRight />

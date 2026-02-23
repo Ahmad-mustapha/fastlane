@@ -299,12 +299,12 @@ export default function Booking() {
                                 {/* Submit */}
                                 <button
                                     type="submit"
-                                    className="group w-auto flex items-center justify-between gap-4 px-3 py-2 pl-4 rounded-full border border-gray-600 hover:border-white transition-all duration-300 bg-transparent text-left"
+                                    className="group w-auto flex items-center justify-between gap-3 px-4 py-2 pl-6 rounded-full border border-gray-600 hover:border-white transition-all duration-300 bg-gray-300 text-white text-left"
                                 >
-                                    <span className="text-[15px] md:text-[17px] font-medium text-white">
+                                    <span className="text-[15px] md:text-[17px] font-medium text-black">
                                         Book
                                     </span>
-                                    <span className="text-white">
+                                    <span className="text-black">
                                         <FaArrowRight />
                                     </span>
                                 </button>
