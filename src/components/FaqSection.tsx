@@ -79,7 +79,7 @@ const FaqSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="bg-[#050505] pt-24 pb-12 px-6 md:px-16 lg:px-24 -mx-6 md:-mx-16 lg:-mx-24 relative overflow-hidden font-sans">
+        <section className="bg-[#050505] pt-12 pb-12 px-6 md:px-16 lg:px-24 -mx-6 md:-mx-16 lg:-mx-24 relative overflow-hidden font-sans mt-20">
             {/* Grid Background Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 

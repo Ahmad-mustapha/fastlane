@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { motion, useScroll } from "framer-motion";
 import Whitelogo from "../assets/whitelogo.png";
+import Whilemobilelogo from '../assets/whitemobilelogo.png'
 import { FaArrowRight } from "react-icons/fa6";
 
 const navlinks = [
@@ -53,8 +54,11 @@ export const Sidebar = ({
         >
             <div className="flex flex-col h-full px-6 py-6 md:px-12">
                 {/* Header */}
-                <div onClick={() => setOpenNav(false)} className="cursor-pointer w-42 mb-16">
+                <div onClick={() => setOpenNav(false)} className="cursor-pointer w-42 mb-16 hidden md:flex">
                     <img src={Whitelogo} alt="Logo" />
+                </div>
+                <div onClick={() => setOpenNav(false)} className="cursor-pointer block md:hidden w-20 mb-6 -mt-3">
+                    <img src={Whilemobilelogo} alt="Logo" />
                 </div>
 
                 {/* Navigation Links */}
@@ -121,22 +125,8 @@ export const Sidebar = ({
 
 const Navbar = () => {
     const [openNav, setOpenNav] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const { pathname } = useLocation();
     const { scrollYProgress } = useScroll();
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 20) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
@@ -156,11 +146,13 @@ const Navbar = () => {
     return (
         <div className="">
             <nav
-                className={`z-30 h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 fixed top-0 w-full transition-all duration-300 ${scrolled ? "backdrop-blur-md bg-black/20" : "bg-transparent"
-                    }`}
+                className={`z-30 h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 fixed top-0 w-full transition-all duration-300 bg-transparent backdrop-blur-md`}
             >
-                <Link to="/" onClick={() => setOpenNav(false)} className="cursor-pointer w-48 md:w-56">
+                <Link to="/" onClick={() => setOpenNav(false)} className="cursor-pointer w-48 md:w-56 hidden sm:block">
                     <img src={Whitelogo} alt="Logo" className="w-full h-auto" />
+                </Link>
+                <Link to="/" onClick={() => setOpenNav(false)} className="cursor-pointer block md:hidden w-18">
+                    <img src={Whilemobilelogo} alt="Logo" />
                 </Link>
 
                 {/* Centered Links */}

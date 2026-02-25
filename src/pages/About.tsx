@@ -44,11 +44,11 @@ export default function About() {
                 <section className="pt-32 pb-16">
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                         {/* Left Content */}
-                        <div className="w-full lg:w-[55%] space-y-8">
+                        <div className="w-full lg:w-[55%] space-y-6 md:space-y-8">
                             <div
-                                className="inline-block px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase text-blue-400"
+                                className="inline-block px-4 py-1.5 rounded-full border-y border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase text-blue-400"
                             >
-                                <span className="mr-2 inline-block w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                {/* <span className="mr-2 inline-block w-1.5 h-1.5 rounded-full bg-blue-400"></span> */}
                                 About Us
                             </div>
                             <h1
@@ -60,19 +60,19 @@ export default function About() {
                             </h1>
 
                             <div
-                                className="flex items-center gap-4"
+                                className="flex flex-wrap items-center gap-3"
                             >
-                                <div className="flex -space-x-2">
+                                <div className="flex -space-x-2 shrink-0">
                                     {[1, 2, 3].map((i) => (
-                                        <div key={i} className="w-10 h-10 rounded-full border-2 border-black overflow-hidden bg-gray-800">
+                                        <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-black overflow-hidden bg-gray-800">
                                             <img src={i === 2 ? HeroImg : AboutImg} alt="User" className="w-full h-full object-cover" />
                                         </div>
                                     ))}
-                                    <div className="w-10 h-10 rounded-full border-2 border-black bg-gray-900 flex items-center justify-center text-[10px] font-bold">
+                                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-black bg-gray-900 flex items-center justify-center text-[9px] sm:text-[10px] font-bold">
                                         +40
                                     </div>
                                 </div>
-                                <p className="text-gray-400 text-sm max-w-[200px]">
+                                <p className="text-gray-400 text-sm leading-snug">
                                     Join a community of passionate learners and expert mentors.
                                 </p>
                             </div>
@@ -89,7 +89,7 @@ export default function About() {
 
                         {/* Right Image */}
                         <div
-                            className="w-full lg:w-[45%] h-[380px] md:h-[500px] relative overflow-hidden inverted-radius transition-all duration-500"
+                            className="w-full lg:w-[45%] h-[300px] md:h-[500px] relative overflow-hidden inverted-radius transition-all duration-500"
                             style={{
                                 transform: 'translate3d(0,0,0)',
                                 WebkitBackfaceVisibility: 'hidden',
@@ -124,7 +124,7 @@ export default function About() {
                         {/* Right Side - Content */}
                         <div className="lg:w-3/4 space-y-16">
                             <p
-                                className="text-2xl md:text-3xl leading-relaxed font-light text-gray-300"
+                                className="text-[14px] md:text-[16px] lg:text-[20px] leading-relaxed font-light text-gray-300"
                             >
                                 We believe every student regardless of their background or starting point deserves access to world-class instruction.
                                 Our mission is to close the gap between classroom teaching and examination excellence, producing a <span className="text-white font-bold">new generation of confident, high-achieving scholars</span>.
@@ -175,7 +175,7 @@ export default function About() {
                         {/* Right Side - Content */}
                         <div className="lg:w-3/4 space-y-16">
                             <p
-                                className="text-2xl md:text-3xl leading-relaxed font-light text-gray-300"
+                                className="text-[14px] md:text-[16px] lg:text-[20px] leading-relaxed font-light text-gray-300"
                             >
                                 To become <span className="text-white font-bold">West Africa's most trusted academic tutoring platform, </span>where every student, regardless of curriculum or location, can access the expert guidance they need to achieve top results and unlock their future.
                             </p>
@@ -210,7 +210,7 @@ export default function About() {
                 </section>
 
                 {/* ── Stats Section ── */}
-                <section className="py-24 border-t border-white/10">
+                <section className="py-10 md:py-24 border-t border-white/10">
                     <div className="mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact</h2>
                         <p className="text-gray-400 max-w-2xl">
@@ -223,7 +223,7 @@ export default function About() {
                     >
                         {stats.map((stat, i) => (
                             <div key={i} className="space-y-2">
-                                <span className="text-4xl md:text-5xl font-extrabold text-white tracking-tight block">
+                                <span className="text-4xl md:text-5xl font-bold text-white tracking-tight block">
                                     {stat.value}
                                 </span>
                                 <p className="text-gray-500 text-sm md:text-base font-medium uppercase tracking-wider">

@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Footer = () => {
 
     return (
-        <footer className="bg-black text-white pt-24 pb-12 overflow-hidden relative border-t border-white/10">
+        <footer className="bg-black text-white pt-12 md:pt-24 overflow-hidden relative border-t border-white/10">
             {/* Creative Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            {/* <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" /> */}
 
             <div className="flex items-center justify-center flex-col relative z-10 w-full mb-24 px-6 md:px-16 lg:px-24">
                 <div className="flex flex-col items-center text-center gap-6 md:gap-8 mx-auto">
@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="w-full relative z-10">
 
                 {/* Main Footer Links Grid */}
-                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 mb-24">
+                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 mb-14">
                     {/* Column 1 */}
                     <div className="space-y-6">
                         <h4 className="font-medium text-gray-400 text-sm flex items-center gap-2">
@@ -113,7 +113,7 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-gray-500 pt-12 mt-6 md:mt-10 bg-black border-t border-white/10">
                     <div className="flex flex-col gap-2">
-                        <p>© 2026 Fastlane. Designed by Musben.</p>
+                        <p>© 2026 Fastlane. Designed by <a target="_blank" href="https://www.linkedin.com/in/mustaphaahmad/" className="hover:text-white transition-colors">Musben.</a></p>
                     </div>
 
                     {/* Minimalist Contact Info Strip */}

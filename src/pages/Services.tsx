@@ -81,15 +81,18 @@ export default function Services() {
     return (
         <div className="overflow-hidden">
             {/* Hero Section */}
-            <div className="px-6 md:px-16 lg:px-24 pt-20 pb-16 md:pt-28 md:pb-24 text-center relative">
+            <div className="px-6 md:px-16 lg:px-24 pt-20 pb-16 md:pt-28 md:pb-24 text-center relative mt-[4rem]">
                 {/* Decorative background blobs */}
                 <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
                 <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-yellow-500/5 rounded-full blur-[100px] pointer-events-none" />
 
                 <div className="relative z-10">
-                    <span className="inline-block px-5 py-2 rounded-full text-xs font-bold tracking-[0.15em] uppercase bg-[#194970]/10 text-[#194970] dark:bg-white/10 dark:text-white/80 mb-6">
+                    <div
+                        className="inline-block mb-2 px-4 py-1.5 rounded-full border-y border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase text-blue-400"
+                    >
+                        {/* <span className="mr-2 inline-block w-1.5 h-1.5 rounded-full bg-blue-400"></span> */}
                         What We Offer
-                    </span>
+                    </div>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
                         Services & Courses
                     </h1>

@@ -39,7 +39,7 @@ export default function ScrollToTop() {
                     exit={{ opacity: 0, scale: 0.8, y: 20 }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-3 md:right-8 z-50 bg-[#194970] text-white px-6 py-3 rounded-l-full flex items-center gap-2"
+                    className="fixed bottom-8 right-3 md:right-8 z-50 bg-[#194070] text-white px-6 py-3 rounded-l-full flex items-center gap-2"
                     aria-label="Back to top"
                 >
                     <span className="text-[10px] md:text-sm font-medium tracking-wide">BACK TO TOP</span>

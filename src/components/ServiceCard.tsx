@@ -9,12 +9,12 @@ interface ServiceCardProps {
 
 const ServiceCard = memo(({ label, title, description, bgColor = 'bg-blue' }: ServiceCardProps) => {
     const bgStyles = {
-        'bg-blue': 'bg-[#194970]',
-        'bg-grey': 'bg-[#e5e7eb]',
-        'bg-yellow': 'bg-[#fdbf26]'
-    }[bgColor] || 'bg-[#194970]';
+        'bg-blue': 'bg-[#194070]',
+        'bg-grey': 'bg-[#fff]',
+        'bg-yellow': 'bg-[#2E9D41]'
+    }[bgColor] || 'bg-[#194070]';
 
-    const iconBg = bgColor === 'bg-blue' ? 'bg-white !text-[#194970]' : 'bg-black text-white';
+    const iconBg = bgColor === 'bg-blue' ? 'bg-white !text-[#194070]' : 'bg-black text-white';
 
     return (
         <div
