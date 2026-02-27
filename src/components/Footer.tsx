@@ -121,7 +121,7 @@ const Footer = () => {
                                         Join
                                     </button>
                                 </div>
-                                <div className="flex items-start gap-2">
+                                <div className="flex items-center gap-2">
                                     <button
                                         onClick={() => setAgreed(!agreed)}
                                         className={`mt-1 w-3.5 h-3.5 shrink-0 rounded border border-white/20 flex items-center justify-center transition-colors ${agreed ? 'bg-blue-600 border-blue-600' : 'bg-transparent'}`}
