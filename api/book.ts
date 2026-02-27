@@ -2,9 +2,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 
-// Initialize Resend with your API key from env
-const resend = new Resend(process.env.RESEND_API_KEY!); // "!" asserts it exists
-
 interface BookingData {
     firstName: string;
     lastName: string;
@@ -21,6 +18,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
+
+    // Check for API key at runtime rather than outside the handler
+    if (!process.env.RESEND_API_KEY) {
+        console.error("Missing process.env.RESEND_API_KEY in Vercel settings");
+        return res.status(500).json({ error: 'Server misconfiguration: Email service is not configured.' });
+    }
+
+    // Initialize Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const data: BookingData = req.body;
 
