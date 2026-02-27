@@ -49,7 +49,7 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <section id="testimonial" className="bg-black py-20 text-white -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
+        <section id="testimonial" className="py-20 text-white -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24">
             <div className="">
                 <Carousel
                     opts={{

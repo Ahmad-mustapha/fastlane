@@ -25,7 +25,7 @@ const Hero = () => {
                             <FaArrowRight />
                         </span>
                     </button>
-                    <button  className="group w-full sm:w-auto flex items-center justify-center gap-4 px-8 py-3 rounded-full bg-white text-black hover:bg-gray-100 transition-all duration-300">
+                    <button onClick={() => navigate('/services')} className="group w-full sm:w-auto flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-white text-black hover:bg-gray-100 transition-all duration-300">
                         <span className="text-[14px] md:text-[17px] font-semibold">
                             View Curriculums
                         </span>

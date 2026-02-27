@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ThemeToggleFAB from './components/ThemeToggleFAB';
 import ScrollToTopOnNavigate from './components/ScrollToTopOnNavigate';
+import { ThemeProvider } from './lib/ThemeProvider';
 
 // Route-level code splitting — each page loads only when visited
 const Home = lazy(() => import('./pages/Home'));
@@ -39,28 +41,31 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="app-wrapper">
-        <ScrollToTopOnNavigate />
-        <Navbar />
-        <main>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/teams" element={<Teams />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/booking" element={<Booking />} />
-              <Route path="/team/:id" element={<TeamProfile />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <div className="px-6 md:px-16 lg:px-24">
-          <Footer />
+    <ThemeProvider>
+      <Router>
+        <div className="app-wrapper">
+          <ScrollToTopOnNavigate />
+          <Navbar />
+          <main>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/teams" element={<Teams />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/booking" element={<Booking />} />
+                <Route path="/team/:id" element={<TeamProfile />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <div className="px-6 md:px-16 lg:px-24">
+            <Footer />
+          </div>
+          <ScrollToTop />
+          <ThemeToggleFAB />
         </div>
-        <ScrollToTop />
-      </div>
-    </Router>
+      </Router>
+    </ThemeProvider>
   );
 }
 

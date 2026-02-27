@@ -14,7 +14,11 @@ const ServiceCard = memo(({ label, title, description, bgColor = 'bg-blue' }: Se
         'bg-yellow': 'bg-[#2E9D41]'
     }[bgColor] || 'bg-[#194070]';
 
-    const iconBg = bgColor === 'bg-blue' ? 'bg-white !text-[#194070]' : 'bg-black text-white';
+    const iconBg = {
+        'bg-blue': 'bg-white !text-[#194070]',
+        'bg-yellow': 'bg-white !text-[#2E9D41]',
+        'bg-grey': 'bg-black text-white'
+    }[bgColor] || 'bg-black text-white';
 
     return (
         <div

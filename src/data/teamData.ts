@@ -60,7 +60,7 @@ Amara holds an MSc in Applied Mathematics and has co-authored a mathematics work
         passRate: '99%',
         specialisms: ['Pure Mathematics', 'Further Maths', 'Statistics', 'WAEC/NECO', 'IGCSE', 'A-Level'],
         subjects: ['Mathematics', 'Further Mathematics', 'Statistics', 'Calculus'],
-        quote: 'Every student is capable of mathematical brilliance — they simply need the right lens to see it.',
+        quote: 'Every student is capable of mathematical brilliance, they simply need the right lens to see it.',
         education: [
             {
                 degree: 'MSc Applied Mathematics',
@@ -105,7 +105,7 @@ Amara holds an MSc in Applied Mathematics and has co-authored a mathematics work
         bio: 'Oxford-trained educator with a passion for literature and critical writing. James has helped over 300 students achieve top marks across IGCSE, A-Level, and SAT examinations.',
         fullBio: `James Whitfield is a graduate of the University of Oxford, where he read English Language and Literature with a specialisation in postcolonial texts. After completing his PGCE at the University of Cambridge, he spent five years as a Head of English at a leading international school in London before relocating to Lagos.
 
-At Fastlane, James curates a rigorous yet engaging approach to English education — one that balances the demands of global examinations with a genuine love for the written word. His essay coaching programme, "Write Right," has consistently produced top-scoring IGCSE and A-Level candidates since 2020.
+At Fastlane, James curates a rigorous yet engaging approach to English education, one that balances the demands of global examinations with a genuine love for the written word. His essay coaching programme, "Write Right," has consistently produced top-scoring IGCSE and A-Level candidates since 2020.
 
 Beyond academics, James is a published poet and literary critic, contributing regularly to The Lagos Review of Books. He runs weekend creative writing workshops for Fastlane students, believing that authentic expression and examination success are not mutually exclusive.`,
         image: HeroImg,
@@ -140,7 +140,7 @@ Beyond academics, James is a published poet and literary critic, contributing re
                 year: '2016',
             },
             {
-                title: 'Cambridge Examiner — English Literature',
+                title: 'Cambridge Examiner, English Literature',
                 issuer: 'Cambridge Assessment International Education',
                 year: '2018',
             },
@@ -161,7 +161,7 @@ Beyond academics, James is a published poet and literary critic, contributing re
         bio: 'Holds a PhD in Biochemistry and brings world-class academic rigour to every session. Her workshops on exam technique are rated #1 by our alumni community.',
         fullBio: `Dr. Fatima Al-Hassan is one of West Africa's foremost science educators, holding a PhD in Biochemistry from the University of Ibadan and a postdoctoral fellowship from the Max Planck Institute for Molecular Genetics in Berlin.
 
-After a decade in academic research, Fatima made a deliberate pivot towards secondary and pre-university education, convinced that the root cause of declining science performance lay in how the subject was taught — not in students' capacity to learn. Her flagship workshop, "The Science of Acing Science," is a comprehensive exam-technique masterclass that dissects past papers, teaches mark-scheme thinking, and dramatically improves performance in both theory and practical-based assessments.
+After a decade in academic research, Fatima made a deliberate pivot towards secondary and pre-university education, convinced that the root cause of declining science performance lay in how the subject was taught, not in students' capacity to learn. Her flagship workshop, "The Science of Acing Science," is a comprehensive exam-technique masterclass that dissects past papers, teaches mark-scheme thinking, and dramatically improves performance in both theory and practical-based assessments.
 
 Dr. Al-Hassan is the author of "Biology Unpacked," a revision guide widely circulated among IGCSE and A-Level students across Anglophone West Africa. She regularly volunteers as a guest lecturer at government secondary schools through the Fastlane Gives Back programme.`,
         image: AboutImg,
@@ -191,7 +191,7 @@ Dr. Al-Hassan is the author of "Biology Unpacked," a revision guide widely circu
         ],
         certifications: [
             {
-                title: 'Postdoctoral Fellow — Molecular Genetics',
+                title: 'Postdoctoral Fellow, Molecular Genetics',
                 issuer: 'Max Planck Institute, Berlin',
                 year: '2013',
             },
@@ -214,7 +214,7 @@ Dr. Al-Hassan is the author of "Biology Unpacked," a revision guide widely circu
         roleColor: 'text-orange-400',
         accentColor: '#f97316',
         bio: 'A celebrated academic with publications spanning African and world history. David crafts immersive lessons that connect the past directly to exam success.',
-        fullBio: `David Mensah is a scholar-educator with deep roots in African historiography and global humanities education. Born in Accra and educated across three continents, David brings an unparalleled breadth of perspective to his classes — one that resonates profoundly with students navigating both Nigerian and British curricula.
+        fullBio: `David Mensah is a scholar-educator with deep roots in African historiography and global humanities education. Born in Accra and educated across three continents, David brings an unparalleled breadth of perspective to his classes, one that resonates profoundly with students navigating both Nigerian and British curricula.
 
 After completing his doctoral thesis on post-independence political culture in West Africa at SOAS, University of London, David worked as a research fellow at the University of Ghana before joining the international education sector. He has served as a History examiner for Cambridge International Examinations since 2016.
 
@@ -226,7 +226,7 @@ At Fastlane, David's classes are legendary for their storytelling. By making his
         passRate: '97%',
         specialisms: ['IGCSE History', 'A-Level History', 'African History', 'Essay Technique', 'Source Analysis', 'Government & Politics'],
         subjects: ['History', 'Government & Politics', 'Global Perspectives', 'Social Studies'],
-        quote: 'History is not what happened. It is the argument we make about what happened — and that is a skill anyone can learn.',
+        quote: 'History is not what happened. It is the argument we make about what happened, and that is a skill anyone can learn.',
         education: [
             {
                 degree: 'PhD African Political History',
@@ -246,12 +246,12 @@ At Fastlane, David's classes are legendary for their storytelling. By making his
         ],
         certifications: [
             {
-                title: 'Cambridge International Examiner — History',
+                title: 'Cambridge International Examiner, History',
                 issuer: 'Cambridge Assessment International Education',
                 year: '2016',
             },
             {
-                title: 'Edexcel Approved Tutor — History',
+                title: 'Edexcel Approved Tutor, History',
                 issuer: 'Pearson Edexcel',
                 year: '2018',
             },
@@ -272,7 +272,7 @@ At Fastlane, David's classes are legendary for their storytelling. By making his
         bio: 'Software engineer turned educator, Chisom bridges the gap between real-world tech skills and academic curriculum requirements with hands-on, project-based teaching.',
         fullBio: `Chisom Eze spent eight years as a software engineer at some of Nigeria's fastest-growing fintech startups before making the leap into education. Having seen first-hand the enormous gap between what schools teach and what the technology industry actually demands, Chisom joined Fastlane to be part of the solution.
 
-His teaching philosophy is project-first: students learn programming concepts by building real, functioning products — not by studying theory in isolation. From web applications to data visualisation dashboards, Chisom's students graduate from sessions with tangible portfolio pieces that open doors in both university admissions and early career opportunities.
+His teaching philosophy is project-first: students learn programming concepts by building real, functioning products, not by studying theory in isolation. From web applications to data visualisation dashboards, Chisom's students graduate from sessions with tangible portfolio pieces that open doors in both university admissions and early career opportunities.
 
 Chisom holds a BSc in Computer Science and two industry-recognised certifications. He also runs "Code Club," a free weekly session for underprivileged students in Lagos, teaching the fundamentals of programming and digital literacy. In 2023, two of his Code Club students were accepted onto Google's STEP intern programme.`,
         image: AboutImg,
@@ -292,7 +292,7 @@ Chisom holds a BSc in Computer Science and two industry-recognised certification
         ],
         certifications: [
             {
-                title: 'AWS Certified Developer – Associate',
+                title: 'AWS Certified Developer, Associate',
                 issuer: 'Amazon Web Services',
                 year: '2019',
             },
@@ -321,9 +321,9 @@ Chisom holds a BSc in Computer Science and two industry-recognised certification
         roleColor: 'text-pink-400',
         accentColor: '#ec4899',
         bio: "Multilingual educator fluent in French, Yoruba, and English. Rachel's holistic approach to language learning fosters genuine confidence in oral and written expression.",
-        fullBio: `Rachel Adeyemi is a linguist, literature scholar, and language coach with a career that spans Lagos, Paris, and London. Raised in a bilingual Yoruba-English household, Rachel developed an early and intuitive understanding of how language shapes identity and opportunity — a conviction that informs everything she does in the classroom.
+        fullBio: `Rachel Adeyemi is a linguist, literature scholar, and language coach with a career that spans Lagos, Paris, and London. Raised in a bilingual Yoruba-English household, Rachel developed an early and intuitive understanding of how language shapes identity and opportunity, a conviction that informs everything she does in the classroom.
 
-After graduating with distinction from the Institut National des Langues et Civilisations Orientales (INALCO) in Paris, Rachel returned to Nigeria where she co-founded a French immersion programme for secondary students before joining Fastlane as lead Languages tutor. Her approach integrates cultural immersion, conversation practice, and precise exam technique to produce students who don't just pass their French or English examinations — they genuinely enjoy the language.
+After graduating with distinction from the Institut National des Langues et Civilisations Orientales (INALCO) in Paris, Rachel returned to Nigeria where she co-founded a French immersion programme for secondary students before joining Fastlane as lead Languages tutor. Her approach integrates cultural immersion, conversation practice, and precise exam technique to produce students who don't just pass their French or English examinations, they genuinely enjoy the language.
 
 Rachel is also a published short-story author in both English and French, and she integrates creative literature into every course she teaches. Her curated reading lists have become a beloved extension of the curriculum for hundreds of Fastlane students.`,
         image: HeroImg,
@@ -333,7 +333,7 @@ Rachel is also a published short-story author in both English and French, and sh
         passRate: '97%',
         specialisms: ['IGCSE French', 'A-Level French', 'IGCSE English Language', 'Oral Examination Coaching', 'Creative Writing', 'Yoruba Language'],
         subjects: ['French', 'English Language', 'English Literature', 'Yoruba'],
-        quote: 'A new language is not just new words — it is a new world you are given access to.',
+        quote: 'A new language is not just new words, it is a new world you are given access to.',
         education: [
             {
                 degree: 'MA Applied Linguistics & Translation',
@@ -348,12 +348,12 @@ Rachel is also a published short-story author in both English and French, and sh
         ],
         certifications: [
             {
-                title: 'DALF C2 — Diplôme Approfondi de Langue Française',
+                title: 'DALF C2, Diplôme Approfondi de Langue Française',
                 issuer: 'Centre International d\'Études Pédagogiques',
                 year: '2015',
             },
             {
-                title: 'Cambridge Examiner — English Language',
+                title: 'Cambridge Examiner, English Language',
                 issuer: 'Cambridge Assessment International Education',
                 year: '2019',
             },

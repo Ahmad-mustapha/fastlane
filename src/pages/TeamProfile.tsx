@@ -30,7 +30,7 @@ export default function TeamProfile() {
     if (!member) {
         return (
             <div className="bg-black min-h-screen text-white flex flex-col items-center justify-center gap-6 px-6">
-                <p className="text-gray-500 text-sm tracking-widest uppercase">404 — Profile Not Found</p>
+                <p className="text-gray-500 text-sm tracking-widest uppercase">404, Profile Not Found</p>
                 <h1 className="text-4xl font-black uppercase tracking-tight">Instructor Profile not found</h1>
                 <Link
                     to="/teams"

@@ -13,6 +13,7 @@ const stats = [
 
 const previewTeam = [
     {
+        id: 'amara-okafor',
         name: 'Amara Okafor',
         role: 'Head of Mathematics',
         roleColor: 'text-blue-400',
@@ -20,6 +21,7 @@ const previewTeam = [
         image: AboutImg,
     },
     {
+        id: 'james-whitfield',
         name: 'James Whitfield',
         role: 'Senior English Tutor',
         roleColor: 'text-purple-400',
@@ -27,6 +29,7 @@ const previewTeam = [
         image: HeroImg,
     },
     {
+        id: 'fatima-al-hassan',
         name: 'Fatima Al-Hassan',
         role: 'Science Lead',
         roleColor: 'text-emerald-400',
@@ -48,7 +51,6 @@ export default function About() {
                             <div
                                 className="inline-block px-4 py-1.5 rounded-full border-y border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase text-blue-400"
                             >
-                                {/* <span className="mr-2 inline-block w-1.5 h-1.5 rounded-full bg-blue-400"></span> */}
                                 About Us
                             </div>
                             <h1
@@ -257,9 +259,9 @@ export default function About() {
                         className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-px bg-transparent md:bg-white/10"
                     >
                         {previewTeam.map((member, i) => (
-                            <a
+                            <Link
                                 key={i}
-                                href={`/team/${member.name.replace(/\s+/g, '-')}`}
+                                to={`/team/${member.id}`}
                                 className="group bg-black p-0 md:p-6 flex flex-col gap-4 hover:bg-white/5 transition-colors duration-300"
                             >
                                 <div className="relative w-full h-[260px] overflow-hidden">
@@ -278,7 +280,7 @@ export default function About() {
                                     <ArrowUpRight size={18} className="text-gray-500 group-hover:text-white transition-colors mt-1 shrink-0" />
                                 </div>
                                 <p className="text-gray-400 text-sm leading-relaxed">{member.bio}</p>
-                            </a>
+                            </Link>
                         ))}
                     </div>
 

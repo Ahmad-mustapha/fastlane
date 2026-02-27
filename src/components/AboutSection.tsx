@@ -1,8 +1,10 @@
 import { memo } from "react";
 import AboutImg from "../assets/aboutus.jpg";
 import { FaArrowRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const AboutSection = memo(() => {
+    const navigate = useNavigate();
     return (
         <section className="py-24">
             <h2 className="text-[28px] md:text-5xl font-bold text-white mb-6 md:mb-12 tracking-tight">
@@ -10,7 +12,7 @@ const AboutSection = memo(() => {
             </h2>
             {/* Main Content Grid */}
             <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16">
-                {/* Left — Image */}
+                {/* Left, Image */}
                 <div className="w-full lg:w-[45%] relative">
                     <div
                         className="relative w-full h-[300px] md:h-[400px] overflow-hidden"
@@ -25,7 +27,7 @@ const AboutSection = memo(() => {
                     </div>
                 </div>
 
-                {/* Right — Header + Text Content */}
+                {/* Right, Header + Text Content */}
                 <div className="w-full lg:w-[55%] flex flex-col justify-between">
                     {/* Section Header */}
                     <div className="mb-8">
@@ -65,7 +67,7 @@ const AboutSection = memo(() => {
 
                     {/* CTA Button */}
                     <div className="mt-10">
-                        <button className="group flex items-center justify-between gap-4 px-4 py-3 pl-6 rounded-full border border-gray-600 hover:border-white transition-colors bg-transparent min-w-[240px]">
+                        <button onClick={() => navigate("/about")} className="group flex items-center justify-between gap-4 px-4 py-3 pl-6 rounded-full border border-gray-600 hover:border-white transition-colors bg-transparent min-w-[240px]">
                             <span className="text-[14px] md:text-[17px] font-medium text-white">
                                 Learn More About Us
                             </span>

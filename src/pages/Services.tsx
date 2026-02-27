@@ -21,6 +21,12 @@ const allServicesData = [
         bgColor: "bg-yellow"
     },
     {
+        label: "GROUP SESSION",
+        title: "SMALL-GROUP CLASSES",
+        description: "Collaborative learning in groups of 3 6 students with a shared tutor, combining the energy of peer learning with personalised attention.",
+        bgColor: "bg-yellow"
+    },
+    {
         label: "EXAM PREP",
         title: "A-LEVEL TUTORING",
         description: "Rigorous subject-specific coaching for AS and A-Level examinations, tailored to CIE, Edexcel, and AQA syllabuses.",
@@ -33,21 +39,9 @@ const allServicesData = [
         bgColor: "bg-grey"
     },
     {
-        label: "GROUP SESSION",
-        title: "SMALL-GROUP CLASSES",
-        description: "Collaborative learning in groups of 3–6 students with a shared tutor, combining the energy of peer learning with personalised attention.",
-        bgColor: "bg-yellow"
-    },
-    {
-        label: "CONSULTATION",
-        title: "FREE INTRO SESSION",
-        description: "A complimentary 30-minute consultation to assess your child's current level, set goals, and match them with the right instructor.",
-        bgColor: "bg-blue"
-    },
-    {
         label: "SUBJECT BOOST",
         title: "MATHEMATICS MASTERCLASS",
-        description: "Specialist maths tutoring for students who need to build confidence and close crucial gaps — from basic numeracy to Further Maths.",
+        description: "Specialist maths tutoring for students who need to build confidence and close crucial gaps, from basic numeracy to Further Maths.",
         bgColor: "bg-grey"
     },
     {
@@ -55,6 +49,12 @@ const allServicesData = [
         title: "SCIENCES PROGRAMME",
         description: "Expert-led Biology, Chemistry, and Physics tutoring covering practical exam technique, theory comprehension, and past-paper mastery.",
         bgColor: "bg-yellow"
+    },
+    {
+        label: "CONSULTATION",
+        title: "FREE INTRO SESSION",
+        description: "A complimentary 30-minute consultation to assess your child's current level, set goals, and match them with the right instructor.",
+        bgColor: "bg-blue"
     },
     {
         label: "SUBJECT BOOST",

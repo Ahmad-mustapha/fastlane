@@ -107,7 +107,7 @@ export default function Teams() {
                 </section>
 
                 {/* ── Bottom CTA Cards ── */}
-                <section className="pb-0">
+                <section className="pb-14">
                     <div
                         className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-0"
                     >

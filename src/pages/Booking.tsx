@@ -135,13 +135,15 @@ export default function Booking() {
         <div className="bg-black text-white min-h-screen">
             {/* Hero Section */}
             <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" />
+                {/* <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" /> */}
 
                 <div className="relative z-10 px-6 md:px-16 lg:px-24 text-center">
-                    <span className="inline-block px-5 py-2 rounded-full text-xs font-bold tracking-[0.15em] uppercase bg-white/10 text-white/80 mb-6">
+                    <div
+                        className="inline-block px-4 py-1.5 rounded-full border-y border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase text-blue-400 mb-4"
+                    >
                         Book a Session
-                    </span>
+                    </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
                         Start Your Learning
@@ -149,7 +151,7 @@ export default function Booking() {
                         <span className="text-gray-500">Journey Today</span>
                     </h1>
 
-                    <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-gray-400 text-[15px] md:text-[18px] max-w-2xl mx-auto leading-relaxed">
                         Schedule a free consultation or book a session with one of our expert tutors. We'll match you with the perfect instructor for your goals.
                     </p>
                 </div>
@@ -291,10 +293,13 @@ export default function Booking() {
                                         <input
                                             id="preferredDate"
                                             name="preferredDate"
-                                            type="date"
+                                            type={formData.preferredDate ? "date" : "text"}
+                                            onFocus={(e) => (e.target.type = "date")}
+                                            onBlur={(e) => !formData.preferredDate && (e.target.type = "text")}
                                             required
                                             value={formData.preferredDate}
                                             onChange={handleChange}
+                                            placeholder="Select preferred date"
                                             className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors"
                                         />
                                     </div>
@@ -305,10 +310,13 @@ export default function Booking() {
                                         <input
                                             id="preferredTime"
                                             name="preferredTime"
-                                            type="time"
+                                            type={formData.preferredTime ? "time" : "text"}
+                                            onFocus={(e) => (e.target.type = "time")}
+                                            onBlur={(e) => !formData.preferredTime && (e.target.type = "text")}
                                             required
                                             value={formData.preferredTime}
                                             onChange={handleChange}
+                                            placeholder="Select preferred time"
                                             className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors"
                                         />
                                     </div>
@@ -334,12 +342,12 @@ export default function Booking() {
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="group w-auto flex items-center justify-between gap-3 px-4 py-2 rounded-[10px] border border-gray-600 hover:border-white transition-all duration-300 bg-gray-300 text-white text-left"
+                                    className="group w-auto flex items-center justify-between gap-3 px-4 py-3 rounded-full transition-all duration-300 bg-gray-300 text-white text-left"
                                 >
-                                    <span className="text-[15px] md:text-[17px] font-medium text-black">
+                                    <span className="text-[15px] md:text-[17px] font-medium text-gray-800">
                                         {loading ? 'Booking...' : 'Book a Session'}
                                     </span>
-                                    <span className="text-black">
+                                    <span className="text-gray-800">
                                         <FaArrowRight />
                                     </span>
                                 </button>

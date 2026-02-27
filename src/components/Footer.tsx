@@ -1,11 +1,26 @@
-
-import { FaArrowRight } from "react-icons/fa";
+import { useState } from "react";
+import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+    const [agreed, setAgreed] = useState(false);
+    const [email, setEmail] = useState("");
+
+    const handleJoin = () => {
+        if (!agreed) {
+            alert("Please agree to receive marketing emails first.");
+            return;
+        }
+        if (!email) {
+            alert("Please enter your email address.");
+            return;
+        }
+        alert(`Thanks for joining! We'll send updates to ${email}`);
+        setEmail("");
+    };
 
     return (
-        <footer className="bg-black text-white pt-12 md:pt-24 overflow-hidden relative border-t border-white/10">
+        <footer className="text-white pt-12 md:pt-24 overflow-hidden relative border-t border-white/10">
             {/* Creative Background Elements */}
             {/* <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" /> */}
 
@@ -18,9 +33,9 @@ const Footer = () => {
                     <p className="text-gray-400 text-sm md:text-lg max-w-xl">
                         Get started with Fastlane now and be part of a community of learners, from beginners to top achievers.
                     </p>
-                    <Link to="/booking" className="sm:w-auto flex items-center justify-between gap-2 px-4 py-3 pl-4 md:pl-6 rounded-full border border-gray-400 dark:border-gray-600 hover:border-white transition-colors bg-transparent text-left w-[220px] md:w-[280px] group">
+                    <Link to="/booking" className="sm:w-auto flex items-center justify-between gap-2 px-4 py-3 pl-4 md:pl-6 rounded-full border border-gray-400 dark:border-gray-600 hover:border-white transition-colors bg-transparent text-left w-[220px] md:w-[250px] group">
                         <span className="text-[14px] font-medium md:text-[17px]">Book Free Session</span>
-                        <span className="bg-white rounded-full p-3 text-black group-hover:scale-110 transition-transform duration-300">
+                        <span className="bg-white rounded-full p-3 text-black duration-300 group-hover:scale-110">
                             <FaArrowRight />
                         </span>
                     </Link>
@@ -37,9 +52,13 @@ const Footer = () => {
                             <span className="text-gray-600 font-mono text-xs">//</span> Product
                         </h4>
                         <ul className="space-y-4 text-gray-300">
-                            {['One-on-One Tutoring', 'Exam Prep', 'Plans & Pricing'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="hover:text-white transition-colors text-sm">{item}</a>
+                            {[
+                                { name: 'One-on-One Tutoring', link: '/services' },
+                                { name: 'Exam Prep', link: '/services' },
+                                { name: 'Plans & Pricing', link: '/services' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link to={item.link} className="hover:text-white transition-colors text-sm">{item.name}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -51,8 +70,8 @@ const Footer = () => {
                             <span className="text-gray-600 font-mono text-xs">//</span> Experts
                         </h4>
                         <ul className="space-y-4 text-gray-300">
-                            <li><a href="/teams" className="hover:text-white transition-colors text-sm">Our Tutors</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors text-sm">Become a Tutor</a></li>
+                            <li><Link to="/teams" className="hover:text-white transition-colors text-sm">Our Tutors</Link></li>
+                            <li><a href="/#contact" className="hover:text-white transition-colors text-sm">Become a Tutor</a></li>
                         </ul>
                     </div>
 
@@ -62,11 +81,8 @@ const Footer = () => {
                             <span className="text-gray-600 font-mono text-xs">//</span> Resources
                         </h4>
                         <ul className="space-y-4 text-gray-300">
-                            {['Educational Blog', 'FAQs'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="hover:text-white transition-colors text-sm">{item}</a>
-                                </li>
-                            ))}
+                            <li><a href="#" className="hover:text-white transition-colors text-sm">Educational Blog</a></li>
+                            <li><a href="/#faq" className="hover:text-white transition-colors text-sm">FAQs</a></li>
                         </ul>
                     </div>
 
@@ -76,7 +92,7 @@ const Footer = () => {
                             <span className="text-gray-600 font-mono text-xs">//</span> Company
                         </h4>
                         <ul className="space-y-4 text-gray-300">
-                            <li><a href="/about" className="hover:text-white transition-colors text-sm">About Fastlane</a></li>
+                            <li><Link to="/about" className="hover:text-white transition-colors text-sm">About Fastlane</Link></li>
                             <li><a href="/#contact" className="hover:text-white transition-colors text-sm">Contact Us</a></li>
                             <li><a href="#" className="hover:text-white transition-colors text-sm">Privacy Policy</a></li>
                             <li><a href="#" className="hover:text-white transition-colors text-sm">Terms</a></li>
@@ -93,25 +109,38 @@ const Footer = () => {
                                 <div className="flex gap-2 w-full">
                                     <input
                                         type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         placeholder="name@email.com"
                                         className="w-full bg-white/5 border border-white/10 rounded-md px-3 py-2 text-white placeholder:text-gray-500 text-xs focus:outline-none focus:border-blue-500 transition-colors"
                                     />
-                                    <button className="bg-white text-black rounded-md px-4 py-2 text-xs font-bold hover:bg-gray-200 transition-colors shrink-0">
+                                    <button
+                                        onClick={handleJoin}
+                                        className="bg-white text-black rounded-md px-4 py-2 text-xs font-bold hover:bg-gray-200 transition-colors shrink-0"
+                                    >
                                         Join
                                     </button>
                                 </div>
                                 <div className="flex items-start gap-2">
-                                    <div className="mt-1 w-3.5 h-3.5 shrink-0 rounded border border-white/20 flex items-center justify-center">
-                                        {/* Checkbox placeholder */}
-                                    </div>
-                                    <span className="text-[10px] text-gray-500 leading-tight">I agree to receive marketing emails from Fastlane.</span>
+                                    <button
+                                        onClick={() => setAgreed(!agreed)}
+                                        className={`mt-1 w-3.5 h-3.5 shrink-0 rounded border border-white/20 flex items-center justify-center transition-colors ${agreed ? 'bg-blue-600 border-blue-600' : 'bg-transparent'}`}
+                                    >
+                                        {agreed && <FaCheck className="text-white text-[8px]" />}
+                                    </button>
+                                    <span
+                                        className="text-[10px] text-gray-500 leading-tight cursor-pointer select-none"
+                                        onClick={() => setAgreed(!agreed)}
+                                    >
+                                        I agree to receive marketing emails from Fastlane.
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-gray-500 pt-12 mt-6 md:mt-10 bg-black border-t border-white/10">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-gray-500 py-12 mt-6 md:mt-10 border-t border-white/10">
                     <div className="flex flex-col gap-2">
                         <p>© 2026 Fastlane. Designed by <a target="_blank" href="https://www.linkedin.com/in/mustaphaahmad/" className="hover:text-white transition-colors">Musben.</a></p>
                     </div>
