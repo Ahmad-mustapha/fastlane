@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa6';
 import { Clock, MapPin, Phone, Mail, ChevronDown } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 interface FormData {
     firstName: string;
@@ -108,7 +109,17 @@ export default function Booking() {
             }
 
             if (res.ok) {
-                alert('Thank you! Your booking request has been submitted.');
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Thank you! Your booking request has been submitted.',
+                    icon: 'success',
+                    background: '#111111',
+                    color: '#ffffff',
+                    confirmButtonColor: '#194070',
+                    customClass: {
+                        popup: 'border border-white/10 rounded-2xl'
+                    }
+                });
                 setFormData({
                     firstName: '',
                     lastName: '',
@@ -121,11 +132,31 @@ export default function Booking() {
                     message: '',
                 });
             } else {
-                alert('Something went wrong: ' + (data.error || 'Server error'));
+                Swal.fire({
+                    title: 'Oops!',
+                    text: 'Something went wrong: ' + (data.error || 'Server error'),
+                    icon: 'error',
+                    background: '#111111',
+                    color: '#ffffff',
+                    confirmButtonColor: '#FF0000',
+                    customClass: {
+                        popup: 'border border-white/10 rounded-2xl'
+                    }
+                });
             }
         } catch (err) {
             console.error(err);
-            alert('Failed to submit booking. Please try again later.');
+            Swal.fire({
+                title: 'Error!',
+                text: 'Failed to submit booking. Please try again later.',
+                icon: 'error',
+                background: '#111111',
+                color: '#ffffff',
+                confirmButtonColor: '#FF0000',
+                customClass: {
+                    popup: 'border border-white/10 rounded-2xl'
+                }
+            });
         } finally {
             setLoading(false);
         }
