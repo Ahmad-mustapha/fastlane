@@ -95,7 +95,7 @@ export default defineConfig(({ mode }) => {
                   // Admin Email (Professional Template)
                   await resend.emails.send({
                     from: 'Fastlane System <onboarding@resend.dev>',
-                    to: 'ahmadishola12@gmail.com',
+                    to: 'Halimgiwa@gmail.com',
                     subject: 'New Fastlane Booking: ' + data.firstName + ' ' + data.lastName,
                     html: `
                       <!DOCTYPE html>
