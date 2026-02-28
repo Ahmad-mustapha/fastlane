@@ -7,7 +7,7 @@ import FaqSection from '../components/FaqSection';
 
 export default function Home() {
     return (
-        <div className="px-6 md:px-16 lg:px-24 overflow-hidden">
+        <div className="px-6 md:px-16 lg:px-24 overflow-hidden"> {/* routing v4 */}
             <Hero />
             <AboutSection />
             <Services />
