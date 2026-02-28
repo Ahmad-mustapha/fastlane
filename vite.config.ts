@@ -148,6 +148,12 @@ export default defineConfig(({ mode }) => {
         }
       }
     ],
+    vercel: {
+      rewrites: [
+        { source: '/api/(.*)', destination: '/api/$1' },
+        { source: '/((?!api/).*)', destination: '/index.html' },
+      ],
+    },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
