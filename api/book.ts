@@ -69,7 +69,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     try {
         // 1️⃣ Email to user (Client Confirmation)
-        await resend.emails.send({
+        const { error: clientError } = await resend.emails.send({
             from: 'Fastlane <hello@fastlanetutors.com>',
             to: data.email,
             subject: 'Booking Confirmation - Fastlane',
@@ -142,8 +142,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             replyTo: 'Halimgiwa@gmail.com',
         });
 
+        if (clientError) {
+            console.error('Failed to send client email:', clientError);
+            throw new Error('Failed to send client email: ' + clientError.message);
+        }
+
         // 2️⃣ Email to owner (Admin Notification)
-        await resend.emails.send({
+        const { error: adminError } = await resend.emails.send({
             from: 'Fastlane System <hello@fastlanetutors.com>',
             to: 'Halimgiwa@gmail.com',
             subject: 'New Fastlane Booking: ' + data.firstName + ' ' + data.lastName,
@@ -190,6 +195,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         </html>
       `,
         });
+
+        if (adminError) {
+            console.error('Failed to send admin email:', adminError);
+            throw new Error('Failed to send admin email: ' + adminError.message);
+        }
 
         return res.status(200).json({ message: 'Booking emails sent successfully!' });
     } catch (error: any) {

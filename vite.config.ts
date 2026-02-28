@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
                   const resend = new Resend(env.RESEND_API_KEY);
 
                   // Client Email (Professional Template)
-                  await resend.emails.send({
+                  const { error: clientError } = await resend.emails.send({
                     from: 'Fastlane <hello@fastlanetutors.com>',
                     to: data.email,
                     subject: 'Booking Confirmation - Fastlane',
@@ -91,9 +91,12 @@ export default defineConfig(({ mode }) => {
                       </body>
                       </html>`
                   });
+                  if (clientError) {
+                    throw new Error('Failed to send client email: ' + clientError.message);
+                  }
 
                   // Admin Email (Professional Template)
-                  await resend.emails.send({
+                  const { error: adminError } = await resend.emails.send({
                     from: 'Fastlane System <hello@fastlanetutors.com>',
                     to: 'Halimgiwa@gmail.com',
                     subject: 'New Fastlane Booking: ' + data.firstName + ' ' + data.lastName,
@@ -126,12 +129,16 @@ export default defineConfig(({ mode }) => {
                       </body>
                       </html>`
                   });
+                  if (adminError) {
+                    throw new Error('Failed to send admin email: ' + adminError.message);
+                  }
 
                   res.setHeader('Content-Type', 'application/json');
                   res.end(JSON.stringify({ message: 'Success' }));
-                } catch (e) {
+                } catch (e: any) {
                   res.statusCode = 500;
-                  res.end(JSON.stringify({ error: 'Local API error' }));
+                  console.error('Local API Error processing booking:', e);
+                  res.end(JSON.stringify({ error: e.message || 'Local API error' }));
                 }
               });
               return;
