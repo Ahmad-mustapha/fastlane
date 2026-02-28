@@ -59,11 +59,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
+        const transId = Math.floor(1000 + Math.random() * 9000);
+
         // 1️⃣ Email to user (Client Confirmation)
         const { data: clientData, error: clientError } = await resend.emails.send({
             from: 'Fastlane <hello@fastlanetutors.com>',
             to: data.email,
-            subject: 'Booking Confirmation - Fastlane',
+            subject: `Booking Confirmation #${transId} - Fastlane`,
             html: `
         <!DOCTYPE html>
         <html>
@@ -130,6 +132,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         </body>
         </html>
       `,
+            text: `Hi ${data.firstName}, we've received your booking request for ${data.sessionType} on ${data.preferredDate} at ${formatTime(data.preferredTime)}. Reference: #${transId}.`,
             replyTo: 'Halimgiwa@gmail.com',
         });
 
@@ -140,9 +143,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         // 2️⃣ Email to owner (Admin Notification)
         const { data: adminData, error: adminError } = await resend.emails.send({
-            from: 'Fastlane System <hello@fastlanetutors.com>',
+            from: 'Fastlane <hello@fastlanetutors.com>',
             to: 'Halimgiwa@gmail.com',
-            subject: 'New Fastlane Booking: ' + data.firstName + ' ' + data.lastName,
+            subject: `NEW BOOKING #${transId}: ${data.firstName} ${data.lastName}`,
             html: `
         <!DOCTYPE html>
         <html>
@@ -153,7 +156,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 </div>
                 
                 <div style="padding: 40px;">
-                    <h2 style="font-size: 18px; font-weight: 700; margin: 0 0 25px 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px;">New Booking Alert</h2>
+                    <h2 style="font-size: 18px; font-weight: 700; margin: 0 0 25px 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px;">New Booking Alert #${transId}</h2>
                     
                     <div style="margin-bottom: 30px;">
                         <p style="margin: 10px 0; font-size: 14px;"><strong>Client Name:</strong> ${data.firstName} ${data.lastName}</p>
@@ -185,6 +188,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         </body>
         </html>
       `,
+            text: `New Booking Request #${transId}: ${data.firstName} ${data.lastName} has booked a ${data.sessionType} session for ${data.preferredDate}. Email: ${data.email}.`,
+            replyTo: data.email,
         });
 
         if (adminError) {
