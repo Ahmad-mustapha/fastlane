@@ -132,27 +132,28 @@ export default function Booking() {
                     message: '',
                 });
             } else {
+                console.error('Booking API Error:', data);
                 Swal.fire({
                     title: 'Oops!',
-                    text: 'Something went wrong: ' + (data.error || 'Server error'),
+                    text: data.error || 'Server error occurred during booking.',
                     icon: 'error',
                     background: '#111111',
                     color: '#ffffff',
-                    confirmButtonColor: '#FF0000',
+                    confirmButtonColor: '#FF3333',
                     customClass: {
                         popup: 'border border-white/10 rounded-2xl'
                     }
                 });
             }
-        } catch (err) {
-            console.error(err);
+        } catch (err: any) {
+            console.error('Booking Fetch Error:', err);
             Swal.fire({
-                title: 'Error!',
-                text: 'Failed to submit booking. Please try again later.',
+                title: 'Connection Error',
+                text: 'Could not connect to the booking service. Please check your internet connection or try again later.',
                 icon: 'error',
                 background: '#111111',
                 color: '#ffffff',
-                confirmButtonColor: '#FF0000',
+                confirmButtonColor: '#FF3333',
                 customClass: {
                     popup: 'border border-white/10 rounded-2xl'
                 }
@@ -373,13 +374,13 @@ export default function Booking() {
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="group w-auto flex items-center justify-between gap-3 px-4 py-3 rounded-full transition-all duration-300 bg-gray-300 text-white text-left"
+                                    className={`group w-fit flex items-center justify-between gap-4 px-2 py-1.5 pl-6 rounded-full border transition-all duration-300 ${loading ? 'border-gray-700 opacity-50 cursor-not-allowed' : 'border-gray-500 hover:border-white cursor-pointer'} bg-transparent`}
                                 >
-                                    <span className="text-[15px] md:text-[17px] font-medium text-gray-800">
-                                        {loading ? 'Booking...' : 'Book a Session'}
+                                    <span className="text-[17px] font-medium text-white">
+                                        {loading ? 'Processing...' : 'Book a Session'}
                                     </span>
-                                    <span className="text-gray-800">
-                                        <FaArrowRight />
+                                    <span className="bg-white rounded-full p-2.5 text-black">
+                                        <FaArrowRight size={16} />
                                     </span>
                                 </button>
                             </form>
