@@ -13307,8 +13307,8 @@ async function handler(req, res) {
     return res.status(400).json({ error: "Missing required fields" });
   }
   try {
-    await resend.emails.send({
-      from: "Fastlane <onboarding@resend.dev>",
+    const { data: clientData, error: clientError } = await resend.emails.send({
+      from: "Fastlane <hello@fastlanetutors.com>",
       to: data.email,
       subject: "Booking Confirmation - Fastlane",
       html: `
@@ -13366,7 +13366,7 @@ async function handler(req, res) {
                     <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eeeeee;">
                         <a href="${createCalendarLink(data.preferredDate, data.preferredTime, data.sessionType)}" style="display: inline-block; background-color: #4285F4; color: #ffffff; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 13px; margin-bottom: 15px;">Add to Google Calendar</a>
                         <br>
-                        <a href="https://fastlane-gamma.vercel.app" style="display: inline-block; color: #666666; text-decoration: underline; font-size: 13px;">Return to Website</a>
+                        <a href="https://www.fastlanetutors.com" style="display: inline-block; color: #666666; text-decoration: underline; font-size: 13px;">Return to Website</a>
                     </div>
                 </div>
                 
@@ -13379,8 +13379,12 @@ async function handler(req, res) {
       `,
       replyTo: "Halimgiwa@gmail.com"
     });
-    await resend.emails.send({
-      from: "Fastlane System <onboarding@resend.dev>",
+    if (clientError) {
+      console.error("Failed to send client email:", clientError);
+      throw new Error("Failed to send client email: " + clientError.message);
+    }
+    const { data: adminData, error: adminError } = await resend.emails.send({
+      from: "Fastlane System <hello@fastlanetutors.com>",
       to: "Halimgiwa@gmail.com",
       subject: "New Fastlane Booking: " + data.firstName + " " + data.lastName,
       html: `
@@ -13426,7 +13430,15 @@ async function handler(req, res) {
         </html>
       `
     });
-    return res.status(200).json({ message: "Booking emails sent successfully!" });
+    if (adminError) {
+      console.error("Failed to send admin email:", adminError);
+      throw new Error("Failed to send admin email: " + adminError.message);
+    }
+    return res.status(200).json({
+      message: "Booking emails sent successfully!",
+      clientMessageId: clientData?.id,
+      adminMessageId: adminData?.id
+    });
   } catch (error) {
     console.error("Resend Error:", error);
     return res.status(500).json({ error: "Failed to send booking emails: " + (error.message || "Unknown error") });
