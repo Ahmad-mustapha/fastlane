@@ -1,12 +1,15 @@
 {
-    "rewrites": [
+    "routes": [
         {
-            "source": "/api/:match*",
-            "destination": "/api/:match*"
+            "src": "/api/book",
+            "dest": "/api/book"
         },
         {
-            "source": "/:path((?!api/).*)",
-            "destination": "/index.html"
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
         }
     ]
 }
