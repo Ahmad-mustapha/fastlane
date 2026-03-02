@@ -24,7 +24,7 @@ const Footer = () => {
             {/* Creative Background Elements */}
             {/* <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" /> */}
 
-            <div className="flex items-center justify-center flex-col relative z-10 w-full mb-24 px-6 md:px-16 lg:px-24">
+            <div className="flex items-center justify-center flex-col relative z-10 w-full mb-24">
                 <div className="flex flex-col items-center text-center gap-6 md:gap-8 mx-auto">
                     {/* <img src={Whitelogo} alt="Fastlane Logo" className="w-20 md:w-24 mb-4" /> */}
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight w-full">

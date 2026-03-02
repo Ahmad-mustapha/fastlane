@@ -49,7 +49,7 @@ export default function TeamProfile() {
     const nextMember = teamMembers[currentIdx + 1] ?? null;
 
     return (
-        <div className="bg-black min-h-screen text-white overflow-hidden">
+        <div className="bg-black min-h-screen text-white overflow-hidden content-max-width">
 
             {/* ── Back Bar ── */}
             <div className="pt-28 pb-0 px-6 md:px-16 lg:px-24">

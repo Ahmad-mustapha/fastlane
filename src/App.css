@@ -104,6 +104,13 @@ body {
   }
 }
 
+/* Ultra-wide viewport constraint (e.g. browser zoom 50%) */
+.content-max-width {
+  max-width: 2100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .navbar .container {

@@ -58,7 +58,7 @@ function App() {
               </Routes>
             </Suspense>
           </main>
-          <div className="px-6 md:px-16 lg:px-24">
+          <div className="px-6 md:px-16 lg:px-24 content-max-width">
             <Footer />
           </div>
           <ScrollToTop />

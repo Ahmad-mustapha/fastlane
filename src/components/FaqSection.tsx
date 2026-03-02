@@ -86,7 +86,7 @@ const FaqSection = () => {
             {/* Gradient overlay */}
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/0 via-transparent to-black/80 pointer-events-none" />
 
-            <div className="container mx-auto relative z-10">
+            <div className="relative z-10">
                 <div className="">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 tracking-tight">
                         Frequently Asked <br /> Questions

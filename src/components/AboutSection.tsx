@@ -11,13 +11,10 @@ const AboutSection = memo(() => {
                 About Us
             </h2>
             {/* Main Content Grid */}
-            <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-[45%_1fr] items-stretch gap-12 lg:gap-16 w-full">
                 {/* Left, Image */}
-                <div className="w-full lg:w-[45%] relative">
-                    <div
-                        className="relative w-full h-[300px] md:h-[400px] overflow-hidden"
-                    // style={{ clipPath: 'polygon(0 0, calc(100% - 70px) 0, 100% 70px, 100% 100%, 0 100%)' }}
-                    >
+                <div className="w-full relative min-h-[300px] md:min-h-[400px] lg:min-h-full">
+                    <div className="absolute inset-0 overflow-hidden">
                         <img
                             src={AboutImg}
                             alt="Students learning together"
@@ -28,7 +25,7 @@ const AboutSection = memo(() => {
                 </div>
 
                 {/* Right, Header + Text Content */}
-                <div className="w-full lg:w-[55%] flex flex-col justify-between">
+                <div className="w-full flex flex-col justify-between py-2">
                     {/* Section Header */}
                     <div className="mb-8">
                         {/* <h2 className="text-5xl font-bolder text-white tracking-tight mb-10">
@@ -41,12 +38,12 @@ const AboutSection = memo(() => {
 
                     {/* Description */}
                     <div className="space-y-6">
-                        <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7] max-w-xl">
+                        <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7]">
                             We are a team of dedicated educators passionate about unlocking every student's
                             potential. With expertise spanning Nigerian, British, and American curricula,
                             we deliver tailored learning experiences that foster deep understanding.
                         </p>
-                        <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7] max-w-xl">
+                        <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7]">
                             Our approach combines rigorous academic standards with modern teaching methods,
                             empowering students to not just pass exams, but to truly master their subjects
                             and build confidence for life.

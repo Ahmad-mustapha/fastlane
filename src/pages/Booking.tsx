@@ -164,7 +164,7 @@ export default function Booking() {
     };
 
     return (
-        <div className="bg-black text-white min-h-screen">
+        <div className="bg-black text-white content-max-width">
             {/* Hero Section */}
             <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
                 {/* <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />

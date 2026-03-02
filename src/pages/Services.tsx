@@ -79,7 +79,7 @@ const allServicesData = [
 
 export default function Services() {
     return (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden content-max-width">
             {/* Hero Section */}
             <div className="px-6 md:px-16 lg:px-24 pt-20 pb-16 md:pt-28 md:pb-24 text-center relative mt-[4rem]">
                 {/* Decorative background blobs */}

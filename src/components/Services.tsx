@@ -68,11 +68,11 @@ const Services = () => {
                         OUR OFFERINGS
                     </h3> */}
                     <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-                        Services & Courses
+                        Services & <br className='block sm:hidden' /> Courses
                     </h2>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-2 md:gap-4">
                     <button
                         onClick={scrollPrev}
                         disabled={!canScrollPrev}

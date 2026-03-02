@@ -35,7 +35,7 @@ const ctaCards = [
 export default function Teams() {
     return (
         <div className="bg-black min-h-screen text-white overflow-hidden">
-            <div className="px-6 md:px-16 lg:px-24">
+            <div className="px-6 md:px-16 lg:px-24 content-max-width">
                 {/* ── Hero Header ── */}
                 <section className="pt-36 pb-16">
                     <div>

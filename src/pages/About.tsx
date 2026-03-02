@@ -1,4 +1,4 @@
-import { GraduationCap, Users, Globe, Zap, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa6';
 import AboutImg from '../assets/aboutus.jpg';
@@ -38,10 +38,36 @@ const previewTeam = [
     },
 ];
 
+const missionPoints = [
+    {
+        number: "01",
+        title: "Expert-Led Tutoring",
+        text: "Every session is delivered by vetted specialists who understand the exact demands of Nigerian, British, and American curricula."
+    },
+    {
+        number: "02",
+        title: "Personalised Learning",
+        text: "We tailor each session to individual gaps, goals, and pace — so every hour translates directly into measurable improvement."
+    },
+];
+
+const visionPoints = [
+    {
+        number: "01",
+        title: "Cross-Curriculum Reach",
+        text: "We cover Nigerian (WAEC/NECO), British (IGCSE/A-Level), and American (SAT/AP) curricula, giving every student the tools to compete globally."
+    },
+    {
+        number: "02",
+        title: "Results-Driven Teaching",
+        text: "With a 98% pass rate and hundreds of top-grade alumni, our track record speaks for itself — and we hold every tutor to that standard."
+    },
+];
+
 export default function About() {
     return (
         <div className="bg-black min-h-screen text-white overflow-hidden">
-            <div className="px-6 md:px-16 lg:px-24">
+            <div className="px-6 md:px-16 lg:px-24 content-max-width">
 
                 {/* ── Page Header (Hero) ── */}
                 <section className="pt-32 pb-16">
@@ -110,104 +136,60 @@ export default function About() {
                     </div>
                 </section>
 
-                {/* ── Mission Section ── */}
+                {/* ── Mission & Vision ── */}
                 <section className="py-16 md:py-24 border-t border-white/10">
-                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-                        {/* Left Side - Label */}
-                        <div className="lg:w-1/4">
-                            <div className="flex items-center gap-4 sticky top-24">
-                                <div className="w-1 h-12 bg-[#194970] rounded-full"></div>
-                                <h2 className="text-xl font-bold tracking-wide uppercase text-white">
-                                    Our Core Mission
-                                </h2>
-                            </div>
-                        </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
-                        {/* Right Side - Content */}
-                        <div className="lg:w-3/4 space-y-16">
-                            <p
-                                className="text-[14px] md:text-[16px] lg:text-[20px] leading-relaxed font-light text-gray-300"
-                            >
-                                We believe every student regardless of their background or starting point deserves access to world-class instruction.
-                                Our mission is to close the gap between classroom teaching and examination excellence, producing a <span className="text-white font-bold">new generation of confident, high-achieving scholars</span>.
+                        {/* Mission Column */}
+                        <div className="lg:pr-12 xl:pr-16 lg:border-r border-white/10 pb-16 lg:pb-0">
+                            <p className="text-sm font-mono text-gray-500 mb-4">// Mission</p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">
+                                What drives us
+                            </h2>
+                            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-10">
+                                We believe every student deserves access to world-class instruction.
+                                Our mission is to close the gap between classroom teaching and examination
+                                excellence, producing a <span className="text-white font-medium">new generation of confident, high-achieving scholars</span>.
                             </p>
 
-                            <div className="grid md:grid-cols-2 gap-12">
-                                <div
-                                    className="space-y-4"
-                                >
-                                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4">
-                                        <GraduationCap size={24} />
+                            <div className="border-t border-white/10">
+                                {missionPoints.map((point) => (
+                                    <div key={point.number} className="flex gap-5 md:gap-8 py-6 border-b border-white/10">
+                                        <span className="text-sm font-mono text-gray-600 pt-0.5 shrink-0">{point.number}</span>
+                                        <div>
+                                            <h3 className="text-base font-semibold text-white mb-1.5">{point.title}</h3>
+                                            <p className="text-gray-500 text-sm leading-relaxed">{point.text}</p>
+                                        </div>
                                     </div>
-                                    <h3 className="text-xl font-bold text-white">Expert-Led Tutoring</h3>
-                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                                        Every session is delivered by vetted academic specialists who understand the exact demands of Nigerian, British, and American curricula, from WAEC to A-Levels to the SAT.
-                                    </p>
-                                </div>
-
-                                <div
-                                    className="space-y-4"
-                                >
-                                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4">
-                                        <Users size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white">Personalised Learning Paths</h3>
-                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                                        No two students learn the same way. We tailor each session to individual gaps, goals, and pace, so every hour spent with Fastlane translates directly into measurable improvement.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── Vision Section ── */}
-                <section className="py-16 md:py-24 border-t border-white/10">
-                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-                        {/* Left Side - Label */}
-                        <div className="lg:w-1/4">
-                            <div className="flex items-center gap-4 sticky top-24">
-                                <div className="w-1 h-12 bg-[#2e9d41] rounded-full"></div>
-                                <h2 className="text-xl font-bold tracking-wide uppercase text-white">
-                                    Our Strategic Vision
-                                </h2>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Right Side - Content */}
-                        <div className="lg:w-3/4 space-y-16">
-                            <p
-                                className="text-[14px] md:text-[16px] lg:text-[20px] leading-relaxed font-light text-gray-300"
-                            >
-                                To become <span className="text-white font-bold">West Africa's most trusted academic tutoring platform, </span>where every student, regardless of curriculum or location, can access the expert guidance they need to achieve top results and unlock their future.
+                        {/* Vision Column */}
+                        <div className="lg:pl-12 xl:pl-16 pt-16 lg:pt-0">
+                            <p className="text-sm font-mono text-gray-500 mb-4">// Vision</p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">
+                                Where we're headed
+                            </h2>
+                            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-10">
+                                To become <span className="text-white font-medium">West Africa's most trusted academic tutoring platform</span>,
+                                where every student, regardless of curriculum or location, can access the expert
+                                guidance they need to achieve top results and unlock their future.
                             </p>
 
-                            <div className="grid md:grid-cols-2 gap-12">
-                                <div
-                                    className="space-y-4"
-                                >
-                                    <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 mb-4">
-                                        <Globe size={24} />
+                            <div className="border-t border-white/10">
+                                {visionPoints.map((point) => (
+                                    <div key={point.number} className="flex gap-5 md:gap-8 py-6 border-b border-white/10">
+                                        <span className="text-sm font-mono text-gray-600 pt-0.5 shrink-0">{point.number}</span>
+                                        <div>
+                                            <h3 className="text-base font-semibold text-white mb-1.5">{point.title}</h3>
+                                            <p className="text-gray-500 text-sm leading-relaxed">{point.text}</p>
+                                        </div>
                                     </div>
-                                    <h3 className="text-xl font-bold text-white">Cross-Curriculum Reach</h3>
-                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                                        We cover Nigerian (WAEC/NECO), British (IGCSE/A-Level), and American (SAT/AP) curricula, giving every student the tools to compete at the highest level, wherever their ambitions take them.
-                                    </p>
-                                </div>
-
-                                <div
-                                    className="space-y-4"
-                                >
-                                    <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-[#2e9d41] mb-4">
-                                        <Zap size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white">Results-Driven Teaching</h3>
-                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                                        We measure our success by our students' results. With a 98% pass rate and hundreds of top-grade alumni, our track record speaks for itself, and we hold every tutor to that standard.
-                                    </p>
-                                </div>
+                                ))}
                             </div>
                         </div>
+
                     </div>
                 </section>
 

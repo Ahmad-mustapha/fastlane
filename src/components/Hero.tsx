@@ -5,16 +5,16 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
     const navigate = useNavigate();
     return (
-        <section className="relative pt-32 md:pt-24 pb-4 mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-0 w-full">
+        <section className="relative pt-32 md:pt-24 pb-4 mx-auto flex flex-col lg:flex-row justify-between items-stretch gap-12 lg:gap-0 w-full">
             <div
-                className="space-y-6 w-full lg:w-1/2"
+                className="space-y-6 w-full lg:w-1/2 flex flex-col justify-center"
             >
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[1] tracking-tight uppercase">
                     UNLOCK YOUR
                     ACADEMIC
                     POTENTIAL
                 </h1>
-                <p className="text-gray-400 text-sm sm:text-md md:text-lg max-w-xl leading-[1.4]">
+                <p className="text-gray-400 text-sm sm:text-md md:text-lg leading-[1.4]">
                     Personalized, results-driven tutoring across Nigerian, British, and American systems.
                     We build confidence through expert instruction and clear learning pathways.
                 </p>
@@ -34,7 +34,7 @@ const Hero = () => {
             </div>
 
             <div
-                className="relative overflow-hidden w-full lg:w-[450px] h-[380px] md:h-[500px] aspect-[4/3] inverted-radius md:mr-0 transition-all duration-500"
+                className="relative overflow-hidden w-full lg:w-[500px] h-[380px] md:h-[500px] aspect-[4/3] inverted-radius md:mr-0 transition-all duration-500"
                 style={{
                     transform: 'translate3d(0,0,0)',
                     WebkitBackfaceVisibility: 'hidden',
