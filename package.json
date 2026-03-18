@@ -13,8 +13,7 @@
   "overrides": {
     "minimatch": "10.2.1",
     "path-to-regexp": "6.3.0",
-    "undici": "6.23.0",
-    "ajv": "8.18.0"
+    "undici": "6.23.0"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
