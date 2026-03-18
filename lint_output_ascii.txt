@@ -1,0 +1,67 @@
+
+> fastlane@0.0.0 lint
+> eslint .
+
+node.exe : NOT SUPPORTED: 
+option missingRefs. Pass 
+empty schema with $id that 
+should be ignored to 
+ajv.addSchema.
+At C:\Program 
+Files\nodejs\npm.ps1:29 
+char:3
++   & $NODE_EXE $NPM_CLI_JS 
+$args
++   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (NOT SUP  
+  PORTED: ... ajv.addSchem   
+ a.:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+
+Oops! Something went wrong! 
+:(
+
+ESLint: 9.39.3
+
+TypeError: Cannot set 
+properties of undefined 
+(setting 'defaultMeta')
+    at ajvOrig (C:\Users\Hi\D
+esktop\Workspace\Projects\Cli
+ents\fastlane\node_modules\@e
+slint\eslintrc\dist\eslintrc-
+universal.cjs:385:27)
+    at Object.<anonymous> (C:
+\Users\Hi\Desktop\Workspace\P
+rojects\Clients\fastlane\node
+_modules\@eslint\eslintrc\dis
+t\eslintrc-universal.cjs:740:
+13)
+    at Module._compile (node:
+internal/modules/cjs/loader:1
+565:14)
+    at Object..js (node:inter
+nal/modules/cjs/loader:1708:1
+0)
+    at Module.load (node:inte
+rnal/modules/cjs/loader:1318:
+32)
+    at Function._load (node:i
+nternal/modules/cjs/loader:11
+28:12)
+    at 
+TracingChannel.traceSync (nod
+e:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:i
+nternal/modules/cjs/loader:21
+9:24)
+    at Module.require (node:i
+nternal/modules/cjs/loader:13
+40:12)
+    at require (node:internal
+/modules/helpers:138:16)
