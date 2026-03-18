@@ -30,17 +30,17 @@ const ServiceCard = memo(({ label, title, description, bgColor = 'bg-blue' }: Se
             <div className="absolute inset-0 p-8 flex flex-col justify-between">
                 {/* Content Top */}
                 <div className="flex flex-col">
-                    <div className={`inline-block px-4 py-1.5 rounded-full text-[0.7rem] font-bold tracking-[0.05em] w-fit mb-6 ${isLightCard ? 'bg-black/10 text-gray-900' : 'bg-white/20 text-white/90'}`}>
+                    <div className={`inline-block px-4 py-1.5 rounded-full text-[0.7rem] font-bold tracking-[0.05em] w-fit mb-6 ${isLightCard ? 'bg-black/10 text-gray-900' : 'bg-white/20 text-[#ffffff]'}`}>
                         {label}
                     </div>
-                    <h2 className={`text-[1.3rem] font-medium leading-[1.1] uppercase ${isLightCard ? 'text-black' : '!text-white'}`}>
+                    <h2 className={`text-[1.3rem] font-medium leading-[1.1] uppercase ${isLightCard ? 'text-black' : 'text-[#ffffff]'}`}>
                         {title}
                     </h2>
                 </div>
 
                 {/* Content Bottom */}
                 <div className="flex flex-col relative">
-                    <p className={`text-[0.9rem] leading-relaxed mb-6 max-w-[80%] ${isLightCard ? 'text-black' : 'text-white/85'}`}>
+                    <p className={`text-[0.9rem] leading-relaxed mb-6 max-w-[80%] ${isLightCard ? 'text-black' : 'text-[rgba(255,255,255,0.85)]'}`}>
                         {description}
                     </p>
 
