@@ -30,7 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const createCalendarLink = (date: string, time: string, session: string) => {
         try {
             const [year, month, day] = date.split('-');
-            let [hourStr, minuteStr] = time.split(':');
+            const [hourStr, minuteStr] = time.split(':');
             const hour = parseInt(hourStr);
             const startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), hour, parseInt(minuteStr));
             const endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
@@ -38,7 +38,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             const title = encodeURIComponent(`Fastlane Session: ${session}`);
             const details = encodeURIComponent('Your Fastlane consulting session has been scheduled. Looking forward to meeting you!');
             return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${format(startDate)}/${format(endDate)}&details=${details}`;
-        } catch (e) {
+        } catch {
             return 'https://calendar.google.com';
         }
     };
@@ -49,7 +49,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             const ampm = hour >= 12 ? 'PM' : 'AM';
             const h = hour % 12 || 12;
             return `${h}:${minute.toString().padStart(2, '0')} ${ampm}`;
-        } catch (e) {
+        } catch {
             return time;
         }
     };
@@ -202,6 +202,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             clientMessageId: clientData?.id,
             adminMessageId: adminData?.id
         });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         console.error('Resend Error:', error);
         return res.status(500).json({ error: 'Failed to send booking emails: ' + (error.message || 'Unknown error') });

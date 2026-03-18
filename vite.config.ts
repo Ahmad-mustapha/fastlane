@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
         configureServer(server) {
           server.middlewares.use(async (req, res, next) => {
             if (req.url === '/api/book' && req.method === 'POST') {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const chunks: any[] = [];
               req.on('data', chunk => { chunks.push(chunk); });
               req.on('end', async () => {
@@ -133,6 +134,7 @@ export default defineConfig(({ mode }) => {
 
                   res.setHeader('Content-Type', 'application/json');
                   res.end(JSON.stringify({ message: 'Success' }));
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 } catch (e: any) {
                   res.statusCode = 500;
                   console.error('Local API Error processing booking:', e);

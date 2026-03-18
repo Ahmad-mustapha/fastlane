@@ -145,6 +145,7 @@ export default function Booking() {
                     }
                 });
             }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             console.error('Booking Fetch Error:', err);
             Swal.fire({
