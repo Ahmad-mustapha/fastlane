@@ -9,7 +9,7 @@ const Hero = () => {
             <div
                 className="space-y-6 w-full lg:w-1/2 flex flex-col justify-center"
             >
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[1] tracking-tight uppercase">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[1] tracking-tight uppercase max-w-4xl">
                     UNLOCK YOUR
                     ACADEMIC
                     POTENTIAL

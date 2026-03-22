@@ -316,8 +316,20 @@ html.light .bg-\[\#194070\] {
   background-color: #194070 !important;
 }
 
+html.light .bg-\[\#194070\] h2, 
+html.light .bg-\[\#194070\] p,
+html.light .bg-\[\#194070\] [class*="text-[#ffffff]"] {
+  color: #ffffff !important;
+}
+
 html.light .bg-\[\#2E9D41\] {
   background-color: #2E9D41 !important;
+}
+
+html.light .bg-\[\#2E9D41\] h2,
+html.light .bg-\[\#2E9D41\] p,
+html.light .bg-\[\#2E9D41\] [class*="text-[#ffffff]"] {
+  color: #ffffff !important;
 }
 
 /* Arrow icon inside cards (text-black or text-white/opacity) */
@@ -548,10 +560,18 @@ main {
 }
 
 .content-max-width {
+  /* max-width: 1280px; */
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+/* Ensure fixed navbar stays centered at max-width */
+nav.content-max-width {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  right: auto !important;
 }
 
 .navbar {

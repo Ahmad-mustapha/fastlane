@@ -218,7 +218,7 @@ const Navbar = () => {
   return (
     <div className="">
       <nav
-        className={`z-30 h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 fixed top-0 w-full transition-all duration-300 bg-transparent backdrop-blur-md content-max-width left-0 right-0`}
+        className={`z-30 h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 fixed top-0 w-full transition-all duration-300 bg-transparent backdrop-blur-md content-max-width`}
       >
         <Link
           to="/"
