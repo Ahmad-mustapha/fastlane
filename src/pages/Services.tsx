@@ -1,4 +1,4 @@
-import '../App.css';
+
 import ServiceCard from '../components/ServiceCard';
 
 const allServicesData = [

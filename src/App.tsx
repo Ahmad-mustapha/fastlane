@@ -19,7 +19,7 @@ const TeamProfile = lazy(() => import('./pages/TeamProfile'));
 import AboutImg from './assets/aboutus.jpg';
 import HeroImg from './assets/heroimg2.jpg';
 
-import './App.css';
+
 
 // Minimal loading fallback shown during route transitions
 function PageLoader() {
