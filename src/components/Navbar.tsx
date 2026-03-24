@@ -53,7 +53,7 @@ export const Sidebar = ({
 
   return (
     <div
-      className={`fixed inset-0 z-[60] bg-[#000] transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      className={`fixed inset-0 z-[60] bg-white dark:bg-black transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
     >
       <div className="flex flex-col h-full px-6 py-6 md:px-12">
         {/* Header */}
@@ -73,7 +73,7 @@ export const Sidebar = ({
         {/* Navigation Links */}
         <ul className="flex flex-col gap-8 mb-auto">
           {mainLinks.map((item) => (
-            <li key={item.id} className="text-[#fff]">
+            <li key={item.id} className="text-[#0a0a0a] dark:text-white">
               {item.text === "Contact" ? (
                 <a
                   onClick={(e) => {
@@ -98,7 +98,7 @@ export const Sidebar = ({
           ))}
 
           {/* Sidebar-only: Testimonials smooth-scroll link */}
-          <li className="text-[#fff]">
+          <li className="text-[#0a0a0a] dark:text-white">
             <a
               href="/#testimonial"
               onClick={(e) => {
@@ -218,7 +218,7 @@ const Navbar = () => {
   return (
     <div className="">
       <nav
-        className={`z-30 h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 fixed top-0 w-full transition-all duration-300 bg-transparent backdrop-blur-md content-max-width`}
+        className={`z-30 h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 fixed top-0 left-0 right-0 mx-auto w-full max-w-[1440px] transition-all duration-300 bg-transparent backdrop-blur-md`}
       >
         <Link
           to="/"
@@ -258,7 +258,7 @@ const Navbar = () => {
               ) : item.text === "Contact" ? (
                 <a
                   onClick={handleContactClick}
-                  className="eachlink text-[#fff] hover:text-gray-300 transition-colors duration-300 cursor-pointer font-medium"
+                  className="eachlink text-[#0a0a0a] dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 cursor-pointer font-medium"
                   href="/#contact"
                 >
                   {item.text}
@@ -266,7 +266,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   to={item.link}
-                  className={`eachlink transition-colors duration-300 font-medium ${pathname === item.link ? "text-white" : "text-gray-300 hover:text-white"}`}
+                  className={`eachlink transition-colors duration-300 font-medium ${pathname === item.link ? "text-black dark:text-white" : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"}`}
                 >
                   {item.text}
                 </Link>
@@ -277,7 +277,7 @@ const Navbar = () => {
 
         {/* Progress Bar */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/30 origin-left"
+          className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/15 dark:bg-white/30 origin-left"
           style={{ scaleX: scrollYProgress }}
         />
       </nav>

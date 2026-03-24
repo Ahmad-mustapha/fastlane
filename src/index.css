@@ -82,51 +82,7 @@ html.light #root {
   color: rgba(0, 0, 0, 0.87);
 }
 
-/* ─── Light mode: navbar desktop links ─── */
-/* text-[#fff] arbitrary class on Contact link + sidebar li items */
-html.light .eachlink,
-html.light .eachlink.text-white,
-html.light [class*="text-[#fff]"] {
-  color: #0a0a0a !important;
-}
-
-/* Hover states for nav links */
-html.light .hover\:text-white:hover {
-  color: #333333 !important;
-}
-
-html.light .hover\:text-gray-300:hover {
-  color: #555555 !important;
-}
-
-html.light .hover\:text-gray-400:hover {
-  color: #555555 !important;
-}
-
-/* Hamburger bars  bg-[#fff] */
-html.light [class*="bg-[#fff]"] {
-  background-color: #0a0a0a !important;
-}
-
-/* Book Session pill border in navbar */
-html.light .border-gray-500 {
-  border-color: #aaaaaa !important;
-}
-
-/* Sidebar: full-screen overlay */
-html.light .fixed.inset-0.bg-\[\#000\] {
-  background-color: #ffffff !important;
-}
-
-/* Sidebar nav link text (li has text-[#fff] class) */
-html.light li.text-\[\#fff\] {
-  color: #0a0a0a !important;
-}
-
-/* Progress bar under nav */
-html.light .bg-white\/30 {
-  background-color: rgba(0, 0, 0, 0.15) !important;
-}
+/* ─── Light mode overrides are now handled natively in Navbar.tsx ─── */
 
 /* ─── Light mode: About section ─── */
 /* Pill background + opacity text */
@@ -567,12 +523,7 @@ main {
   width: 100%;
 }
 
-/* Ensure fixed navbar stays centered at max-width */
-nav.content-max-width {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  right: auto !important;
-}
+/* Navbar centering is now handled natively in Navbar.tsx using left-0 right-0 mx-auto */
 
 .navbar {
   position: sticky;
