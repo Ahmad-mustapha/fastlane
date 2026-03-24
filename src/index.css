@@ -179,54 +179,7 @@ html.light .bg-zinc-900 * {
 }
 
 /* ─── Light mode: flip all hardcoded text colors ─── */
-html.light .text-white {
-  color: #0a0a0a !important;
-}
-
-html.light .text-gray-50 {
-  color: #1a1a1a !important;
-}
-
-html.light .text-gray-100 {
-  color: #1a1a1a !important;
-}
-
-html.light .text-gray-200 {
-  color: #2a2a2a !important;
-}
-
-html.light .text-gray-300 {
-  color: #333333 !important;
-}
-
-html.light .text-gray-400 {
-  color: #444444 !important;
-}
-
-html.light .text-gray-500 {
-  color: #555555 !important;
-}
-
-html.light .text-gray-600 {
-  color: #666666 !important;
-}
-
-/* ─── Light mode: flip hardcoded black/dark backgrounds ─── */
-html.light .bg-black {
-  background-color: #ffffff !important;
-}
-
-html.light .bg-\[\#000\] {
-  background-color: #ffffff !important;
-}
-
-html.light .bg-\[\#050505\] {
-  background-color: #f0f0f0 !important;
-}
-
-html.light .bg-\[\#0a0a0a\] {
-  background-color: #f5f5f5 !important;
-}
+/* ─── Global theme overrides removed — handled in components using dark: variants ─── */
 
 /* ─── Light mode: FAQ section gradient overlay fix ─── */
 html.light .bg-gradient-to-b.to-black\/80 {
@@ -260,42 +213,9 @@ html.light .hover\:bg-gray-100:hover {
   background-color: #222222 !important;
 }
 
-/* ─── Light mode: Service cards ─── */
-/* Give white cards a subtle border so they pop on #f5f5f5 background */
-html.light .bg-\[\#fff\] {
-  background-color: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-}
+/* Service card overrides are now handled natively in ServiceCard.tsx */
 
-/* Ensure the yellow and blue cards stay readable */
-html.light .bg-\[\#194070\] {
-  background-color: #194070 !important;
-}
-
-html.light .bg-\[\#194070\] h2, 
-html.light .bg-\[\#194070\] p,
-html.light .bg-\[\#194070\] [class*="text-[#ffffff]"] {
-  color: #ffffff !important;
-}
-
-html.light .bg-\[\#2E9D41\] {
-  background-color: #2E9D41 !important;
-}
-
-html.light .bg-\[\#2E9D41\] h2,
-html.light .bg-\[\#2E9D41\] p,
-html.light .bg-\[\#2E9D41\] [class*="text-[#ffffff]"] {
-  color: #ffffff !important;
-}
-
-/* Arrow icon inside cards (text-black or text-white/opacity) */
-html.light .bg-white.text-\[\#194070\] {
-  color: #194070 !important;
-}
-
-html.light .bg-white.text-\[\#2E9D41\] {
-  color: #2E9D41 !important;
-}
+/* Service card arrow icon colors are now handled in the component */
 
 /* ─── Light mode: Form elements (Booking Page) ─── */
 html.light input,

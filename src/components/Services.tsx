@@ -67,7 +67,7 @@ const Services = () => {
                     {/* <h3 className="text-wte font-bold uppercase tracking-widest text-sm">
                         OUR OFFERINGS
                     </h3> */}
-                    <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
                         Services & <br className='block sm:hidden' /> Courses
                     </h2>
                 </div>

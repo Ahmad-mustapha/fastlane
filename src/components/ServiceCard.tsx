@@ -10,15 +10,15 @@ interface ServiceCardProps {
 const ServiceCard = memo(({ label, title, description, bgColor = 'bg-blue' }: ServiceCardProps) => {
     const bgStyles = {
         'bg-blue': 'bg-[#194070]',
-        'bg-grey': 'bg-[#fff]',
+        'bg-grey': 'bg-white dark:bg-[#111111] border border-black/10 dark:border-white/10',
         'bg-yellow': 'bg-[#2E9D41]'
     }[bgColor] || 'bg-[#194070]';
 
     const iconBg = {
-        'bg-blue': 'bg-white !text-[#194070]',
-        'bg-yellow': 'bg-white !text-[#2E9D41]',
-        'bg-grey': 'bg-black text-white'
-    }[bgColor] || 'bg-black text-white';
+        'bg-blue': 'bg-white text-[#194070]',
+        'bg-yellow': 'bg-white text-[#2E9D41]',
+        'bg-grey': 'bg-black dark:bg-white text-white dark:text-black'
+    }[bgColor] || 'bg-black dark:bg-white text-white dark:text-black';
 
     const isLightCard = bgColor === 'bg-grey';
 
@@ -30,17 +30,17 @@ const ServiceCard = memo(({ label, title, description, bgColor = 'bg-blue' }: Se
             <div className="absolute inset-0 p-8 flex flex-col justify-between">
                 {/* Content Top */}
                 <div className="flex flex-col">
-                    <div className={`inline-block px-4 py-1.5 rounded-full text-[0.7rem] font-bold tracking-[0.05em] w-fit mb-6 ${isLightCard ? 'bg-black/10 text-gray-900' : 'bg-white/20 text-[#ffffff]'}`}>
+                    <div className={`inline-block px-4 py-1.5 rounded-full text-[0.7rem] font-bold tracking-[0.05em] w-fit mb-6 ${isLightCard ? 'bg-black/10 text-gray-900 dark:bg-white/10 dark:text-gray-100' : 'bg-white/20 !text-white'}`}>
                         {label}
                     </div>
-                    <h2 className={`text-[1.3rem] font-medium leading-[1.1] uppercase ${isLightCard ? 'text-black' : 'text-[#ffffff]'}`}>
+                    <h2 className={`text-[1.3rem] font-medium leading-[1.1] uppercase ${isLightCard ? 'text-black dark:text-white' : '!text-white'}`}>
                         {title}
                     </h2>
                 </div>
 
                 {/* Content Bottom */}
                 <div className="flex flex-col relative">
-                    <p className={`text-[0.9rem] leading-relaxed mb-6 max-w-[80%] ${isLightCard ? 'text-black' : 'text-[rgba(255,255,255,0.85)]'}`}>
+                    <p className={`text-[0.9rem] leading-relaxed mb-6 max-w-[80%] ${isLightCard ? 'text-black dark:text-gray-300' : '!text-white/85'}`}>
                         {description}
                     </p>
 

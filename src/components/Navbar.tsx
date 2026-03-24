@@ -217,70 +217,72 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <nav
-        className={`z-30 h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 fixed top-0 left-0 right-0 mx-auto w-full max-w-[1440px] transition-all duration-300 bg-transparent backdrop-blur-md`}
-      >
-        <Link
-          to="/"
-          onClick={() => setOpenNav(false)}
-          className="cursor-pointer w-48 md:w-56 hidden lg:block"
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+        <nav
+          className={`pointer-events-auto h-[6rem] flex items-center justify-between py-6 px-6 md:px-16 lg:px-24 w-full max-w-[1440px] transition-all duration-300 bg-transparent backdrop-blur-md relative`}
         >
-          <img
-            src={isDark ? Whitelogo : FullcolorLogo}
-            alt="Logo"
-            className="w-full h-auto"
+          <Link
+            to="/"
+            onClick={() => setOpenNav(false)}
+            className="cursor-pointer w-48 md:w-56 hidden lg:block"
+          >
+            <img
+              src={isDark ? Whitelogo : FullcolorLogo}
+              alt="Logo"
+              className="w-full h-auto"
+            />
+          </Link>
+          <Link
+            to="/"
+            onClick={() => setOpenNav(false)}
+            className="cursor-pointer block lg:hidden w-18"
+          >
+            <img src={isDark ? Whilemobilelogo : BluemobileLogo} alt="Logo" />
+          </Link>
+
+          {/* Centered Links */}
+          <ul className="hidden md:flex items-center gap-10">
+            {navlinks.map((item, index) => (
+              <li className="relative text-[16px]" key={index}>
+                {item.id === 5 ? (
+                  <Link
+                    to="/booking"
+                    className="group flex items-center justify-between gap-4 px-2 py-1.5 pl-5 rounded-full border border-gray-500 hover:border-white transition-colors bg-transparent"
+                  >
+                    <span className="text-[15px] font-medium text-white">
+                      Book Session
+                    </span>
+                    <span className="bg-white rounded-full p-2 text-black">
+                      <FaArrowRight size={14} />
+                    </span>
+                  </Link>
+                ) : item.text === "Contact" ? (
+                  <a
+                    onClick={handleContactClick}
+                    className="eachlink text-[#0a0a0a] dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 cursor-pointer font-medium"
+                    href="/#contact"
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.link}
+                    className={`eachlink transition-colors duration-300 font-medium ${pathname === item.link ? "text-black dark:text-white" : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"}`}
+                  >
+                    {item.text}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          {/* Progress Bar */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/15 dark:bg-white/30 origin-left"
+            style={{ scaleX: scrollYProgress }}
           />
-        </Link>
-        <Link
-          to="/"
-          onClick={() => setOpenNav(false)}
-          className="cursor-pointer block lg:hidden w-18"
-        >
-          <img src={isDark ? Whilemobilelogo : BluemobileLogo} alt="Logo" />
-        </Link>
-
-        {/* Centered Links */}
-        <ul className="hidden md:flex items-center gap-10">
-          {navlinks.map((item, index) => (
-            <li className="relative text-[16px]" key={index}>
-              {item.id === 5 ? (
-                <Link
-                  to="/booking"
-                  className="group flex items-center justify-between gap-4 px-2 py-1.5 pl-5 rounded-full border border-gray-500 hover:border-white transition-colors bg-transparent"
-                >
-                  <span className="text-[15px] font-medium text-white">
-                    Book Session
-                  </span>
-                  <span className="bg-white rounded-full p-2 text-black">
-                    <FaArrowRight size={14} />
-                  </span>
-                </Link>
-              ) : item.text === "Contact" ? (
-                <a
-                  onClick={handleContactClick}
-                  className="eachlink text-[#0a0a0a] dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 cursor-pointer font-medium"
-                  href="/#contact"
-                >
-                  {item.text}
-                </a>
-              ) : (
-                <Link
-                  to={item.link}
-                  className={`eachlink transition-colors duration-300 font-medium ${pathname === item.link ? "text-black dark:text-white" : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"}`}
-                >
-                  {item.text}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        {/* Progress Bar */}
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/15 dark:bg-white/30 origin-left"
-          style={{ scaleX: scrollYProgress }}
-        />
-      </nav>
+        </nav>
+      </div>
       {/* Hamburger Menu */}
       <div
         className="menu z-[70] fixed top-8 right-[2rem] md:hidden flex flex-col gap-2 cursor-pointer transition-all duration-300 p-2"
