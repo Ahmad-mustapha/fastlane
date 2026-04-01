@@ -124,9 +124,9 @@ export const Sidebar = ({
           <Link
             to="/booking"
             onClick={() => setOpenNav(false)}
-            className="group w-fit flex items-center justify-between gap-6 px-3 py-2 pl-5 rounded-full border border-gray-600 hover:border-white transition-colors bg-transparent text-left"
+            className="group w-fit flex items-center justify-between gap-6 px-3 py-2 pl-5 rounded-full border border-gray-600 hover:border-black dark:hover:border-white transition-colors bg-transparent text-left"
           >
-            <span className="text-[17px] font-medium text-white">
+            <span className="text-[17px] font-medium text-black dark:text-white">
               Book Session
             </span>
             <span className="bg-white rounded-full p-2.5 text-black duration-300">
@@ -141,10 +141,10 @@ export const Sidebar = ({
               toggleTheme();
               setOpenNav(false);
             }}
-            className="group w-fit flex items-center justify-between gap-4 px-3 py-2 rounded-full border border-gray-600 hover:border-white transition-all duration-300 bg-white/10 dark:bg-black/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] text-left"
+            className="group w-fit flex items-center justify-between gap-4 px-3 py-2 rounded-full border border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white transition-all duration-300 bg-black/5 dark:bg-black/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] text-left"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
           >
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/10">
+            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-black/10 dark:bg-white/10">
               <AnimatePresence>
                 {isDark ? (
                   <motion.div
@@ -174,7 +174,8 @@ export const Sidebar = ({
                     animate={{ rotate: 0, opacity: 1, scale: 1 }}
                     exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="absolute text-white"
+                    className="absolute"
+                    style={{ color: isDark ? 'white' : 'black' }}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
@@ -184,7 +185,10 @@ export const Sidebar = ({
               </AnimatePresence>
             </div>
 
-            <span className="text-[14px] font-bold tracking-[0.1em] text-white opacity-80 group-hover:opacity-100 pr-2">
+            <span 
+              className="text-[14px] font-bold tracking-[0.1em] group-hover:opacity-100 pr-2"
+              style={{ color: isDark ? 'white' : 'black' }}
+            >
               {isDark ? 'Light' : 'Dark'}
             </span>
           </motion.button>
@@ -247,9 +251,9 @@ const Navbar = () => {
                 {item.id === 5 ? (
                   <Link
                     to="/booking"
-                    className="group flex items-center justify-between gap-4 px-2 py-1.5 pl-5 rounded-full border border-gray-500 hover:border-white transition-colors bg-transparent"
+                    className="group flex items-center justify-between gap-4 px-2 py-1.5 pl-5 rounded-full border border-gray-500 hover:border-black dark:hover:border-white transition-colors bg-transparent"
                   >
-                    <span className="text-[15px] font-medium text-white">
+                    <span className="text-[15px] font-medium text-black dark:text-white">
                       Book Session
                     </span>
                     <span className="bg-white rounded-full p-2 text-black">

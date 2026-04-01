@@ -24,8 +24,8 @@ import HeroImg from './assets/heroimg2.jpg';
 // Minimal loading fallback shown during route transitions
 function PageLoader() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <div className="w-8 h-8 rounded-full border-2 border-white/20 border-t-white animate-spin" />
+    <div className="min-h-screen bg-[#f5f5f5] dark:bg-black flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-black/20 dark:border-white/20 border-t-black dark:border-t-white animate-spin" />
     </div>
   );
 }

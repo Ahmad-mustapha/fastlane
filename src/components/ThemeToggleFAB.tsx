@@ -9,7 +9,7 @@ export default function ThemeToggleFAB() {
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
-            className="fixed bottom-8 left-3 md:left-8 z-50 h-14 w-14 md:w-auto md:px-5 rounded-full hidden md:flex items-center justify-center gap-3 bg-white/10 dark:bg-black/20 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] transition-all duration-300 hover:bg-white/20"
+            className="fixed bottom-8 left-3 md:left-8 z-50 h-14 w-14 md:w-auto md:px-5 rounded-full hidden md:flex items-center justify-center gap-3 bg-black/5 dark:bg-black/20 backdrop-blur-xl border border-black/10 dark:border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/20 group"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
         >
             <div className="relative flex items-center justify-center w-6 h-6">
@@ -42,7 +42,8 @@ export default function ThemeToggleFAB() {
                             animate={{ rotate: 0, opacity: 1, scale: 1 }}
                             exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="absolute text-white"
+                            className="absolute"
+                            style={{ color: isDark ? 'white' : 'black' }}
                         >
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
@@ -52,7 +53,10 @@ export default function ThemeToggleFAB() {
                 </AnimatePresence>
             </div>
 
-            <span className="hidden md:block text-[11px] font-bold tracking-[0.15em] text-white opacity-80 group-hover:opacity-100">
+            <span 
+                className="hidden md:block text-[11px] font-bold tracking-[0.15em] group-hover:opacity-100"
+                style={{ color: isDark ? 'white' : 'black' }}
+            >
                 {isDark ? 'Light' : 'Dark'}
             </span>
         </motion.button>

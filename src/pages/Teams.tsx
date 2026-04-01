@@ -16,9 +16,9 @@ const ctaCards = [
         tag: 'MENTORSHIP',
         title: 'BECOME A MENTOR',
         action: 'LEARN MORE',
-        bg: 'bg-white/5 border border-white/10',
-        textColor: 'text-white',
-        tagColor: 'bg-white/10',
+        bg: 'bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10',
+        textColor: 'text-black dark:text-white',
+        tagColor: 'bg-black/10 dark:bg-white/10',
     },
     {
         tag: 'PARTNERSHIP',
@@ -34,7 +34,7 @@ const ctaCards = [
 
 export default function Teams() {
     return (
-        <div className="bg-black min-h-screen text-white overflow-hidden">
+        <div className="bg-[#f5f5f5] dark:bg-black min-h-screen text-black dark:text-white overflow-hidden">
             <div className="px-6 md:px-16 lg:px-24 content-max-width">
                 {/* ── Hero Header ── */}
                 <section className="pt-36 pb-16">
@@ -69,7 +69,7 @@ export default function Teams() {
                             >
                                 <Link
                                     to={`/team/${member.id}`}
-                                    className="group bg-black p-6 flex flex-col gap-4 hover:bg-white/5 transition-colors duration-300 cursor-pointer h-full"
+                                    className="group bg-white dark:bg-black p-6 flex flex-col gap-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 cursor-pointer h-full"
                                 >
                                     {/* Photo */}
                                     <div className="relative w-full h-[280px] overflow-hidden">
@@ -86,18 +86,18 @@ export default function Teams() {
                                     {/* Info */}
                                     <div className="flex items-start justify-between gap-2">
                                         <div>
-                                            <h3 className="text-xl font-bold text-white tracking-tight">{member.name}</h3>
+                                            <h3 className="text-xl font-bold text-black dark:text-white tracking-tight">{member.name}</h3>
                                             <p className={`text-sm font-semibold mt-0.5 ${member.roleColor}`}>{member.role}</p>
                                         </div>
                                         <ArrowUpRight
                                             size={18}
-                                            className="text-gray-500 group-hover:text-white transition-colors mt-1 shrink-0"
+                                            className="text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors mt-1 shrink-0"
                                         />
                                     </div>
 
                                     <p className="text-gray-400 text-sm leading-relaxed">{member.bio}</p>
 
-                                    <span className="mt-auto inline-block px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-white/5 border border-white/10 text-white/50 rounded-full w-fit">
+                                    <span className="mt-auto inline-block px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black/50 dark:text-white/50 rounded-full w-fit">
                                         {member.tag}
                                     </span>
                                 </Link>

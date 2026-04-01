@@ -41,7 +41,7 @@ const FaqItem = ({ item, index, isOpen, onClick }: { item: typeof faqs[0], index
                 </span>
 
                 <div className="flex-1 pt-1">
-                    <h3 className="text-md md:text-xl font-medium text-white">
+                    <h3 className="text-md md:text-xl font-medium text-black dark:text-white">
                         {item.question}
                     </h3>
                 </div>
@@ -88,7 +88,7 @@ const FaqSection = () => {
 
             <div className="relative z-10">
                 <div className="">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-16 tracking-tight">
                         Frequently Asked <br /> Questions
                     </h2>
 

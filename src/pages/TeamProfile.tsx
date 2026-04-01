@@ -29,7 +29,7 @@ export default function TeamProfile() {
     /* ── 404 state ── */
     if (!member) {
         return (
-            <div className="bg-black min-h-screen text-white flex flex-col items-center justify-center gap-6 px-6">
+            <div className="bg-[#f5f5f5] dark:bg-black min-h-screen text-black dark:text-white flex flex-col items-center justify-center gap-6 px-6">
                 <p className="text-gray-500 text-sm tracking-widest uppercase">404, Profile Not Found</p>
                 <h1 className="text-4xl font-black uppercase tracking-tight">Instructor Profile not found</h1>
                 <Link
@@ -49,13 +49,13 @@ export default function TeamProfile() {
     const nextMember = teamMembers[currentIdx + 1] ?? null;
 
     return (
-        <div className="bg-black min-h-screen text-white overflow-hidden content-max-width">
+        <div className="bg-[#f5f5f5] dark:bg-black min-h-screen text-black dark:text-white overflow-hidden content-max-width">
 
             {/* ── Back Bar ── */}
             <div className="pt-28 pb-0 px-6 md:px-16 lg:px-24">
                 <button
                     onClick={() => navigate(-1)}
-                    className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-sm font-medium group"
+                    className="flex items-center gap-2 text-gray-500 hover:text-black dark:hover:text-white transition-colors text-sm font-medium group"
                 >
                     <ChevronLeft
                         size={16}
@@ -90,7 +90,7 @@ export default function TeamProfile() {
                             />
                             {/* curriculum tag */}
                             <div className="absolute bottom-4 left-4">
-                                <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-black/60 backdrop-blur-sm border border-white/10 text-white/60 rounded-full">
+                                <span className="inline-block px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-black/10 dark:bg-black/60 backdrop-blur-sm border border-black/10 dark:border-white/10 text-black/60 dark:text-white/60 rounded-full">
                                     {member.tag}
                                 </span>
                             </div>
@@ -104,7 +104,7 @@ export default function TeamProfile() {
                                     href={social.url}
                                     target={social.platform !== 'email' ? '_blank' : undefined}
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2.5 border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/25 transition-all duration-300 text-gray-400 hover:text-white text-xs font-medium tracking-wide"
+                                    className="flex items-center gap-2 px-4 py-2.5 border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] hover:bg-black/[0.07] dark:hover:bg-white/[0.07] hover:border-black/25 dark:hover:border-white/25 transition-all duration-300 text-gray-400 hover:text-black dark:hover:text-white text-xs font-medium tracking-wide"
                                 >
                                     <SocialIcon platform={social.platform} />
                                     <span>{social.handle}</span>
@@ -159,9 +159,9 @@ export default function TeamProfile() {
                                 { icon: Users, value: `${member.studentsHelped}+`, label: 'Students' },
                                 { icon: Star, value: member.passRate, label: 'Pass Rate' },
                             ].map((stat) => (
-                                <div key={stat.label} className="bg-black px-5 py-5 flex flex-col gap-1">
+                                <div key={stat.label} className="bg-white dark:bg-black px-5 py-5 flex flex-col gap-1">
                                     <stat.icon size={16} className="text-gray-600 mb-1" />
-                                    <span className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                                    <span className="text-2xl md:text-3xl font-extrabold text-black dark:text-white tracking-tight">
                                         {stat.value}
                                     </span>
                                     <p className="text-[10px] font-bold tracking-widest uppercase text-gray-500">
@@ -180,7 +180,7 @@ export default function TeamProfile() {
                                 {member.subjects.map((s) => (
                                     <span
                                         key={s}
-                                        className="px-3 py-1.5 text-xs font-semibold tracking-wide border border-white/10 bg-white/[0.03] text-white/70"
+                                        className="px-3 py-1.5 text-xs font-semibold tracking-wide border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] text-black/70 dark:text-white/70"
                                     >
                                         {s}
                                     </span>
@@ -203,7 +203,7 @@ export default function TeamProfile() {
                                 className="w-1 h-10 rounded-full"
                                 style={{ backgroundColor: member.accentColor }}
                             />
-                            <h2 className="text-base font-bold tracking-widest uppercase text-white">
+                            <h2 className="text-base font-bold tracking-widest uppercase text-black dark:text-white">
                                 About
                             </h2>
                         </div>
@@ -237,7 +237,7 @@ export default function TeamProfile() {
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
                             <div className="w-1 h-10 bg-white/20 rounded-full" />
-                            <h2 className="text-base font-bold tracking-widest uppercase text-white">
+                            <h2 className="text-base font-bold tracking-widest uppercase text-black dark:text-white">
                                 Specialisms
                             </h2>
                         </div>
@@ -249,9 +249,9 @@ export default function TeamProfile() {
                         {member.specialisms.map((spec, i) => (
                             <div
                                 key={i}
-                                className="bg-black px-6 py-5 flex items-center justify-between group hover:bg-white/[0.03] transition-colors duration-300"
+                                className="bg-white dark:bg-black px-6 py-5 flex items-center justify-between group hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors duration-300"
                             >
-                                <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                                <span className="text-sm font-medium text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">
                                     {spec}
                                 </span>
                                 <ArrowUpRight
@@ -275,7 +275,7 @@ export default function TeamProfile() {
                                 className="w-1 h-10 rounded-full"
                                 style={{ backgroundColor: member.accentColor }}
                             />
-                            <h2 className="text-base font-bold tracking-widest uppercase text-white">
+                            <h2 className="text-base font-bold tracking-widest uppercase text-black dark:text-white">
                                 Education
                             </h2>
                         </div>
@@ -297,7 +297,7 @@ export default function TeamProfile() {
                                     />
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-base font-bold text-white leading-tight">
+                                    <h3 className="text-base font-bold text-black dark:text-white leading-tight">
                                         {edu.degree}
                                     </h3>
                                     <p className="text-sm text-gray-400 mt-1">{edu.institution}</p>
@@ -319,7 +319,7 @@ export default function TeamProfile() {
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
                             <div className="w-1 h-10 bg-white/20 rounded-full" />
-                            <h2 className="text-base font-bold tracking-widest uppercase text-white">
+                            <h2 className="text-base font-bold tracking-widest uppercase text-black dark:text-white">
                                 Certifications
                             </h2>
                         </div>
@@ -335,7 +335,7 @@ export default function TeamProfile() {
                                     <BadgeCheck size={18} className="text-gray-400" />
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-base font-bold text-white leading-tight">
+                                    <h3 className="text-base font-bold text-black dark:text-white leading-tight">
                                         {cert.title}
                                     </h3>
                                     <p className="text-sm text-gray-400 mt-1">{cert.issuer}</p>
@@ -375,9 +375,9 @@ export default function TeamProfile() {
                         </p>
                         <Link
                             to="/booking"
-                            className="group inline-flex items-center justify-between gap-5 px-4 py-2.5 pl-6 rounded-full border border-gray-600 hover:border-white transition-all duration-300 bg-transparent"
+                            className="group inline-flex items-center justify-between gap-5 px-4 py-2.5 pl-6 rounded-full border border-gray-600 hover:border-black dark:hover:border-white transition-all duration-300 bg-transparent"
                         >
-                            <span className="text-[15px] md:text-[17px] font-medium text-white">
+                            <span className="text-[15px] md:text-[17px] font-medium text-black dark:text-white">
                                 Book a Session
                             </span>
                             <span className="bg-white rounded-full p-2.5 text-black group-hover:scale-105 transition-transform duration-300">
@@ -399,21 +399,21 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             <section className="border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
                 {/* Prev */}
-                <div className="bg-black">
+                <div className="bg-white dark:bg-black">
                     {prevMember ? (
                         <Link
                             to={`/team/${prevMember.id}`}
-                            className="group flex items-center gap-6 px-8 py-10 hover:bg-white/[0.03] transition-colors duration-300 h-full"
+                            className="group flex items-center gap-6 px-8 py-10 hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors duration-300 h-full"
                         >
                             <ChevronLeft
                                 size={20}
-                                className="text-gray-600 group-hover:text-white group-hover:-translate-x-1 transition-all shrink-0"
+                                className="text-gray-600 group-hover:text-black dark:group-hover:text-white group-hover:-translate-x-1 transition-all shrink-0"
                             />
                             <div>
                                 <p className="text-[10px] font-bold tracking-widest uppercase text-gray-600 mb-1">
                                     Previous
                                 </p>
-                                <p className="text-base font-bold text-white">{prevMember.name}</p>
+                                <p className="text-base font-bold text-black dark:text-white">{prevMember.name}</p>
                                 <p className={`text-xs mt-0.5 ${prevMember.roleColor}`}>
                                     {prevMember.role}
                                 </p>
@@ -422,57 +422,57 @@ export default function TeamProfile() {
                     ) : (
                         <Link
                             to="/teams"
-                            className="group flex items-center gap-6 px-8 py-10 hover:bg-white/[0.03] transition-colors duration-300 h-full"
+                            className="group flex items-center gap-6 px-8 py-10 hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors duration-300 h-full"
                         >
                             <ChevronLeft
                                 size={20}
-                                className="text-gray-600 group-hover:text-white group-hover:-translate-x-1 transition-all shrink-0"
+                                className="text-gray-600 group-hover:text-black dark:group-hover:text-white group-hover:-translate-x-1 transition-all shrink-0"
                             />
                             <div>
                                 <p className="text-[10px] font-bold tracking-widest uppercase text-gray-600 mb-1">
                                     Back to
                                 </p>
-                                <p className="text-base font-bold text-white">All Instructors</p>
+                                <p className="text-base font-bold text-black dark:text-white">All Instructors</p>
                             </div>
                         </Link>
                     )}
                 </div>
 
                 {/* Next */}
-                <div className="bg-black">
+                <div className="bg-white dark:bg-black">
                     {nextMember ? (
                         <Link
                             to={`/team/${nextMember.id}`}
-                            className="group flex items-center justify-end gap-6 px-8 py-10 hover:bg-white/[0.03] transition-colors duration-300 h-full text-right"
+                            className="group flex items-center justify-end gap-6 px-8 py-10 hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors duration-300 h-full text-right"
                         >
                             <div>
                                 <p className="text-[10px] font-bold tracking-widest uppercase text-gray-600 mb-1">
                                     Next
                                 </p>
-                                <p className="text-base font-bold text-white">{nextMember.name}</p>
+                                <p className="text-base font-bold text-black dark:text-white">{nextMember.name}</p>
                                 <p className={`text-xs mt-0.5 ${nextMember.roleColor}`}>
                                     {nextMember.role}
                                 </p>
                             </div>
                             <ArrowUpRight
                                 size={20}
-                                className="text-gray-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0"
+                                className="text-gray-600 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0"
                             />
                         </Link>
                     ) : (
                         <Link
                             to="/teams"
-                            className="group flex items-center justify-end gap-6 px-8 py-10 hover:bg-white/[0.03] transition-colors duration-300 h-full text-right"
+                            className="group flex items-center justify-end gap-6 px-8 py-10 hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors duration-300 h-full text-right"
                         >
                             <div>
                                 <p className="text-[10px] font-bold tracking-widest uppercase text-gray-600 mb-1">
                                     View all
                                 </p>
-                                <p className="text-base font-bold text-white">All Instructors</p>
+                                <p className="text-base font-bold text-black dark:text-white">All Instructors</p>
                             </div>
                             <ArrowUpRight
                                 size={20}
-                                className="text-gray-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0"
+                                className="text-gray-600 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0"
                             />
                         </Link>
                     )}

@@ -7,7 +7,7 @@ const AboutSection = memo(() => {
     const navigate = useNavigate();
     return (
         <section className="py-24">
-            <h2 className="text-[28px] md:text-5xl font-bold text-white mb-6 md:mb-12 tracking-tight">
+            <h2 className="text-[28px] md:text-5xl font-bold text-black dark:text-white mb-6 md:mb-12 tracking-tight">
                 About Us
             </h2>
             {/* Main Content Grid */}
@@ -31,7 +31,7 @@ const AboutSection = memo(() => {
                         {/* <h2 className="text-5xl font-bolder text-white tracking-tight mb-10">
                             Who We Are
                         </h2> */}
-                        <h2 className="text-[18px] md:text-2xl lg:text-3xl text-white tracking-tight leading-[1.05]">
+                        <h2 className="text-[18px] md:text-2xl lg:text-3xl text-black dark:text-white tracking-tight leading-[1.05]">
                             Building Futures Through Education
                         </h2>
                     </div>
@@ -65,7 +65,7 @@ const AboutSection = memo(() => {
                     {/* CTA Button */}
                     <div className="mt-10">
                         <button onClick={() => navigate("/about")} className="group flex items-center justify-between gap-4 px-4 py-3 pl-6 rounded-full border border-gray-600 hover:border-white transition-colors bg-transparent min-w-[240px]">
-                            <span className="text-[14px] md:text-[17px] font-medium text-white">
+                            <span className="text-[14px] md:text-[17px] font-medium text-black dark:text-white">
                                 Learn More About Us
                             </span>
                             <span className="bg-white rounded-full p-3 text-black">

@@ -13,6 +13,8 @@ const testimonials = [
         id: 1,
         name: "Mrs. Adebayo",
         role: "PARENT",
+        course: "MATH",
+        rating: 5,
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
         quote: "My son's confidence in Math has skyrocketed. The tutors patiently explained concepts he struggled with in class. Highly recommended!",
         footerText: "IGCSE Success",
@@ -22,6 +24,8 @@ const testimonials = [
         id: 2,
         name: "Chinedu Okeke",
         role: "STUDENT",
+        course: "SAT PREP",
+        rating: 5,
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
         quote: "The SAT prep classes were a game changer. I improved my score by 200 points and got into my dream university in the US.",
         footerText: "Admitted to College",
@@ -31,6 +35,8 @@ const testimonials = [
         id: 3,
         name: "Priya Patel",
         role: "STUDENT",
+        course: "BRITISH CURRICULUM",
+        rating: 4,
         image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
         quote: "Switching to the British Curriculum was tough, but Fastlane made it seamless. The tutors really understand the syllabus inside out.",
         footerText: "Top of Class",
@@ -40,6 +46,8 @@ const testimonials = [
         id: 4,
         name: "Mr. Johnson",
         role: "PARENT",
+        course: "MATH & SCIENCE",
+        rating: 5,
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
         quote: "We've seen remarkable improvement in just two terms. The personalized attention is exactly what was missing at school.",
         footerText: "Grade Improvement",
@@ -49,7 +57,7 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <section id="testimonial" className="py-20 text-white">
+        <section id="testimonial" className="py-20 text-black dark:text-white">
             {/* <div className=""> */}
             <Carousel
                 opts={{
@@ -89,13 +97,18 @@ export default function Testimonials() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-lg leading-tight">{testimonial.name}</h3>
-                                        <p className="text-xs text-zinc-500 font-semibold tracking-wider">{testimonial.role}</p>
+                                        <p className="text-[10px] text-zinc-500 font-semibold tracking-wider uppercase">
+                                            {testimonial.role} <span className="text-[#194970]">•</span> {testimonial.course}
+                                        </p>
                                     </div>
                                 </div>
 
                                 <div className="flex gap-1 mb-6">
                                     {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                                        <Star 
+                                            key={i} 
+                                            className={`w-4 h-4 ${i < testimonial.rating ? 'text-yellow-500 fill-yellow-500' : 'text-zinc-600'}`} 
+                                        />
                                     ))}
                                 </div>
 

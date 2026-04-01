@@ -145,7 +145,7 @@ export default function Booking() {
                     }
                 });
             }
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             console.error('Booking Fetch Error:', err);
             Swal.fire({
@@ -165,7 +165,7 @@ export default function Booking() {
     };
 
     return (
-        <div className="bg-black text-white content-max-width">
+        <div className="bg-[#f5f5f5] dark:bg-black text-black dark:text-white content-max-width">
             {/* Hero Section */}
             <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
                 {/* <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
@@ -377,7 +377,7 @@ export default function Booking() {
                                     disabled={loading}
                                     className={`group w-fit flex items-center justify-between gap-4 px-2 py-1.5 pl-6 rounded-full border transition-all duration-300 ${loading ? 'border-gray-700 opacity-50 cursor-not-allowed' : 'border-gray-500 hover:border-white cursor-pointer'} bg-transparent`}
                                 >
-                                    <span className="text-[17px] font-medium text-white">
+                                    <span className="text-[17px] font-medium text-black dark:text-white">
                                         {loading ? 'Processing...' : 'Book a Session'}
                                     </span>
                                     <span className="bg-white rounded-full p-2.5 text-black">
@@ -401,7 +401,7 @@ export default function Booking() {
                                         </div>
                                         <div>
                                             <p className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-1">{item.label}</p>
-                                            <p className="text-sm text-white">{item.value}</p>
+                                            <p className="text-sm text-black dark:text-white">{item.value}</p>
                                         </div>
                                     </div>
                                 ))}
