@@ -70,7 +70,7 @@ export default function About() {
             <div className="px-6 md:px-16 lg:px-24 content-max-width">
 
                 {/* ── Page Header (Hero) ── */}
-                <section className="pt-32 pb-16">
+                <section className="pt-32 pb-16 content-max-width">
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                         {/* Left Content */}
                         <div className="w-full lg:w-[55%] space-y-6 md:space-y-8">
@@ -137,7 +137,7 @@ export default function About() {
                 </section>
 
                 {/* ── Mission & Vision ── */}
-                <section className="py-16 md:py-24 border-t border-white/10">
+                <section className="py-16 md:py-24 border-t border-white/10 content-max-width">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
                         {/* Mission Column */}
@@ -194,7 +194,7 @@ export default function About() {
                 </section>
 
                 {/* ── Stats Section ── */}
-                <section className="py-10 md:py-24 border-t border-white/10">
+                <section className="py-10 md:py-24 border-t border-white/10 content-max-width">
                     <div className="mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact</h2>
                         <p className="text-gray-400 max-w-2xl">
@@ -219,7 +219,7 @@ export default function About() {
                 </section>
 
                 {/* ── Team Preview Section ── */}
-                <section className="py-16 md:py-24 border-t border-white/10">
+                <section className="py-16 md:py-24 border-t border-white/10 content-max-width">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
                         <div>
                             <div className="flex items-center gap-4 mb-4">

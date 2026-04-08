@@ -6,7 +6,7 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "./ui/carousel";
 
 const testimonials = [
     {
@@ -57,7 +57,7 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <section id="testimonial" className="py-20 text-black dark:text-white">
+        <section id="testimonial" className="py-20 text-black dark:text-white content-max-width">
             {/* <div className=""> */}
             <Carousel
                 opts={{

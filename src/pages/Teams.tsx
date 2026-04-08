@@ -37,7 +37,7 @@ export default function Teams() {
         <div className="bg-[#f5f5f5] dark:bg-black min-h-screen text-black dark:text-white overflow-hidden">
             <div className="px-6 md:px-16 lg:px-24 content-max-width">
                 {/* ── Hero Header ── */}
-                <section className="pt-36 pb-16">
+                <section className="pt-36 pb-16 content-max-width">
                     <div>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] uppercase mb-6">
                             MEET THE{' '}
@@ -59,7 +59,7 @@ export default function Teams() {
                 </section>
 
                 {/* ── Team Grid ── */}
-                <section className="pb-24">
+                <section className="pb-24 content-max-width">
                     <div
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10"
                     >
@@ -107,7 +107,7 @@ export default function Teams() {
                 </section>
 
                 {/* ── Bottom CTA Cards ── */}
-                <section className="pb-14">
+                <section className="pb-14 content-max-width">
                     <div
                         className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-0"
                     >

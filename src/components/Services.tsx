@@ -4,7 +4,7 @@ import {
     CarouselContent,
     CarouselItem,
     type CarouselApi
-} from '@/components/ui/carousel'
+} from './ui/carousel'
 import { useCallback, useEffect, useState } from 'react'
 
 const servicesData = [
@@ -61,7 +61,7 @@ const Services = () => {
     }, [api])
 
     return (
-        <section className="">
+        <section className="content-max-width">
             <div className="flex items-center justify-between mb-8 md:mb-16">
                 <div className="">
                     {/* <h3 className="text-wte font-bold uppercase tracking-widest text-sm">

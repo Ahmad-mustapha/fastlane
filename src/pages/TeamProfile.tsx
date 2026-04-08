@@ -68,7 +68,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  HERO BLOCK                                      */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 pt-10 pb-0">
+            <section className="px-6 md:px-16 lg:px-24 pt-10 pb-0 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
 
                     {/* ── Photo ── */}
@@ -194,7 +194,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  ABOUT / BIO                                     */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 mt-16">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 mt-16 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     {/* Label */}
                     <div className="lg:w-1/4">
@@ -232,7 +232,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  SPECIALISMS                                     */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
@@ -267,7 +267,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  EDUCATION                                       */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
@@ -314,7 +314,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  CERTIFICATIONS                                  */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
@@ -352,7 +352,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  BOOK CTA                                        */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 pb-20">
+            <section className="px-6 md:px-16 lg:px-24 pb-20 content-max-width">
                 <div
                     className="w-full p-10 md:p-14 relative overflow-hidden border border-white/10"
                     style={{
@@ -397,7 +397,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  PREV / NEXT NAV                                 */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
+            <section className="border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 content-max-width">
                 {/* Prev */}
                 <div className="bg-white dark:bg-black">
                     {prevMember ? (

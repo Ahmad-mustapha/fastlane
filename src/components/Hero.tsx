@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
     const navigate = useNavigate();
     return (
-        <section className="relative pt-32 md:pt-24 pb-4 mx-auto flex flex-col lg:flex-row justify-between items-stretch gap-12 lg:gap-0 w-full">
+        <section className="relative pt-32 md:pt-24 pb-4 mx-auto flex flex-col lg:flex-row justify-between items-stretch gap-12 lg:gap-0 w-full content-max-width">
             <div
                 className="space-y-6 w-full lg:w-1/2 flex flex-col justify-center"
             >

@@ -167,7 +167,7 @@ export default function Booking() {
     return (
         <div className="bg-[#f5f5f5] dark:bg-black text-black dark:text-white content-max-width">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+            <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden content-max-width">
                 {/* <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" /> */}
 
@@ -191,7 +191,7 @@ export default function Booking() {
             </section>
 
             {/* Main Content */}
-            <section className="px-6 md:px-16 lg:px-24 pb-24">
+            <section className="px-6 md:px-16 lg:px-24 pb-24 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     {/* Booking Form */}
                     <div className="lg:w-3/5">

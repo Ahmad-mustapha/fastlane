@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const AboutSection = memo(() => {
     const navigate = useNavigate();
     return (
-        <section className="py-24">
+        <section className="py-24 content-max-width">
             <h2 className="text-[28px] md:text-5xl font-bold text-black dark:text-white mb-6 md:mb-12 tracking-tight">
                 About Us
             </h2>
