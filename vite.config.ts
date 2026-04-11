@@ -134,7 +134,7 @@ export default defineConfig(({ mode }) => {
 
                   res.setHeader('Content-Type', 'application/json');
                   res.end(JSON.stringify({ message: 'Success' }));
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 } catch (e: any) {
                   res.statusCode = 500;
                   console.error('Local API Error processing booking:', e);
