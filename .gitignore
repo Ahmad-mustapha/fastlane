@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+.vercel/*
+
+# Temporary / Scratch files
+lint_*.txt
+lintout*.txt
+temp_*.txt
+test-*.js
