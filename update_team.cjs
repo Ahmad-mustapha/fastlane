@@ -1,46 +1,17 @@
+const fs = require('fs');
+const fileContent = fs.readFileSync('src/data/teamData.ts', 'utf8');
 
-
-
-export interface Education {
-    degree: string;
-    institution: string;
-    year: string;
+// Find the start of the array
+const arrayStart = fileContent.indexOf('export const teamMembers: TeamMember[] = [');
+if (arrayStart === -1) {
+    console.error('Array start not found');
+    process.exit(1);
 }
 
-export interface Certification {
-    title: string;
-    issuer: string;
-    year: string;
-}
+const bracketIndex = fileContent.indexOf('[', arrayStart);
+const beforeArray = fileContent.substring(0, bracketIndex + 1);
 
-export interface Social {
-    platform: 'linkedin' | 'twitter' | 'instagram' | 'email';
-    handle: string;
-    url: string;
-}
-
-export interface TeamMember {
-    id: string;
-    name: string;
-    role: string;
-    roleColor: string;
-    accentColor: string;
-    bio: string;
-    fullBio: string;
-    image: string;
-    tag: string;
-    yearsExperience: number;
-    studentsHelped: number;
-    passRate: string;
-    specialisms: string[];
-    education: Education[];
-    certifications: Certification[];
-    socials: Social[];
-    subjects: string[];
-    quote: string;
-}
-
-export const teamMembers: TeamMember[] = [
+const newTeamMembers = `
     {
         id: 'halim-giwa',
         name: 'Halim Giwa',
@@ -48,8 +19,8 @@ export const teamMembers: TeamMember[] = [
         roleColor: 'text-blue-400',
         accentColor: '#3b82f6',
         bio: 'For over a decade, I have prepared students for WAEC, JAMB, IGCSE, Checkpoint, and SAT exams using interactive tools like Khan Academy and custom worksheets. My focus is making Mathematics fun, practical, and exam‑oriented through real‑life problem‑solving.',
-        fullBio: `Experienced exam coach making Mathematics fun, practical, and success‑driven for WAEC, JAMB, IGCSE, Checkpoint, and SAT learners\n\nI have over a decade of experience preparing students for WAEC, JAMB, IGCSE, Checkpoint, and SAT examinations. My teaching blends subject mastery with modern tools like Khan Academy and tailored worksheets that align with curriculum standards, ensuring students gain both understanding and confidence.\n\nMany of my learners have achieved outstanding results through this approach. My style is interactive, practical, and problem solving based, making Mathematics engaging and relevant to everyday life. By combining exam oriented strategies with curiosity driven learning, I help students transform anxiety into enjoyment, building independent thinkers ready for academic success and real world problem solving.`,
-        image: '/Halim.jpeg',
+        fullBio: \`Experienced exam coach making Mathematics fun, practical, and success‑driven for WAEC, JAMB, IGCSE, Checkpoint, and SAT learners\\n\\nI have over a decade of experience preparing students for WAEC, JAMB, IGCSE, Checkpoint, and SAT examinations. My teaching blends subject mastery with modern tools like Khan Academy and tailored worksheets that align with curriculum standards, ensuring students gain both understanding and confidence.\\n\\nMany of my learners have achieved outstanding results through this approach. My style is interactive, practical, and problem solving based, making Mathematics engaging and relevant to everyday life. By combining exam oriented strategies with curiosity driven learning, I help students transform anxiety into enjoyment, building independent thinkers ready for academic success and real world problem solving.\`,
+        image: AboutImg,
         tag: 'Nigerian & British Curriculum',
         yearsExperience: 10,
         studentsHelped: 50,
@@ -104,8 +75,8 @@ export const teamMembers: TeamMember[] = [
         roleColor: 'text-orange-400',
         accentColor: '#fb923c',
         bio: 'Experienced Physics educator with a strong record of preparing students for WAEC, IGCSE, and A Level Physics through structured virtual coaching.',
-        fullBio: `I am an experienced Physics educator with a strong record of preparing students for high-stakes examinations through structured virtual coaching and targeted exam preparation strategies. Over the years, I have successfully supported learners preparing for West African Senior School Certificate Examination (WAEC), International General Certificate of Secondary Education (IGCSE), and A Level Physics, helping them master complex concepts, strengthen problem-solving skills, and achieve strong results in both national and international assessment pathways.\n\nMy teaching approach focuses on conceptual clarity, exam-focused practice, and simplified explanations of core Physics principles. Through virtual instruction, I guide students step-by-step in breaking down difficult topics, interpreting exam questions effectively, and applying scientific reasoning confidently during examinations. This approach has enabled many learners to build competence and succeed in rigorous Physics assessments across different curricula.`,
-        image: '/Hamid.png',
+        fullBio: \`I am an experienced Physics educator with a strong record of preparing students for high-stakes examinations through structured virtual coaching and targeted exam preparation strategies. Over the years, I have successfully supported learners preparing for West African Senior School Certificate Examination (WAEC), International General Certificate of Secondary Education (IGCSE), and A Level Physics, helping them master complex concepts, strengthen problem-solving skills, and achieve strong results in both national and international assessment pathways.\\n\\nMy teaching approach focuses on conceptual clarity, exam-focused practice, and simplified explanations of core Physics principles. Through virtual instruction, I guide students step-by-step in breaking down difficult topics, interpreting exam questions effectively, and applying scientific reasoning confidently during examinations. This approach has enabled many learners to build competence and succeed in rigorous Physics assessments across different curricula.\`,
+        image: HeroImg,
         tag: 'Physics & General Science',
         yearsExperience: 9,
         studentsHelped: 16,
@@ -150,8 +121,8 @@ export const teamMembers: TeamMember[] = [
         roleColor: 'text-purple-400',
         accentColor: '#a855f7',
         bio: 'I specialize in teaching English and helping students build strong reading and writing skills. My focus is on clear understanding, critical thinking, and exam success.',
-        fullBio: `I am an experienced English teacher with a strong background in teaching both primary and secondary school students. I have worked with learners from different academic systems, helping them build strong foundations in reading, writing, comprehension, and critical thinking. I support students preparing for school and external examinations through structured lessons, diagnostic assessments, and targeted practice that builds both confidence and competence.\n\nMy teaching style is clear, supportive, and engaging, focusing on helping students truly understand concepts rather than simply memorize them. I use guided instruction, discussion, and practical exercises to strengthen language skills and encourage independent thinking. I also work effectively with international students, helping them adapt to different curricula and develop the language skills needed to succeed academically and communicate confidently.`,
-        image: '/Rayhanah.png',
+        fullBio: \`I am an experienced English teacher with a strong background in teaching both primary and secondary school students. I have worked with learners from different academic systems, helping them build strong foundations in reading, writing, comprehension, and critical thinking. I support students preparing for school and external examinations through structured lessons, diagnostic assessments, and targeted practice that builds both confidence and competence.\\n\\nMy teaching style is clear, supportive, and engaging, focusing on helping students truly understand concepts rather than simply memorize them. I use guided instruction, discussion, and practical exercises to strengthen language skills and encourage independent thinking. I also work effectively with international students, helping them adapt to different curricula and develop the language skills needed to succeed academically and communicate confidently.\`,
+        image: AboutImg,
         tag: 'English & Literature',
         yearsExperience: 22,
         studentsHelped: 100,
@@ -196,8 +167,8 @@ export const teamMembers: TeamMember[] = [
         roleColor: 'text-cyan-400',
         accentColor: '#22d3ee',
         bio: 'Experienced ICT and Computer Science tutor with a passion for coding and digital literacy.',
-        fullBio: `I am an ICT and Computer Science tutor with over a decade of experience teaching coding, digital literacy, and computational thinking. At Crescent Pearls Leadership Academy, I design and deliver engaging lessons that foster creativity, problem-solving, and hands-on learning. My teaching approach emphasizes project-based learning, ensuring students apply knowledge through coding challenges and real-world projects. Previously, at Noble Guide Academy, I integrated technology into the curriculum and supported students in mastering ICT fundamentals. I am committed to helping learners build confidence in technology and achieve academic success.`,
-        image: '/Wasiu.jpg',
+        fullBio: \`I am an ICT and Computer Science tutor with over a decade of experience teaching coding, digital literacy, and computational thinking. At Crescent Pearls Leadership Academy, I design and deliver engaging lessons that foster creativity, problem-solving, and hands-on learning. My teaching approach emphasizes project-based learning, ensuring students apply knowledge through coding challenges and real-world projects. Previously, at Noble Guide Academy, I integrated technology into the curriculum and supported students in mastering ICT fundamentals. I am committed to helping learners build confidence in technology and achieve academic success.\`,
+        image: HeroImg,
         tag: 'ICT & Computer Science',
         yearsExperience: 12,
         studentsHelped: 500,
@@ -266,3 +237,7 @@ export const teamMembers: TeamMember[] = [
         ],
     }
 ];
+`;
+
+fs.writeFileSync('src/data/teamData.ts', beforeArray + newTeamMembers);
+console.log('Successfully updated teamData.ts');

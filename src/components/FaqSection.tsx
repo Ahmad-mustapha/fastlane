@@ -29,7 +29,7 @@ const faqs = [
 const FaqItem = ({ item, index, isOpen, onClick }: { item: typeof faqs[0], index: number, isOpen: boolean, onClick: () => void }) => {
     return (
         <div
-            className={`border-b border-white/10 transition-colors duration-300 ${isOpen ? 'bg-white/5' : 'hover:bg-white/5'}`}
+            className={`border-b border-black/10 dark:border-white/10 transition-colors duration-300 ${isOpen ? 'bg-black/5 dark:bg-white/5' : 'hover:bg-black/5 dark:hover:bg-white/5'}`}
         >
             {/* Question row — button only contains the trigger */}
             <button
@@ -48,7 +48,7 @@ const FaqItem = ({ item, index, isOpen, onClick }: { item: typeof faqs[0], index
 
                 <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-sm transition-all duration-300 ${isOpen
                     ? 'bg-[#194970] shadow-lg'
-                    : 'bg-[#1A1A1A] text-white hover:bg-[#252525]'
+                    : 'bg-black/10 dark:bg-[#1A1A1A] text-black dark:text-white hover:bg-black/20 dark:hover:bg-[#252525]'
                     }`}>
                     {isOpen ? <Minus size={16} className="text-white" /> : <Plus size={16} />}
                 </div>
@@ -65,7 +65,7 @@ const FaqItem = ({ item, index, isOpen, onClick }: { item: typeof faqs[0], index
                         className="overflow-hidden"
                     >
                         {/* Indent to align with question text: pl-4 (button padding) + ~24px (number span) + gap-6 */}
-                        <p className="text-gray-400 leading-relaxed font-light text-[14px] md:text-base pb-8 pl-4 pr-4 md:px-8 md:pl-[calc(2rem+2ch+3rem)]">
+                        <p className="text-gray-700 dark:text-gray-400 leading-relaxed font-normal text-[14px] md:text-base pb-8 pl-4 pr-4 md:px-8 md:pl-[calc(2rem+2ch+3rem)]">
                             {item.answer}
                         </p>
                     </motion.div>
@@ -92,7 +92,7 @@ const FaqSection = () => {
                         Frequently Asked <br /> Questions
                     </h2>
 
-                    <div className="border-t border-white/10">
+                    <div className="border-t border-black/10 dark:border-white/10">
                         {faqs.map((faq, index) => (
                             <FaqItem
                                 key={index}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa6';
 import AboutImg from '../assets/aboutus.jpg';
 import HeroImg from '../assets/heroimg2.jpg';
+import { teamMembers } from '../data/teamData';
 
 const stats = [
     { value: "500+", label: "Students Taught" },
@@ -11,32 +12,6 @@ const stats = [
     { value: "3", label: "Curriculums" },
 ];
 
-const previewTeam = [
-    {
-        id: 'amara-okafor',
-        name: 'Amara Okafor',
-        role: 'Head of Mathematics',
-        roleColor: 'text-blue-400',
-        bio: 'Former lecturer at University of Lagos with 12 years of experience turning complex maths into clear, digestible lessons.',
-        image: AboutImg,
-    },
-    {
-        id: 'james-whitfield',
-        name: 'James Whitfield',
-        role: 'Senior English Tutor',
-        roleColor: 'text-purple-400',
-        bio: 'Oxford-trained educator who has helped over 300 students achieve top marks across IGCSE, A-Level, and SAT.',
-        image: HeroImg,
-    },
-    {
-        id: 'fatima-al-hassan',
-        name: 'Fatima Al-Hassan',
-        role: 'Science Lead',
-        roleColor: 'text-emerald-400',
-        bio: 'PhD in Biochemistry, bringing world-class academic rigour to every session. Rated #1 by our alumni community.',
-        image: AboutImg,
-    },
-];
 
 const missionPoints = [
     {
@@ -68,7 +43,6 @@ export default function About() {
     return (
         <div className="bg-[#f5f5f5] dark:bg-black min-h-screen text-black dark:text-white overflow-hidden">
             <div className="px-6 md:px-16 lg:px-24 content-max-width">
-
                 {/* ── Page Header (Hero) ── */}
                 <section className="pt-32 pb-16 content-max-width">
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -171,15 +145,15 @@ export default function About() {
                             <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white tracking-tight mb-6">
                                 Where we're headed
                             </h2>
-                            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-10">
+                            <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed mb-10">
                                 To become <span className="text-black dark:text-white font-medium">West Africa's most trusted academic tutoring platform</span>,
                                 where every student, regardless of curriculum or location, can access the expert
                                 guidance they need to achieve top results and unlock their future.
                             </p>
 
-                            <div className="border-t border-white/10">
+                            <div className="border-t border-black/10 dark:border-white/10">
                                 {visionPoints.map((point) => (
-                                    <div key={point.number} className="flex gap-5 md:gap-8 py-6 border-b border-white/10">
+                                    <div key={point.number} className="flex gap-5 md:gap-8 py-6 border-b border-black/10 dark:border-white/10">
                                         <span className="text-sm font-mono text-gray-600 pt-0.5 shrink-0">{point.number}</span>
                                         <div>
                                             <h3 className="text-base font-semibold text-black dark:text-white mb-1.5">{point.title}</h3>
@@ -194,10 +168,10 @@ export default function About() {
                 </section>
 
                 {/* ── Stats Section ── */}
-                <section className="py-10 md:py-24 border-t border-white/10 content-max-width">
+                <section className="py-10 md:py-24 border-t border-black/10 dark:border-white/10 content-max-width">
                     <div className="mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact</h2>
-                        <p className="text-gray-400 max-w-2xl">
+                        <p className="text-gray-600 dark:text-gray-400 max-w-2xl">
                             We take pride in the numbers that define our success and the success of our students.
                         </p>
                     </div>
@@ -219,28 +193,28 @@ export default function About() {
                 </section>
 
                 {/* ── Team Preview Section ── */}
-                <section className="py-16 md:py-24 border-t border-white/10 content-max-width">
+                <section className="py-16 md:py-24 border-t border-black/10 dark:border-white/10 content-max-width">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
                         <div>
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-1 h-10 bg-[#194970] rounded-full"></div>
-                                <span className="text-sm font-bold tracking-widest uppercase text-gray-400">
+                                <span className="text-sm font-bold tracking-widest uppercase text-gray-600 dark:text-gray-400">
                                     Our Team
                                 </span>
                             </div>
                             <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight uppercase">
-                                MEET THE <span className="text-transparent" style={{ WebkitTextStroke: '1.5px rgba(255,255,255,0.25)' }}>INSTRUCTORS</span>
+                                MEET THE <span className="text-black/25 dark:text-white/25" style={{ WebkitTextFillColor: 'transparent', WebkitTextStroke: '1.5px currentColor' }}>INSTRUCTORS</span>
                             </h2>
-                            <p className="text-gray-400 mt-4 max-w-md leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-md leading-relaxed">
                                 Learn from industry experts with decades of combined experience across top academic institutions worldwide.
                             </p>
                         </div>
                     </div>
 
                     <div
-                        className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-px bg-transparent md:bg-white/10"
+                        className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-px bg-transparent md:bg-black/10 dark:md:bg-white/10"
                     >
-                        {previewTeam.map((member, i) => (
+                        {teamMembers.slice(0, 3).map((member, i) => (
                             <Link
                                 key={i}
                                 to={`/team/${member.id}`}
@@ -261,7 +235,7 @@ export default function About() {
                                     </div>
                                     <ArrowUpRight size={18} className="text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors mt-1 shrink-0" />
                                 </div>
-                                <p className="text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+                                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
                             </Link>
                         ))}
                     </div>

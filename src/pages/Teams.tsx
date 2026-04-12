@@ -41,8 +41,8 @@ export default function Teams() {
                     <div>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] uppercase mb-6">
                             MEET THE{' '}
-                            <span className="block text-transparent"
-                                style={{ WebkitTextStroke: '1.5px rgba(255,255,255,0.25)' }}>
+                            <span className="block text-black/25 dark:text-white/25"
+                                style={{ WebkitTextFillColor: 'transparent', WebkitTextStroke: '1.5px currentColor' }}>
                                 INSTRUCTORS
                             </span>
                         </h1>
@@ -50,7 +50,7 @@ export default function Teams() {
 
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mt-8">
                         <p
-                            className="text-gray-400 text-base md:text-lg max-w-md leading-relaxed"
+                            className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-md leading-relaxed"
                         >
                             Learn from industry experts who have shaped academic outcomes across the globe.
                             Our team brings decades of combined experience from top institutions to your screen.
@@ -61,7 +61,7 @@ export default function Teams() {
                 {/* ── Team Grid ── */}
                 <section className="pb-24 content-max-width">
                     <div
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
                     >
                         {teamMembers.map((member, i) => (
                             <div
@@ -95,7 +95,7 @@ export default function Teams() {
                                         />
                                     </div>
 
-                                    <p className="text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+                                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
 
                                     <span className="mt-auto inline-block px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black/50 dark:text-white/50 rounded-full w-fit">
                                         {member.tag}

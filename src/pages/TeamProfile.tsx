@@ -133,8 +133,8 @@ export default function TeamProfile() {
                         >
                             {member.name.split(' ')[0]}{' '}
                             <span
-                                className="block text-transparent"
-                                style={{ WebkitTextStroke: '1.5px rgba(255,255,255,0.22)' }}
+                                className="block text-black/25 dark:text-white/25"
+                                style={{ WebkitTextFillColor: 'transparent', WebkitTextStroke: '1.5px currentColor' }}
                             >
                                 {member.name.split(' ').slice(1).join(' ')}
                             </span>
@@ -145,14 +145,14 @@ export default function TeamProfile() {
                             className="border-l-2 pl-5 mb-8"
                             style={{ borderColor: member.accentColor }}
                         >
-                            <p className="text-gray-300 text-base md:text-lg leading-relaxed italic font-light">
+                            <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed italic font-light">
                                 "{member.quote}"
                             </p>
                         </blockquote>
 
                         {/* Stats Row */}
                         <div
-                            className="grid grid-cols-3 gap-px bg-white/10 mb-10"
+                            className="grid grid-cols-3 gap-px bg-black/10 dark:bg-white/10 mb-10"
                         >
                             {[
                                 { icon: Briefcase, value: `${member.yearsExperience}+`, label: 'Yrs Experience' },
@@ -194,7 +194,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  ABOUT / BIO                                     */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 mt-16 content-max-width">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-black/10 dark:border-white/10 mt-16 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     {/* Label */}
                     <div className="lg:w-1/4">
@@ -218,8 +218,8 @@ export default function TeamProfile() {
                                 key={i}
                                 className={
                                     i === 0
-                                        ? 'text-xl md:text-2xl leading-relaxed font-light text-gray-300'
-                                        : 'text-base leading-relaxed text-gray-400'
+                                        ? 'text-xl md:text-2xl leading-relaxed font-light text-gray-700 dark:text-gray-300'
+                                        : 'text-base leading-relaxed text-gray-600 dark:text-gray-400'
                                 }
                             >
                                 {para.trim()}
@@ -232,7 +232,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  SPECIALISMS                                     */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 content-max-width">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-black/10 dark:border-white/10 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
@@ -244,14 +244,14 @@ export default function TeamProfile() {
                     </div>
 
                     <div
-                        className="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10"
+                        className="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-px bg-black/10 dark:bg-white/10"
                     >
                         {member.specialisms.map((spec, i) => (
                             <div
                                 key={i}
                                 className="bg-white dark:bg-black px-6 py-5 flex items-center justify-between group hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors duration-300"
                             >
-                                <span className="text-sm font-medium text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">
+                                <span className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">
                                     {spec}
                                 </span>
                                 <ArrowUpRight
@@ -267,7 +267,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  EDUCATION                                       */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 content-max-width">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-black/10 dark:border-white/10 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
@@ -281,7 +281,7 @@ export default function TeamProfile() {
                         </div>
                     </div>
 
-                    <div className="lg:w-3/4 space-y-0 divide-y divide-white/10">
+                    <div className="lg:w-3/4 space-y-0 divide-y divide-black/10 dark:divide-white/10">
                         {member.education.map((edu, i) => (
                             <div
                                 key={i}
@@ -300,7 +300,7 @@ export default function TeamProfile() {
                                     <h3 className="text-base font-bold text-black dark:text-white leading-tight">
                                         {edu.degree}
                                     </h3>
-                                    <p className="text-sm text-gray-400 mt-1">{edu.institution}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{edu.institution}</p>
                                 </div>
                                 <span className="text-xs text-gray-600 font-bold tracking-wider shrink-0 pt-1">
                                     {edu.year}
@@ -314,7 +314,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  CERTIFICATIONS                                  */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-white/10 content-max-width">
+            <section className="px-6 md:px-16 lg:px-24 py-20 border-t border-black/10 dark:border-white/10 content-max-width">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                     <div className="lg:w-1/4">
                         <div className="flex items-center gap-4 sticky top-24">
@@ -325,20 +325,20 @@ export default function TeamProfile() {
                         </div>
                     </div>
 
-                    <div className="lg:w-3/4 space-y-0 divide-y divide-white/10">
+                    <div className="lg:w-3/4 space-y-0 divide-y divide-black/10 dark:divide-white/10">
                         {member.certifications.map((cert, i) => (
                             <div
                                 key={i}
                                 className="flex items-start gap-5 py-7"
                             >
-                                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 mt-0.5">
+                                <div className="w-10 h-10 rounded-xl bg-black/5 dark:bg-white/5 flex items-center justify-center shrink-0 mt-0.5">
                                     <BadgeCheck size={18} className="text-gray-400" />
                                 </div>
                                 <div className="flex-1">
                                     <h3 className="text-base font-bold text-black dark:text-white leading-tight">
                                         {cert.title}
                                     </h3>
-                                    <p className="text-sm text-gray-400 mt-1">{cert.issuer}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{cert.issuer}</p>
                                 </div>
                                 <span className="text-xs text-gray-600 font-bold tracking-wider shrink-0 pt-1">
                                     {cert.year}
@@ -354,14 +354,14 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             <section className="px-6 md:px-16 lg:px-24 pb-20 content-max-width">
                 <div
-                    className="w-full p-10 md:p-14 relative overflow-hidden border border-white/10"
+                    className="w-full p-10 md:p-14 relative overflow-hidden border border-black/10 dark:border-white/10"
                     style={{
                         background: `linear-gradient(135deg, ${member.accentColor}14 0%, transparent 60%)`,
                     }}
                 >
                     <div className="max-w-2xl relative z-10">
                         <span
-                            className="inline-block px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full mb-5 bg-white/5 border border-white/10"
+                            className="inline-block px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full mb-5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10"
                             style={{ color: member.accentColor }}
                         >
                             Book a Session
@@ -369,7 +369,7 @@ export default function TeamProfile() {
                         <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase mb-4">
                             LEARN WITH {member.name.split(' ')[0].toUpperCase()}
                         </h2>
-                        <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-8 max-w-lg">
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base mb-8 max-w-lg">
                             Ready to accelerate your academic journey? Book a one-on-one session
                             or free consultation with {member.name} today.
                         </p>
@@ -397,7 +397,7 @@ export default function TeamProfile() {
             {/* ════════════════════════════════════════════════ */}
             {/*  PREV / NEXT NAV                                 */}
             {/* ════════════════════════════════════════════════ */}
-            <section className="border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 content-max-width">
+            <section className="border-t border-black/10 dark:border-white/10 grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 dark:bg-white/10 content-max-width">
                 {/* Prev */}
                 <div className="bg-white dark:bg-black">
                     {prevMember ? (

@@ -173,7 +173,7 @@ export default function Booking() {
 
                 <div className="relative z-10 px-6 md:px-16 lg:px-24 text-center">
                     <div
-                        className="inline-block px-4 py-1.5 rounded-full border-y border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase text-blue-400 mb-4"
+                        className="inline-block px-4 py-1.5 rounded-full border-y border-black/10 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[10px] font-bold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-4"
                     >
                         Book a Session
                     </div>
@@ -184,7 +184,7 @@ export default function Booking() {
                         <span className="text-gray-500">Journey Today</span>
                     </h1>
 
-                    <p className="text-gray-400 text-[15px] md:text-[18px] max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-400 text-[15px] md:text-[18px] max-w-2xl mx-auto leading-relaxed">
                         Schedule a free consultation or book a session with one of our expert tutors. We'll match you with the perfect instructor for your goals.
                     </p>
                 </div>
@@ -195,9 +195,9 @@ export default function Booking() {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     {/* Booking Form */}
                     <div className="lg:w-3/5">
-                        <div className="border border-white/10 rounded-2xl p-8 md:p-10 bg-white/[0.02] backdrop-blur-sm">
+                        <div className="border border-black/10 dark:border-white/10 rounded-2xl p-8 md:p-10 bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-sm">
                             <h2 className="text-2xl md:text-3xl font-bold mb-2">Book Your Session</h2>
-                            <p className="text-gray-500 text-sm mb-10">
+                            <p className="text-gray-600 dark:text-gray-500 text-sm mb-10">
                                 Fill in the details below and we'll get back to you within 24 hours.
                             </p>
 
@@ -205,7 +205,7 @@ export default function Booking() {
                                 {/* Name */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             First Name
                                         </label>
                                         <input
@@ -216,11 +216,11 @@ export default function Booking() {
                                             value={formData.firstName}
                                             onChange={handleChange}
                                             placeholder="John"
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                                            className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg px-4 py-3 text-black dark:text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             Last Name
                                         </label>
                                         <input
@@ -231,7 +231,7 @@ export default function Booking() {
                                             value={formData.lastName}
                                             onChange={handleChange}
                                             placeholder="Doe"
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                                            className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg px-4 py-3 text-black dark:text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
                                         />
                                     </div>
                                 </div>
@@ -239,7 +239,7 @@ export default function Booking() {
                                 {/* Email & Phone */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             Email Address
                                         </label>
                                         <input
@@ -250,11 +250,11 @@ export default function Booking() {
                                             value={formData.email}
                                             onChange={handleChange}
                                             placeholder="john@example.com"
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                                            className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg px-4 py-3 text-black dark:text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             Phone Number
                                         </label>
                                         <input
@@ -264,7 +264,7 @@ export default function Booking() {
                                             value={formData.phone}
                                             onChange={handleChange}
                                             placeholder="+234 800 000 0000"
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                                            className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg px-4 py-3 text-black dark:text-white placeholder:text-gray-600 text-sm focus:outline-none focus:border-blue-500 transition-colors"
                                         />
                                     </div>
                                 </div>
@@ -272,7 +272,7 @@ export default function Booking() {
                                 {/* Dropdowns */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="curriculum" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="curriculum" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             Curriculum
                                         </label>
                                         <div className="relative">
@@ -282,10 +282,10 @@ export default function Booking() {
                                                 required
                                                 value={formData.curriculum}
                                                 onChange={handleChange}
-                                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
+                                                className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg px-4 py-3 text-sm text-black dark:text-white appearance-none focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
                                             >
                                                 {curriculums.map((c) => (
-                                                    <option key={c.value} value={c.value} className="bg-black text-white">
+                                                    <option key={c.value} value={c.value} className="bg-white dark:bg-black text-black dark:text-white">
                                                         {c.label}
                                                     </option>
                                                 ))}
@@ -294,7 +294,7 @@ export default function Booking() {
                                         </div>
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="sessionType" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="sessionType" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             Session Type
                                         </label>
                                         <div className="relative">
@@ -304,10 +304,10 @@ export default function Booking() {
                                                 required
                                                 value={formData.sessionType}
                                                 onChange={handleChange}
-                                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
+                                                className="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg px-4 py-3 text-sm text-black dark:text-white appearance-none focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
                                             >
                                                 {sessionTypes.map((s) => (
-                                                    <option key={s.value} value={s.value} className="bg-black text-white">
+                                                    <option key={s.value} value={s.value} className="bg-white dark:bg-black text-black dark:text-white">
                                                         {s.label}
                                                     </option>
                                                 ))}
@@ -320,7 +320,7 @@ export default function Booking() {
                                 {/* Date & Time */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             Preferred Date
                                         </label>
                                         <input
@@ -337,7 +337,7 @@ export default function Booking() {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="preferredTime" className="block text-sm font-medium text-gray-300">
+                                        <label htmlFor="preferredTime" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                             Preferred Time
                                         </label>
                                         <input
@@ -357,7 +357,7 @@ export default function Booking() {
 
                                 {/* Additional Notes */}
                                 <div className="space-y-2">
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                         Additional Notes <span className="text-gray-600">(optional)</span>
                                     </label>
                                     <textarea
@@ -391,12 +391,12 @@ export default function Booking() {
                     {/* Sidebar (contact info & FAQs) */}
                     <div className="lg:w-2/5 space-y-8">
                         {/* Contact Info */}
-                        <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
+                        <div className="border border-black/10 dark:border-white/10 rounded-2xl p-8 bg-black/[0.02] dark:bg-white/[0.02]">
                             <h3 className="text-xl font-bold mb-6">Get in Touch</h3>
                             <div className="space-y-6">
                                 {contactInfo.map((item, i) => (
                                     <div key={i} className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 flex-shrink-0">
+                                        <div className="w-10 h-10 rounded-xl bg-black/5 dark:bg-white/5 flex items-center justify-center text-gray-500 dark:text-gray-400 flex-shrink-0">
                                             <item.icon size={18} />
                                         </div>
                                         <div>
@@ -409,22 +409,22 @@ export default function Booking() {
                         </div>
 
                         {/* FAQs */}
-                        <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
+                        <div className="border border-black/10 dark:border-white/10 rounded-2xl p-8 bg-black/[0.02] dark:bg-white/[0.02]">
                             <h3 className="text-xl font-bold mb-6">Common Questions</h3>
                             <div className="space-y-4">
                                 {faqs.map((faq, i) => (
-                                    <div key={i} className="border-b border-white/5 last:border-b-0 pb-4 last:pb-0">
+                                    <div key={i} className="border-b border-black/10 dark:border-white/5 last:border-b-0 pb-4 last:pb-0">
                                         <button
                                             onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
                                             className="flex items-center justify-between w-full text-left gap-4 py-1 cursor-pointer"
                                         >
-                                            <span className="text-sm font-medium text-gray-200">{faq.question}</span>
+                                            <span className="text-sm font-medium text-gray-900 dark:text-gray-200">{faq.question}</span>
                                             <ChevronDown
                                                 className={`w-4 h-4 text-gray-500 flex-shrink-0 transition-transform duration-300 ${expandedFaq === i ? 'rotate-180' : ''}`}
                                             />
                                         </button>
                                         <div className={`overflow-hidden transition-all duration-300 ${expandedFaq === i ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                                            <p className="text-sm text-gray-400 leading-relaxed">{faq.answer}</p>
+                                            <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
                                         </div>
                                     </div>
                                 ))}
