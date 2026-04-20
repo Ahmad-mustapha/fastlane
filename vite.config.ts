@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
 
                   // Client Email (Professional Template)
                   const { error: clientError } = await resend.emails.send({
-                    from: 'Fastlane <hello@fastlanetutors.com>',
+                    from: 'Fastlane <fastlanetutoradmin@gmail.com>',
                     to: data.email,
                     subject: 'Booking Confirmation - Fastlane',
                     html: `
@@ -96,7 +96,7 @@ export default defineConfig(({ mode }) => {
 
                   // Admin Email (Professional Template)
                   const { error: adminError } = await resend.emails.send({
-                    from: 'Fastlane System <hello@fastlanetutors.com>',
+                    from: 'Fastlane System <fastlanetutoradmin@gmail.com>',
                     to: 'Halimgiwa@gmail.com',
                     subject: 'New Fastlane Booking: ' + data.firstName + ' ' + data.lastName,
                     html: `

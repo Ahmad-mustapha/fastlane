@@ -115,9 +115,9 @@ export default function TeamProfile() {
 
                     {/* ── Intro Content ── */}
                     <div className="flex-1 pt-2">
-                        {/* Badge */}
+                        {/* Role Badge */}
                         <div
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase mb-6"
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-[10px] font-bold tracking-widest uppercase mb-3"
                             style={{ color: member.accentColor }}
                         >
                             <span
@@ -126,6 +126,16 @@ export default function TeamProfile() {
                             />
                             {member.role}
                         </div>
+
+                        {/* Ambassador Badge */}
+                        {member.ambassador && (
+                            <div className="mb-6">
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.15em] uppercase border border-[#194970]/40 text-[#194970] bg-[#194970]/5">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#194970] inline-block" />
+                                    {member.ambassador} Ambassador
+                                </span>
+                            </div>
+                        )}
 
                         {/* Name */}
                         <h1

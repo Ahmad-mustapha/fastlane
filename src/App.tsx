@@ -14,6 +14,7 @@ const Teams = lazy(() => import('./pages/Teams'));
 const Services = lazy(() => import('./pages/Services'));
 const Booking = lazy(() => import('./pages/Booking'));
 const TeamProfile = lazy(() => import('./pages/TeamProfile'));
+const Consulting = lazy(() => import('./pages/Consulting'));
 
 // Import assets for preloading
 import AboutImg from './assets/aboutus.jpg';
@@ -55,6 +56,7 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/booking" element={<Booking />} />
                 <Route path="/team/:id" element={<TeamProfile />} />
+                <Route path="/consulting" element={<Consulting />} />
               </Routes>
             </Suspense>
           </main>

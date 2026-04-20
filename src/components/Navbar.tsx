@@ -25,7 +25,11 @@ const navlinks = [
     text: "Services",
     link: "/services",
   },
-
+  {
+    id: 6,
+    text: "Consulting",
+    link: "/consulting",
+  },
   {
     id: 4,
     text: "Contact",

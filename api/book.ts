@@ -63,7 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         // 1️⃣ Email to user (Client Confirmation)
         const { data: clientData, error: clientError } = await resend.emails.send({
-            from: 'Fastlane <hello@fastlanetutors.com>',
+            from: 'Fastlane <fastlanetutoradmin@gmail.com>',
             to: data.email,
             subject: `Booking Confirmation #${transId} - Fastlane`,
             html: `
@@ -133,7 +133,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         </html>
       `,
             text: `Hi ${data.firstName}, we've received your booking request for ${data.sessionType} on ${data.preferredDate} at ${formatTime(data.preferredTime)}. Reference: #${transId}.`,
-            replyTo: 'Halimgiwa@gmail.com',
+            replyTo: 'fastlanetutoradmin@gmail.com',
         });
 
         if (clientError) {
@@ -143,8 +143,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         // 2️⃣ Email to owner (Admin Notification)
         const { data: adminData, error: adminError } = await resend.emails.send({
-            from: 'Fastlane <hello@fastlanetutors.com>',
-            to: 'Halimgiwa@gmail.com',
+            from: 'Fastlane <fastlanetutoradmin@gmail.com>',
+            to: 'fastlanetutoradmin@gmail.com',
             subject: `NEW BOOKING #${transId}: ${data.firstName} ${data.lastName}`,
             html: `
         <!DOCTYPE html>

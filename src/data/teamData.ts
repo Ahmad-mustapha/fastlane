@@ -38,6 +38,7 @@ export interface TeamMember {
     socials: Social[];
     subjects: string[];
     quote: string;
+    ambassador?: string;
 }
 
 export const teamMembers: TeamMember[] = [
@@ -57,6 +58,7 @@ export const teamMembers: TeamMember[] = [
         specialisms: ['Pure Mathematics', 'Further Maths', 'Statistics', 'WAEC/NECO', 'IGCSE', 'A-Level'],
         subjects: ['Mathematics', 'Further Mathematics', 'Statistics', 'Calculus'],
         quote: 'Turning Mathematics into fun, practical problem‑solving for exam success',
+        ambassador: 'Commonwealth Education',
         education: [
             {
                 degree: 'B.Sc Biochemistry (SLT)',
@@ -113,6 +115,7 @@ export const teamMembers: TeamMember[] = [
         specialisms: ['WAEC Physics', 'IGCSE Physics', 'A Level Physics', 'Virtual Coaching', 'Exam Prep'],
         subjects: ['Physics', 'General Science'],
         quote: 'My teaching philosophy is simple: meaningful relationships come before academic rigor, because students learn best when they feel supported, valued, and confident enough to engage with challenging ideas.',
+        ambassador: 'Commonwealth Education',
         education: [
             {
                 degree: 'B.sc. Physics/Electronics',
@@ -143,52 +146,52 @@ export const teamMembers: TeamMember[] = [
             { platform: 'email', handle: 'hamid@fastlane.ng', url: 'mailto:hamid@fastlane.ng' },
         ],
     },
-    {
-        id: 'rayhanah-kolawole',
-        name: 'Rayhanah Kolawole',
-        role: 'Senior English Tutor',
-        roleColor: 'text-purple-400',
-        accentColor: '#a855f7',
-        bio: 'I specialize in teaching English and helping students build strong reading and writing skills. My focus is on clear understanding, critical thinking, and exam success.',
-        fullBio: `I am an experienced English teacher with a strong background in teaching both primary and secondary school students. I have worked with learners from different academic systems, helping them build strong foundations in reading, writing, comprehension, and critical thinking. I support students preparing for school and external examinations through structured lessons, diagnostic assessments, and targeted practice that builds both confidence and competence.\n\nMy teaching style is clear, supportive, and engaging, focusing on helping students truly understand concepts rather than simply memorize them. I use guided instruction, discussion, and practical exercises to strengthen language skills and encourage independent thinking. I also work effectively with international students, helping them adapt to different curricula and develop the language skills needed to succeed academically and communicate confidently.`,
-        image: '/Rayhanah.png',
-        tag: 'English & Literature',
-        yearsExperience: 22,
-        studentsHelped: 100,
-        passRate: '94%',
-        specialisms: ['English Education', 'Reading & Writing Skills', 'Primary & Secondary Education', 'Exam Prep'],
-        subjects: ['English', 'Literature'],
-        quote: 'Every student learns best when lessons are clear, engaging, and tailored to their individual strengths, fostering both understanding and confidence.',
-        education: [
-            {
-                degree: 'N. C. E English education',
-                institution: 'LASUED (AOCOED)',
-                year: '',
-            },
-            {
-                degree: 'B. A in English Studies',
-                institution: 'LASU',
-                year: '',
-            },
-        ],
-        certifications: [
-            {
-                title: 'Cambridge in FLE and ESL IGCSE',
-                issuer: 'Cambridge',
-                year: '',
-            },
-            {
-                title: 'TEFL',
-                issuer: 'TEFL',
-                year: '',
-            },
-        ],
-        socials: [
-            { platform: 'linkedin', handle: 'rayhanah-kolawole', url: 'https://linkedin.com/in/rayhanah-kolawole' },
-            { platform: 'twitter', handle: '@RayhanahK', url: 'https://twitter.com/RayhanahK' },
-            { platform: 'email', handle: 'rayhanah@fastlane.ng', url: 'mailto:rayhanah@fastlane.ng' },
-        ],
-    },
+    // {
+    //     id: 'rayhanah-kolawole',
+    //     name: 'Rayhanah Kolawole',
+    //     role: 'Senior English Tutor',
+    //     roleColor: 'text-purple-400',
+    //     accentColor: '#a855f7',
+    //     bio: 'I specialize in teaching English and helping students build strong reading and writing skills. My focus is on clear understanding, critical thinking, and exam success.',
+    //     fullBio: `I am an experienced English teacher with a strong background in teaching both primary and secondary school students. I have worked with learners from different academic systems, helping them build strong foundations in reading, writing, comprehension, and critical thinking. I support students preparing for school and external examinations through structured lessons, diagnostic assessments, and targeted practice that builds both confidence and competence.\n\nMy teaching style is clear, supportive, and engaging, focusing on helping students truly understand concepts rather than simply memorize them. I use guided instruction, discussion, and practical exercises to strengthen language skills and encourage independent thinking. I also work effectively with international students, helping them adapt to different curricula and develop the language skills needed to succeed academically and communicate confidently.`,
+    //     image: '/Rayhanah.png',
+    //     tag: 'English & Literature',
+    //     yearsExperience: 22,
+    //     studentsHelped: 100,
+    //     passRate: '94%',
+    //     specialisms: ['English Education', 'Reading & Writing Skills', 'Primary & Secondary Education', 'Exam Prep'],
+    //     subjects: ['English', 'Literature'],
+    //     quote: 'Every student learns best when lessons are clear, engaging, and tailored to their individual strengths, fostering both understanding and confidence.',
+    //     education: [
+    //         {
+    //             degree: 'N. C. E English education',
+    //             institution: 'LASUED (AOCOED)',
+    //             year: '',
+    //         },
+    //         {
+    //             degree: 'B. A in English Studies',
+    //             institution: 'LASU',
+    //             year: '',
+    //         },
+    //     ],
+    //     certifications: [
+    //         {
+    //             title: 'Cambridge in FLE and ESL IGCSE',
+    //             issuer: 'Cambridge',
+    //             year: '',
+    //         },
+    //         {
+    //             title: 'TEFL',
+    //             issuer: 'TEFL',
+    //             year: '',
+    //         },
+    //     ],
+    //     socials: [
+    //         { platform: 'linkedin', handle: 'rayhanah-kolawole', url: 'https://linkedin.com/in/rayhanah-kolawole' },
+    //         { platform: 'twitter', handle: '@RayhanahK', url: 'https://twitter.com/RayhanahK' },
+    //         { platform: 'email', handle: 'rayhanah@fastlane.ng', url: 'mailto:rayhanah@fastlane.ng' },
+    //     ],
+    // },
     {
         id: 'adeleke-wasiu-adebisi',
         name: 'Adeleke Wasiu Adebisi',
