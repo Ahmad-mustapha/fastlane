@@ -11,7 +11,7 @@ const pillars = [
     {
         label: "STAFF TRAINING",
         title: "EDUCATOR DEVELOPMENT",
-        description: "Structured professional development programmes for teachers — from subject mastery workshops to classroom management and modern pedagogy.",
+        description: "Structured professional development programmes for teachers from subject mastery workshops to classroom management and modern pedagogy.",
     },
     {
         label: "STRATEGY",
@@ -21,7 +21,7 @@ const pillars = [
     {
         label: "ASSESSMENT",
         title: "EXAMINATION READINESS",
-        description: "Institution-wide preparation frameworks for WAEC, NECO, IGCSE, and SAT — ensuring schools move students toward consistent, measurable results.",
+        description: "Institution-wide preparation frameworks for WAEC, NECO, IGCSE, and SAT, ensuring schools move students toward consistent, measurable results.",
     },
 ];
 
@@ -47,8 +47,8 @@ export default function Consulting() {
                     INSTITUTIONAL<br />
                     <span className="text-[#194970]">CONSULTING</span>
                 </h1>
-                <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-[1.6] max-w-xl">
-                    We partner with schools and educational institutions to build stronger academic systems — from curriculum design to staff training and examination strategy.
+                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base md:text-lg leading-[1.6] max-w-xl">
+                    We partner with schools and educational institutions to build stronger academic systems from curriculum design to staff training and examination strategy.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
                     <button
@@ -73,7 +73,7 @@ export default function Consulting() {
                             <p className="text-4xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
                                 {item.stat}
                             </p>
-                            <p className="text-gray-400 text-sm">
+                            <p className="text-gray-600 dark:text-gray-400 text-sm">
                                 {item.label}
                             </p>
                         </div>
@@ -83,11 +83,11 @@ export default function Consulting() {
 
             {/* ── What We Do (Pillars) ── */}
             <section className="py-24 content-max-width">
-                <div className="flex items-start justify-between mb-12 gap-6 flex-col md:flex-row md:items-end">
+                <div className="flex items-start mb-12 gap-3 flex-col">
                     <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
                         What We <span className="text-[#194970]">Offer</span>
                     </h2>
-                    <p className="text-gray-400 text-sm md:text-base max-w-sm leading-[1.7]">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base max-w-sm leading-[1.7]">
                         Every engagement is scoped to the institution's specific gaps. No generic programmes.
                     </p>
                 </div>
@@ -104,7 +104,7 @@ export default function Consulting() {
                             <h3 className="text-lg md:text-xl font-bold text-black dark:text-white tracking-tight leading-snug">
                                 {pillar.title}
                             </h3>
-                            <p className="text-gray-400 text-sm leading-[1.7]">
+                            <p className="text-gray-600 dark:text-gray-400 text-sm leading-[1.7]">
                                 {pillar.description}
                             </p>
                         </div>
@@ -114,11 +114,11 @@ export default function Consulting() {
 
             {/* ── Consultants ── */}
             <section className="py-24 border-t border-black/10 dark:border-white/10 content-max-width">
-                <div className="flex items-start justify-between mb-12 gap-6 flex-col md:flex-row md:items-end">
+                <div className="flex items-start mb-12 gap-3 flex-col">
                     <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
                         Our <span className="text-[#194970]">Consultants</span>
                     </h2>
-                    <p className="text-gray-400 text-sm md:text-base max-w-sm leading-[1.7]">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base max-w-sm leading-[1.7]">
                         Experienced educators driving institutional change across leading curricula.
                     </p>
                 </div>
@@ -127,10 +127,10 @@ export default function Consulting() {
                     {teamMembers.slice(0, 2).map((consultant) => (
                         <div
                             key={consultant.id}
-                            className="bg-white dark:bg-[#111111] p-8 md:p-12 flex flex-col gap-6 group hover:bg-black/[0.02] dark:hover:bg-white/[0.03] transition-colors"
+                            className="bg-white dark:bg-[#111111] flex flex-col group hover:bg-black/[0.02] dark:hover:bg-white/[0.03] transition-colors"
                         >
-                            {/* Photo */}
-                            <div className="w-full h-52 overflow-hidden">
+                            {/* Photo - Full width, no padding */}
+                            <div className="w-full h-[240px] md:h-[300px] overflow-hidden">
                                 <img
                                     src={consultant.image}
                                     alt={consultant.name}
@@ -138,49 +138,52 @@ export default function Consulting() {
                                 />
                             </div>
 
-                            {/* Ambassador Badge */}
-                            {consultant.ambassador && (
-                                <span className="self-start inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.15em] uppercase border border-[#194970]/40 text-[#194970] bg-[#194970]/5">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#194970] inline-block" />
-                                    {consultant.ambassador} Ambassador
-                                </span>
-                            )}
-
-                            {/* Name */}
-                            <div className="flex flex-col gap-1">
-                                <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white tracking-tight">
-                                    {consultant.name}
-                                </h3>
-                                <p className="text-[10px] text-[#194970] font-bold tracking-[0.2em] uppercase">
-                                    {consultant.tag}
-                                </p>
-                            </div>
-
-                            {/* Subjects */}
-                            <div className="flex flex-wrap gap-2">
-                                {consultant.subjects.map((subject) => (
-                                    <span
-                                        key={subject}
-                                        className="inline-block px-3 py-1 text-[11px] font-medium tracking-wide bg-black/5 dark:bg-white/5 text-black/60 dark:text-white/60 rounded-sm"
-                                    >
-                                        {subject}
+                            {/* Content with padding */}
+                            <div className="p-8 md:p-10 flex flex-col gap-6 flex-grow">
+                                {/* Ambassador Badge */}
+                                {consultant.ambassador && (
+                                    <span className="self-start inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black tracking-[0.1em] uppercase border border-[#194970]/60 text-[#194970] bg-[#194970]/10">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#194970] inline-block" />
+                                        {consultant.ambassador} Ambassador
                                     </span>
-                                ))}
-                            </div>
+                                )}
 
-                            {/* Stats */}
-                            <div className="flex gap-8 pt-2 border-t border-black/10 dark:border-white/10">
-                                <div className="flex flex-col gap-0.5">
-                                    <p className="text-2xl font-bold text-black dark:text-white tracking-tight">{consultant.yearsExperience}+</p>
-                                    <p className="text-[11px] text-gray-400 uppercase tracking-wider">Yrs Experience</p>
+                                {/* Name */}
+                                <div className="flex flex-col gap-1">
+                                    <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white tracking-tight">
+                                        {consultant.name}
+                                    </h3>
+                                    <p className="text-[10px] text-[#194970] font-bold tracking-[0.2em] uppercase">
+                                        {consultant.tag}
+                                    </p>
                                 </div>
-                                <div className="flex flex-col gap-0.5">
-                                    <p className="text-2xl font-bold text-black dark:text-white tracking-tight">{consultant.studentsHelped}+</p>
-                                    <p className="text-[11px] text-gray-400 uppercase tracking-wider">Students</p>
+
+                                {/* Subjects */}
+                                <div className="flex flex-wrap gap-2">
+                                    {consultant.subjects.map((subject) => (
+                                        <span
+                                            key={subject}
+                                            className="inline-block px-3 py-1 text-[11px] font-medium tracking-wide bg-black/5 dark:bg-white/5 text-black/80 dark:text-white/60 rounded-sm"
+                                        >
+                                            {subject}
+                                        </span>
+                                    ))}
                                 </div>
-                                <div className="flex flex-col gap-0.5">
-                                    <p className="text-2xl font-bold text-black dark:text-white tracking-tight">{consultant.passRate}</p>
-                                    <p className="text-[11px] text-gray-400 uppercase tracking-wider">Pass Rate</p>
+
+                                {/* Stats */}
+                                <div className="flex gap-8 pt-6 mt-auto border-t border-black/10 dark:border-white/10">
+                                    <div className="flex flex-col gap-0.5">
+                                        <p className="text-2xl font-bold text-black dark:text-white tracking-tight">{consultant.yearsExperience}+</p>
+                                        <p className="text-[11px] text-gray-600 dark:text-gray-400 uppercase tracking-wider">Yrs Experience</p>
+                                    </div>
+                                    <div className="flex flex-col gap-0.5">
+                                        <p className="text-2xl font-bold text-black dark:text-white tracking-tight">{consultant.studentsHelped}+</p>
+                                        <p className="text-[11px] text-gray-600 dark:text-gray-400 uppercase tracking-wider">Students</p>
+                                    </div>
+                                    <div className="flex flex-col gap-0.5">
+                                        <p className="text-2xl font-bold text-black dark:text-white tracking-tight">{consultant.passRate}</p>
+                                        <p className="text-[11px] text-gray-600 dark:text-gray-400 uppercase tracking-wider">Pass Rate</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +194,7 @@ export default function Consulting() {
             {/* ── Who We Work With ── */}
             <section className="py-24 content-max-width">
                 <div className="grid grid-cols-1 lg:grid-cols-[45%_1fr] items-stretch gap-12 lg:gap-16 w-full">
-                    {/* Left — Image placeholder area */}
+                    {/* Left, Image placeholder area */}
                     <div className="w-full relative min-h-[300px] md:min-h-[420px] lg:min-h-full bg-black/5 dark:bg-white/5 overflow-hidden">
                         <div className="absolute inset-0 flex items-end p-8">
                             <div className="flex flex-wrap gap-3">
@@ -216,10 +219,10 @@ export default function Consulting() {
                         </div>
 
                         <div className="space-y-6">
-                            <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7]">
-                                We partner with schools at all levels — from independent primary academies to established international institutions — that are serious about raising academic standards in a structured, measurable way.
+                            <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7]">
+                                We partner with schools at all levels from independent primary academies to established international institutions that are serious about raising academic standards in a structured, measurable way.
                             </p>
-                            <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7]">
+                            <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base lg:text-lg leading-[1.7]">
                                 Our consulting engagements are typically long-form partnerships, not one-off workshops. We embed within the school's academic calendar to ensure lasting impact on both staff and students.
                             </p>
                         </div>
@@ -261,7 +264,7 @@ export default function Consulting() {
                         {
                             step: "03",
                             title: "Execution Plan",
-                            desc: "A bespoke programme — workshops, curriculum adjustments, or ongoing advisory — delivered on your school's timeline."
+                            desc: "A bespoke programme workshops, curriculum adjustments, or ongoing advisory delivered on your school's timeline."
                         },
                     ].map((item) => (
                         <div key={item.step} className="flex flex-col gap-4">
@@ -271,7 +274,7 @@ export default function Consulting() {
                             <h3 className="text-lg font-bold text-black dark:text-white">
                                 {item.title}
                             </h3>
-                            <p className="text-gray-400 text-sm leading-[1.7]">
+                            <p className="text-gray-600 dark:text-gray-400 text-sm leading-[1.7]">
                                 {item.desc}
                             </p>
                         </div>
@@ -281,10 +284,10 @@ export default function Consulting() {
 
             {/* ── Bottom CTA ── */}
             <section className="py-24 flex flex-col items-center text-center gap-8 content-max-width">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white max-w-3xl">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight w-full">
                     Ready to raise the standard at your school?
                 </h2>
-                <p className="text-gray-400 text-sm md:text-lg max-w-xl leading-[1.6]">
+                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-lg max-w-xl leading-[1.6]">
                     Book a discovery call with our consulting team and we'll map out exactly what your institution needs.
                 </p>
                 <button

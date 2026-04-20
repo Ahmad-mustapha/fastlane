@@ -282,10 +282,7 @@ export default function Testimonials() {
                 <div className="relative">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                         <div className="max-w-xl">
-                            <p className="text-[10px] text-[#194970] font-bold tracking-[0.2em] uppercase mb-4">
-                                Experience the Impact
-                            </p>
-                            <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white">
+                            <h3 className="text-3xl md:text-5xl font-bold text-black dark:text-white">
                                 Featured <span className="text-[#194970]">Video Stories</span>
                             </h3>
                         </div>

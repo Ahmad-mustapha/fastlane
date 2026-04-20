@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+    const location = useLocation();
     const [agreed, setAgreed] = useState(false);
     const [email, setEmail] = useState("");
+
+    const isConsultingPage = location.pathname === "/consulting";
 
     const handleJoin = () => {
         if (!agreed) {
@@ -24,23 +27,25 @@ const Footer = () => {
             {/* Creative Background Elements */}
             {/* <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" /> */}
 
-            <div className="flex items-center justify-center flex-col relative z-10 w-full mb-24">
-                <div className="flex flex-col items-center text-center gap-6 md:gap-8 mx-auto">
-                    {/* <img src={Whitelogo} alt="Fastlane Logo" className="w-20 md:w-24 mb-4" /> */}
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight w-full">
-                        Uncover a new approach to learning
-                    </h2>
-                    <p className="text-black dark:text-gray-400 text-sm md:text-lg max-w-xl">
-                        Get started with Fastlane now and be part of a community of learners, from beginners to top achievers.
-                    </p>
-                    <Link to="/booking" className="sm:w-auto flex items-center justify-between gap-2 px-4 py-3 pl-4 md:pl-6 rounded-full border border-gray-400 dark:border-gray-600 hover:border-white transition-colors bg-transparent text-left w-[220px] md:w-[250px] group">
-                        <span className="text-[14px] font-medium md:text-[17px]">Book Free Session</span>
-                        <span className="bg-white rounded-full p-3 text-black duration-300 group-hover:scale-110">
-                            <FaArrowRight />
-                        </span>
-                    </Link>
+            {!isConsultingPage && (
+                <div className="flex items-center justify-center flex-col relative z-10 w-full mb-24">
+                    <div className="flex flex-col items-center text-center gap-6 md:gap-8 mx-auto">
+                        {/* <img src={Whitelogo} alt="Fastlane Logo" className="w-20 md:w-24 mb-4" /> */}
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight w-full">
+                            Uncover a new approach to learning
+                        </h2>
+                        <p className="text-black dark:text-gray-400 text-sm md:text-lg max-w-xl">
+                            Get started with Fastlane now and be part of a community of learners, from beginners to top achievers.
+                        </p>
+                        <Link to="/booking" className="sm:w-auto flex items-center justify-between gap-2 px-4 py-3 pl-4 md:pl-6 rounded-full border border-gray-400 dark:border-gray-600 hover:border-white transition-colors bg-transparent text-left w-[220px] md:w-[250px] group">
+                            <span className="text-[14px] font-medium md:text-[17px]">Book Free Session</span>
+                            <span className="bg-white rounded-full p-3 text-black duration-300 group-hover:scale-110">
+                                <FaArrowRight />
+                            </span>
+                        </Link>
+                    </div>
                 </div>
-            </div>
+            )}
 
             <div className="w-full relative z-10">
 
