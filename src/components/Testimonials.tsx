@@ -1,5 +1,5 @@
-
-import { Quote, Star } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { Quote, Star, Play, Pause, Maximize2 } from 'lucide-react';
 import {
     Carousel,
     CarouselContent,
@@ -55,7 +55,146 @@ const testimonials = [
     }
 ];
 
+function VideoStory({ 
+    url, 
+    title, 
+    sub, 
+    activeVideoUrl, 
+    setActiveVideoUrl 
+}: { 
+    url: string, 
+    title: string, 
+    sub: string,
+    activeVideoUrl: string | null,
+    setActiveVideoUrl: (url: string | null) => void
+}) {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    // Pause if another video starts playing
+    useEffect(() => {
+        if (activeVideoUrl !== url && isPlaying) {
+            videoRef.current?.pause();
+        }
+    }, [activeVideoUrl, url, isPlaying]);
+
+    // Sync native controls with fullscreen state
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handleFSChange = () => {
+            const fsElement = document.fullscreenElement || (document as any).webkitFullscreenElement;
+            const isFs = !!fsElement;
+            
+            if (isFs && (document.fullscreenElement === video || (document as any).webkitFullscreenElement === video)) {
+                video.controls = true;
+                video.play().catch(console.error);
+            } else {
+                video.controls = false;
+            }
+        };
+
+        document.addEventListener('fullscreenchange', handleFSChange);
+        document.addEventListener('webkitfullscreenchange', handleFSChange);
+
+        return () => {
+            document.removeEventListener('fullscreenchange', handleFSChange);
+            document.removeEventListener('webkitfullscreenchange', handleFSChange);
+        };
+    }, []);
+
+    const togglePlay = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (videoRef.current) {
+            if (videoRef.current.paused) {
+                setActiveVideoUrl(url); // Notify parent we are playing
+                videoRef.current.play().catch(console.error);
+            } else {
+                videoRef.current.pause();
+                if (activeVideoUrl === url) setActiveVideoUrl(null);
+            }
+        }
+    };
+
+    const handleExpand = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (videoRef.current) {
+            const video = videoRef.current;
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if ((video as any).webkitRequestFullscreen) {
+                (video as any).webkitRequestFullscreen();
+            } else if ((video as any).webkitEnterFullscreen) {
+                // iOS specific video fullscreen
+                (video as any).webkitEnterFullscreen();
+            }
+        }
+    };
+
+    return (
+        <div
+            className="bg-white dark:bg-[#111111] p-1 relative flex flex-col group/vid cursor-pointer h-full select-none"
+            onClick={togglePlay}
+        >
+            <div className="aspect-[3/4] md:aspect-video relative rounded-2xl overflow-hidden bg-black/5 dark:bg-black">
+                <video
+                    ref={videoRef}
+                    src={url}
+                    className="w-full h-full object-cover pointer-events-none"
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                    onEnded={() => {
+                        setIsPlaying(false);
+                        setActiveVideoUrl(null);
+                    }}
+                    loop
+                    playsInline
+                    preload="metadata"
+                />
+
+                {!isPlaying && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover/vid:bg-black/40 transition-all z-10 pointer-events-none">
+                        <div className="w-16 h-16 rounded-full bg-[#194970] flex items-center justify-center text-white shadow-2xl group-hover/vid:scale-110 transition-transform">
+                            <Play size={24} fill="currentColor" />
+                        </div>
+                    </div>
+                )}
+
+                {isPlaying && (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/vid:opacity-100 transition-opacity z-10 pointer-events-none">
+                        <div className="w-12 h-12 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center text-white">
+                            <Pause size={20} fill="currentColor" />
+                        </div>
+                    </div>
+                )}
+
+                {/* Expand Button */}
+                <button
+                    onClick={handleExpand}
+                    className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-black/20 backdrop-blur-md text-white border border-white/10 opacity-0 group-hover/vid:opacity-100 transition-all hover:bg-black/40 hover:scale-110 active:scale-95"
+                    title="Expand video"
+                >
+                    <Maximize2 size={18} />
+                </button>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-0 pointer-events-none" />
+                <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
+                    <p className="text-white font-bold tracking-wide uppercase">{title}</p>
+                    <p className="text-white/60 text-xs mt-1">{sub}</p>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
 export default function Testimonials() {
+    const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
+
     return (
         <section id="testimonial" className="py-20 text-black dark:text-white content-max-width">
             <Carousel
@@ -136,11 +275,10 @@ export default function Testimonials() {
                 </CarouselContent>
             </Carousel>
 
-            {/* ── Video Testimonials Section (Commented Out for Now) ── */}
-            {/* 
+            {/* ── Video Testimonials Section ── */}
             <div className="mt-32 relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#194970]/5 to-transparent dark:from-[#194970]/10 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
+
                 <div className="relative">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                         <div className="max-w-xl">
@@ -152,43 +290,25 @@ export default function Testimonials() {
                             </h3>
                         </div>
                     </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 dark:bg-white/10 rounded-3xl overflow-hidden border border-black/10 dark:border-white/10">
-                        <div className="bg-white dark:bg-[#111111] p-1 relative flex flex-col group/vid cursor-pointer">
-                            <div className="aspect-video relative rounded-2xl overflow-hidden">
-                                <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover/vid:bg-black/30 transition-all z-10">
-                                    <div className="w-14 h-14 rounded-full bg-[#194970] flex items-center justify-center text-white shadow-xl group-hover/vid:scale-110 transition-transform">
-                                        <Play size={20} fill="currentColor" />
-                                    </div>
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-0" />
-                                <div className="absolute bottom-6 left-6 z-20">
-                                    <p className="text-white font-bold tracking-wide">STUDENT JOURNEY</p>
-                                    <p className="text-white/60 text-xs mt-1">Watch their transformation</p>
-                                </div>
-                                <div className="absolute inset-0 bg-[#0a0a0a] -z-10" />
-                            </div>
-                        </div>
 
-                        <div className="bg-white dark:bg-[#111111] p-1 relative flex flex-col group/vid cursor-pointer">
-                            <div className="aspect-video relative rounded-2xl overflow-hidden">
-                                <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover/vid:bg-black/30 transition-all z-10">
-                                    <div className="w-14 h-14 rounded-full bg-[#194970] flex items-center justify-center text-white shadow-xl group-hover/vid:scale-110 transition-transform">
-                                        <Play size={20} fill="currentColor" />
-                                    </div>
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-0" />
-                                <div className="absolute bottom-6 left-6 z-20">
-                                    <p className="text-white font-bold tracking-wide">ACADEMIC EXCELLENCE</p>
-                                    <p className="text-white/60 text-xs mt-1">Hear from the best</p>
-                                </div>
-                                <div className="absolute inset-0 bg-[#0a0a0a] -z-10" />
-                            </div>
-                        </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 dark:bg-white/10 rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-xl">
+                        <VideoStory
+                            url="https://res.cloudinary.com/de30l793l/video/upload/q_auto/f_auto/v1776668337/VID-20260407-WA0006_qqmb3z.mp4"
+                            title="STUDENT JOURNEY"
+                            sub="Watch their transformation"
+                            activeVideoUrl={activeVideoUrl}
+                            setActiveVideoUrl={setActiveVideoUrl}
+                        />
+                        <VideoStory
+                            url="https://res.cloudinary.com/de30l793l/video/upload/q_auto/f_auto/v1776669198/VID-20260406-WA0011_d9ysn1.mp4"
+                            title="ACADEMIC EXCELLENCE"
+                            sub="Hear from the best"
+                            activeVideoUrl={activeVideoUrl}
+                            setActiveVideoUrl={setActiveVideoUrl}
+                        />
                     </div>
                 </div>
             </div>
-            */}
         </section>
     );
 }
