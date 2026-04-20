@@ -55,15 +55,15 @@ const testimonials = [
     }
 ];
 
-function VideoStory({ 
-    url, 
-    title, 
-    sub, 
-    activeVideoUrl, 
-    setActiveVideoUrl 
-}: { 
-    url: string, 
-    title: string, 
+function VideoStory({
+    url,
+    title,
+    sub,
+    activeVideoUrl,
+    setActiveVideoUrl
+}: {
+    url: string,
+    title: string,
     sub: string,
     activeVideoUrl: string | null,
     setActiveVideoUrl: (url: string | null) => void
@@ -86,7 +86,7 @@ function VideoStory({
         const handleFSChange = () => {
             const fsElement = document.fullscreenElement || (document as any).webkitFullscreenElement;
             const isFs = !!fsElement;
-            
+
             if (isFs && (document.fullscreenElement === video || (document as any).webkitFullscreenElement === video)) {
                 video.controls = true;
                 video.play().catch(console.error);
