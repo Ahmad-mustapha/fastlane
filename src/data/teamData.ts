@@ -146,6 +146,7 @@ export const teamMembers: TeamMember[] = [
             { platform: 'email', handle: 'hamid@fastlane.ng', url: 'mailto:hamid@fastlane.ng' },
         ],
     },
+    /*
     {
         id: 'adeleke-wasiu-adebisi',
         name: 'Adeleke Wasiu Adebisi',
@@ -222,6 +223,8 @@ export const teamMembers: TeamMember[] = [
             { platform: 'email', handle: 'wasiu@fastlane.ng', url: 'mailto:wasiu@fastlane.ng' },
         ],
     },
+    */
+    /*
     {
         id: 'boluwatito-adebamiro',
         name: 'Boluwatito Adebamiro',
@@ -278,6 +281,7 @@ export const teamMembers: TeamMember[] = [
             { platform: 'email', handle: 'boluwatito@fastlane.ng', url: 'mailto:boluwatito@fastlane.ng' },
         ],
     },
+    */
     {
         id: 'olowo-hafsoh-ashabi',
         name: 'Olowo Hafsoh Ashabi',
