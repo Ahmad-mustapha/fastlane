@@ -2,7 +2,7 @@
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import AboutSection from '../components/AboutSection';
-import Testimonials from '../components/Testimonials';
+// import Testimonials from '../components/Testimonials';
 import FaqSection from '../components/FaqSection';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
             <AboutSection />
             <Services />
             <FaqSection />
-            <Testimonials />
+            {/* <Testimonials /> */}
         </div>
     );
 }
