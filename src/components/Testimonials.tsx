@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import { Quote, Star, Play, Pause, Maximize2 } from 'lucide-react';
+﻿import { Quote, Star, User } from 'lucide-react';
 import {
     Carousel,
     CarouselContent,
@@ -11,190 +10,106 @@ import {
 const testimonials = [
     {
         id: 1,
-        name: "Miss Hassana",
+        name: "Mr. Saleh",
         role: "STUDENT",
-        course: "IGCSE",
+        course: "MATHEMATICS",
         rating: 5,
-        image: "/Hassana.jpeg",
-        quote: "Mr Abdulhalim dissected Mathematics and made me view the subject from a clearer view. The subject I was so frightened of became something I looked forward to because it was guaranteed that I’ll understand what was taught.",
-        footerText: "Passed IGCSE Mathematics",
+        image: null,
+        quote: "He was my best maths teacher throughout my life and he made us get A's in my WAEC.",
+        footerText: "Top of Class",
         dotColor: "bg-blue-400"
     },
     {
         id: 2,
-        name: "Mr Abdulmalik Abdulrazaq",
+        name: "Nabila Ahmed Rufai",
         role: "STUDENT",
-        course: "IGCSE & MATHS",
+        course: "MATHEMATICS",
         rating: 5,
-        image: "/Abdulrazaq.jpg",
-        quote: "Mr Abdulhalim helped me translate my goals into something tangible. Gaining the best result in my school, this made me confident in my ability to conquer anything I set my mind to.",
-        footerText: "2A* 3A 1B (Best Result)",
+        image: null,
+        quote: "Mr. Abdul Halim is an excellent tutor who consistently prioritizes his students understanding and comfort over all else. He has a unique way of simplifying topics that would normally seem difficult, making them easier to understand. More importantly, he helped me build confidence in my own abilities and recognize my strengths, encouraging me to believe that I am capable of achieving more.",
+        footerText: "Passed WAEC",
         dotColor: "bg-[#194970]"
     },
     {
         id: 3,
-        name: "Yahya Murtadho",
+        name: "Mr Ismail Ridwan",
         role: "STUDENT",
-        course: "MATHEMATICS",
+        course: "MATH & IGCSE",
         rating: 5,
-        image: "/yahya.png",
-        quote: "Through focused sessions and clear explanations, I was able to achieve results among the best in my class. The tutoring style is extremely effective for complex topics.",
-        footerText: "Result: Among the Best",
+        image: "/src/assets/Ismail.png",
+        quote: "It is an honor to be a student of AbdulHalim. His teaching style is truly unique—he connects with students on a personal level and brings out the best in them. He has a remarkable ability to simplify complex mathematical concepts, making them easy to understand. Thanks to his approach, I was able to pass my IGCSE exams with distinction and build a strong foundation in mathematics.",
+        footerText: "Top of Class",
         dotColor: "bg-yellow-500"
     },
     {
         id: 4,
-        name: "Abdallah Muhammad Kabir",
+        name: "Farida Ahmed Rufai",
+        role: "STUDENT",
+        course: "WAEC",
+        rating: 5,
+        image: "/src/assets/Farida.jpeg",
+        quote: "Mr. Abdul Halim was a truly wonderful teacher, and I deeply appreciated my time learning under him. He had a unique way of making every lesson clear and engaging, which transformed my entire attitude toward school. He created a comfortable environment where I felt confident to ask questions and contribute. Most importantly, he helped build my confidence and laid a strong foundation for my success in all my endeavors.",
+        footerText: "Passed WAEC",
+        dotColor: "bg-purple-400"
+    },
+    {
+        id: 5,
+        name: "Abubakar Abdulazeez",
+        role: "STUDENT",
+        course: "MATHEMATICS & IGCSE",
+        rating: 5,
+        image: null,
+        quote: "Mr Abdulhalim was more than a teacher, he was a mentor who guided me whenever I lost focus. With his support, I grew in confidence and graduated as the best mathematician. He truly helped me believe in what I'm capable of.",
+        footerText: "Best Student in Mathematics",
+        dotColor: "bg-green-500"
+    },
+    {
+        id: 6,
+        name: "Ms. Adebamiro",
+        role: "STUDENT",
+        course: "LITERATURE IN ENGLISH",
+        rating: 5,
+        image: null,
+        quote: "When I first came to CPLA, I was the only arts student. I remember the first time she told me to write an analysis of a book I had read. I only wrote a page. By the time I was in year 11, I was writing 7 pages of analysis and didn't even want to stop- that was how much she made me enjoy and learn literature in English. To me she was more than a teacher. She was a friend, and one of my biggest supporters.",
+        footerText: "Passed IGCSE, WAEC, NECO & JAMB",
+        dotColor: "bg-pink-500"
+    },
+    {
+        id: 7,
+        name: "Miss Mujibah",
         role: "STUDENT",
         course: "MATHEMATICS",
-        rating: 4,
-        image: "/Kabir.png",
-        quote: "He has a unique way of simplifying complex mathematical concepts and making them easy to understand. He is dedicated, patient, and changed the way I see mathematics.",
-        footerText: "Improved Problem Solving",
-        dotColor: "bg-purple-400"
+        rating: 5,
+        image: null,
+        quote: "I used to hate math. Honestly, I almost failed my first Real Analysis midterm. But I didn't quit. I broke everything down and slowly, it started clicking. That struggle became my greatest strength as a mentor. When I started mentoring, my first student was exactly where I had been. Ten weeks later, he passed. That moment meant more to me than any grade I ever earned.",
+        footerText: "From Struggling to Mentoring",
+        dotColor: "bg-indigo-500"
+    },
+    {
+        id: 8,
+        name: "Yusuff Muizah",
+        role: "STUDENT",
+        course: "MATHEMATICS",
+        rating: 5,
+        image: null,
+        quote: "He made math easy to understand and fun. His patience and encouragement boosted my confidence and improved my grades. Grateful for his support and dedication.",
+        footerText: "Top of Class",
+        dotColor: "bg-teal-500"
+    },
+    {
+        id: 9,
+        name: "Miss Neemat",
+        role: "STUDENT",
+        course: "MATHEMATICS",
+        rating: 5,
+        image: "/src/assets/Neemat.jpg",
+        quote: "An exceptional teacher who made learning enjoyable and accessible. Their dedication and support helped me achieve my academic goals.",
+        footerText: "Top of Class",
+        dotColor: "bg-rose-500"
     }
 ];
 
-function VideoStory({
-    url,
-    title,
-    sub,
-    activeVideoUrl,
-    setActiveVideoUrl
-}: {
-    url: string,
-    title: string,
-    sub: string,
-    activeVideoUrl: string | null,
-    setActiveVideoUrl: (url: string | null) => void
-}) {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    // Pause if another video starts playing
-    useEffect(() => {
-        if (activeVideoUrl !== url && isPlaying) {
-            videoRef.current?.pause();
-        }
-    }, [activeVideoUrl, url, isPlaying]);
-
-    // Sync native controls with fullscreen state
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        const handleFSChange = () => {
-            const fsElement = document.fullscreenElement || (document as any).webkitFullscreenElement;
-            const isFs = !!fsElement;
-
-            if (isFs && (document.fullscreenElement === video || (document as any).webkitFullscreenElement === video)) {
-                video.controls = true;
-                video.play().catch(console.error);
-            } else {
-                video.controls = false;
-            }
-        };
-
-        document.addEventListener('fullscreenchange', handleFSChange);
-        document.addEventListener('webkitfullscreenchange', handleFSChange);
-
-        return () => {
-            document.removeEventListener('fullscreenchange', handleFSChange);
-            document.removeEventListener('webkitfullscreenchange', handleFSChange);
-        };
-    }, []);
-
-    const togglePlay = (e: React.MouseEvent) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (videoRef.current) {
-            if (videoRef.current.paused) {
-                setActiveVideoUrl(url); // Notify parent we are playing
-                videoRef.current.play().catch(console.error);
-            } else {
-                videoRef.current.pause();
-                if (activeVideoUrl === url) setActiveVideoUrl(null);
-            }
-        }
-    };
-
-    const handleExpand = (e: React.MouseEvent) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (videoRef.current) {
-            const video = videoRef.current;
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if ((video as any).webkitRequestFullscreen) {
-                (video as any).webkitRequestFullscreen();
-            } else if ((video as any).webkitEnterFullscreen) {
-                // iOS specific video fullscreen
-                (video as any).webkitEnterFullscreen();
-            }
-        }
-    };
-
-    return (
-        <div
-            className="bg-white dark:bg-[#111111] p-1 relative flex flex-col group/vid cursor-pointer h-full select-none"
-            onClick={togglePlay}
-        >
-            <div className="aspect-[3/4] md:aspect-video relative rounded-2xl overflow-hidden bg-black/5 dark:bg-black">
-                <video
-                    ref={videoRef}
-                    src={url}
-                    className="w-full h-full object-cover pointer-events-none"
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
-                    onEnded={() => {
-                        setIsPlaying(false);
-                        setActiveVideoUrl(null);
-                    }}
-                    loop
-                    playsInline
-                    preload="metadata"
-                />
-
-                {!isPlaying && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover/vid:bg-black/40 transition-all z-10 pointer-events-none">
-                        <div className="w-16 h-16 rounded-full bg-[#194970] flex items-center justify-center text-white shadow-2xl group-hover/vid:scale-110 transition-transform">
-                            <Play size={24} fill="currentColor" />
-                        </div>
-                    </div>
-                )}
-
-                {isPlaying && (
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/vid:opacity-100 transition-opacity z-10 pointer-events-none">
-                        <div className="w-12 h-12 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center text-white">
-                            <Pause size={20} fill="currentColor" />
-                        </div>
-                    </div>
-                )}
-
-                {/* Expand Button */}
-                <button
-                    onClick={handleExpand}
-                    className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-black/20 backdrop-blur-md text-white border border-white/10 opacity-0 group-hover/vid:opacity-100 transition-all hover:bg-black/40 hover:scale-110 active:scale-95"
-                    title="Expand video"
-                >
-                    <Maximize2 size={18} />
-                </button>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-0 pointer-events-none" />
-                <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
-                    <p className="text-white font-bold tracking-wide uppercase">{title}</p>
-                    <p className="text-white/60 text-xs mt-1">{sub}</p>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-
 export default function Testimonials() {
-    const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
-
     return (
         <section id="testimonial" className="py-20 text-black dark:text-white content-max-width">
             <Carousel
@@ -226,22 +141,26 @@ export default function Testimonials() {
                                 <Quote className="absolute top-8 right-8 text-black/5 dark:text-zinc-700 w-10 h-10" />
 
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-black/5 dark:border-zinc-700 shadow-sm bg-gray-100 dark:bg-zinc-800">
-                                        {testimonial.image.endsWith('.mov') || testimonial.image.endsWith('.mp4') ? (
-                                            <video
-                                                src={testimonial.image}
-                                                className="w-full h-full object-cover"
-                                                muted
-                                                loop
-                                                autoPlay
-                                                playsInline
-                                            />
+                                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-black/5 dark:border-zinc-700 shadow-sm bg-gray-100 dark:bg-zinc-800 flex items-center justify-center">
+                                        {testimonial.image ? (
+                                            testimonial.image.endsWith('.mov') || testimonial.image.endsWith('.mp4') ? (
+                                                <video
+                                                    src={testimonial.image}
+                                                    className="w-full h-full object-cover"
+                                                    muted
+                                                    loop
+                                                    autoPlay
+                                                    playsInline
+                                                />
+                                            ) : (
+                                                <img
+                                                    src={testimonial.image}
+                                                    alt={testimonial.name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            )
                                         ) : (
-                                            <img
-                                                src={testimonial.image}
-                                                alt={testimonial.name}
-                                                className="w-full h-full object-cover"
-                                            />
+                                            <User className="w-6 h-6 text-gray-400 dark:text-zinc-600" />
                                         )}
                                     </div>
                                     <div>
@@ -288,7 +207,7 @@ export default function Testimonials() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 dark:bg-white/10 rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-xl">
+                    {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 dark:bg-white/10 rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-xl">
                         <VideoStory
                             url="https://res.cloudinary.com/de30l793l/video/upload/q_auto/f_auto/v1776668337/VID-20260407-WA0006_qqmb3z.mp4"
                             title="STUDENT JOURNEY"
@@ -303,9 +222,12 @@ export default function Testimonials() {
                             activeVideoUrl={activeVideoUrl}
                             setActiveVideoUrl={setActiveVideoUrl}
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
     );
 }
+
+
+

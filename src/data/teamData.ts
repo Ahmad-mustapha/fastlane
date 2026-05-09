@@ -436,5 +436,33 @@ export const teamMembers: TeamMember[] = [
             { platform: 'linkedin', handle: 'ajimoh-adeuja', url: 'https://linkedin.com/in/ajimoh-adeuja' },
             { platform: 'email', handle: 'ajimoh@fastlane.ng', url: 'mailto:ajimoh@fastlane.ng' },
         ],
+    },
+    {
+        id: 'alimi-musa-adio',
+        name: 'Alimi Musa Adio',
+        role: 'Senior Chemistry Tutor',
+        roleColor: 'text-green-400',
+        accentColor: '#4ade80',
+        bio: 'Experienced chemistry tutor specializing in simplifying complex concepts across organic, inorganic, and physical chemistry for diverse learners. Focused on building strong fundamentals, exam readiness, and critical thinking through clear explanations and practical problem-solving.',
+        fullBio: `I am a dedicated chemistry tutor with a strong academic background in Biochemistry (B.Sc) and extensive experience teaching secondary school students preparing for WAEC, NECO, and JAMB examinations. Over the years, I have successfully guided students with varying levels of understanding, helping them build confidence and achieve significant improvements in their academic performance. My approach combines both online and in-person teaching, allowing me to adapt effectively to different learning environments and student needs.\n\nMy teaching style focuses on simplifying complex chemical concepts through step-by-step explanations, real-life applications, and interactive problem-solving sessions. I emphasize strong foundational understanding, regular practice, and exam-oriented strategies to ensure students are well-prepared and confident. I am known for my patience, clarity, and ability to engage students, which has consistently led to better results and improved outcomes. I am comfortable teaching all areas of chemistry and committed to helping students develop both subject mastery and critical thinking skills.`,
+        image: '/kunle.jpeg',
+        tag: 'Chemistry & Exam Preparation',
+        yearsExperience: 9,
+        studentsHelped: 300,
+        passRate: '75%',
+        specialisms: ['Organic Chemistry', 'Inorganic Chemistry', 'Physical Chemistry', 'WAEC Chemistry', 'NECO Chemistry', 'JAMB Chemistry'],
+        subjects: ['Chemistry'],
+        quote: 'My teaching philosophy is centered on making chemistry clear, relatable, and engaging, while building strong foundational understanding and confidence for academic success.',
+        education: [
+            {
+                degree: 'B.Sc. Biochemistry',
+                institution: 'Federal University of Agriculture, Abeokuta',
+                year: '',
+            },
+        ],
+        certifications: [],
+        socials: [
+            { platform: 'email', handle: 'alimi@fastlane.ng', url: 'mailto:alimi@fastlane.ng' },
+        ],
     }
 ];
