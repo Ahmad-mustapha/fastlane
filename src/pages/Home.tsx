@@ -4,6 +4,7 @@ import Services from '../components/Services';
 import AboutSection from '../components/AboutSection';
 import Testimonials from '../components/Testimonials';
 import FaqSection from '../components/FaqSection';
+import SocialConnect from '../components/SocialConnect';
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <Services />
             <FaqSection />
             <Testimonials />
+            <SocialConnect />
         </div>
     );
 }

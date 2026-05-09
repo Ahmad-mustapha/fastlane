@@ -195,7 +195,7 @@ export default function Testimonials() {
             </Carousel>
 
             {/* ── Video Testimonials Section ── */}
-            <div className="mt-32 relative group">
+            {/* <div className="mt-32 relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#194970]/5 to-transparent dark:from-[#194970]/10 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                 <div className="relative">
@@ -207,7 +207,7 @@ export default function Testimonials() {
                         </div>
                     </div>
 
-                    {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 dark:bg-white/10 rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-xl">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 dark:bg-white/10 rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-xl">
                         <VideoStory
                             url="https://res.cloudinary.com/de30l793l/video/upload/q_auto/f_auto/v1776668337/VID-20260407-WA0006_qqmb3z.mp4"
                             title="STUDENT JOURNEY"
@@ -222,9 +222,9 @@ export default function Testimonials() {
                             activeVideoUrl={activeVideoUrl}
                             setActiveVideoUrl={setActiveVideoUrl}
                         />
-                    </div> */}
+                    </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 }
